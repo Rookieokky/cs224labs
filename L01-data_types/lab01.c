@@ -73,7 +73,7 @@ int main(void)
 	/********** Part 3 **********/
 	TERMINAL("\n\r** PART 3 *************");
 
-	TERMINAL2("Largest Q16.16 = %f (0x%4x)", ((long)unsigned_long/65536.0));
+	TERMINAL3("Largest Q16.16 = %f (0x%4x)", ((long)signed_long/65536.0), signed_long);
 
 
     return 0;
