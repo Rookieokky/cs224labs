@@ -1,0 +1,270 @@
+!SESSION 2015-01-22 15:47:47.359 -----------------------------------------------
+eclipse.buildId=M20120914-1540
+java.version=1.6.0_13
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product com.ti.ccstudio.branding.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product com.ti.ccstudio.branding.product
+
+!ENTRY org.eclipse.ui 2 0 2015-01-22 15:48:59.736
+!MESSAGE Warnings while parsing the viewer contributions from the 'org.eclipse.ui.popupMenus' extension point
+!SUBENTRY 1 org.eclipse.ui 2 0 2015-01-22 15:48:59.736
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.CEditorRulerActions/org.eclipse.cdt.debug.internal.ui.actions.CBreakpointPropertiesRulerActionDelegate'
+!SUBENTRY 1 org.eclipse.ui 2 0 2015-01-22 15:48:59.736
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.CEditorRulerActions/org.eclipse.cdt.debug.internal.ui.actions.EnableDisableBreakpointRulerActionDelegate'
+!SUBENTRY 1 org.eclipse.ui 2 0 2015-01-22 15:48:59.736
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.CEditorRulerActions/org.eclipse.cdt.debug.ui.actions.RulerCreateBreakpointInteractiveAction'
+!SUBENTRY 1 org.eclipse.ui 2 0 2015-01-22 15:48:59.737
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.AsmEditorRulerActions/org.eclipse.cdt.debug.internal.ui.actions.asm.CBreakpointPropertiesRulerActionDelegate'
+!SUBENTRY 1 org.eclipse.ui 2 0 2015-01-22 15:48:59.737
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.AsmEditorRulerActions/org.eclipse.cdt.debug.internal.ui.actions.asm.EnableDisableBreakpointRulerActionDelegate'
+!SUBENTRY 1 org.eclipse.ui 2 0 2015-01-22 15:48:59.737
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.AsmEditorRulerActions/org.eclipse.cdt.debug.ui.actions.asm.RulerCreateBreakpointInteractiveAction'
+!SUBENTRY 1 org.eclipse.ui 2 0 2015-01-22 15:48:59.737
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.dsf.ui', id='AUTOGEN:::org.eclipse.cdt.dsf.debug.ui.disassemblyRulerActions/org.eclipse.debug.ui.actions.RulerAddBreakpointAction'
+!SUBENTRY 1 org.eclipse.ui 2 0 2015-01-22 15:48:59.737
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.dsf.ui', id='org.eclipse.cdt.dsf.debug.ui.disassembly.commands.rulerToggleBreakpoint'
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-01-22 15:55:35.856
+!MESSAGE Indexed 'Lab1' (1 sources, 4 headers) in 2.55 sec: 744 declarations; 973 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-01-22 15:55:42.192
+!MESSAGE Indexed 'Lab1' (1 sources, 4 headers) in 2.23 sec: 744 declarations; 973 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY com.ti.ccstudio.debug 1 0 2015-01-22 15:58:01.672
+!MESSAGE DS_ERROR: MSP430: Error connecting to the target: The target setup (CC430F5123) does not match the actual target type (MSP430G2xx3)
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2015-01-22 15:58:05.151
+!MESSAGE DS_ERROR: Error connecting to the target:
+The target setup (CC430F5123) does not match the actual target type (MSP430G2xx3)
+
+!ENTRY org.eclipse.cdt.core 4 0 2015-01-22 15:58:47.546
+!MESSAGE Errorparser com.ti.ccstudio.errorparser.CoffErrorParser failed parsing line [Error: Program "C:/ti/ccsv5/utils/bin/gmake" is not found in PATH]
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.core.resources.ACBuilder.addMarker(ACBuilder.java:79)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.addMarker(CommonBuilder.java:1060)
+	at org.eclipse.cdt.core.ErrorParserManager.addProblemMarker(ErrorParserManager.java:607)
+	at com.ti.ccstudio.errorparser.parsers.ErrorPattern.recordError(ErrorPattern.java:121)
+	at com.ti.ccstudio.errorparser.parsers.CoffErrorParser.processPendingMesg(CoffErrorParser.java:269)
+	at com.ti.ccstudio.errorparser.parsers.CoffErrorParser.processLine(CoffErrorParser.java:207)
+	at org.eclipse.cdt.core.ErrorParserManager.processLine(ErrorParserManager.java:361)
+	at org.eclipse.cdt.core.ErrorParserManager.checkLine(ErrorParserManager.java:700)
+	at org.eclipse.cdt.core.ErrorParserManager.write(ErrorParserManager.java:684)
+	at org.eclipse.cdt.internal.core.StreamProgressMonitor.write(StreamProgressMonitor.java:101)
+	at java.io.OutputStream.write(Unknown Source)
+	at com.ti.ccstudio.project.core.internal.build.temp.ExternalBuildRunner.invokeExternalBuild(ExternalBuildRunner.java:267)
+	at com.ti.ccstudio.project.core.internal.build.CCSBuildRunner.invokeExternalBuild(CCSBuildRunner.java:141)
+	at com.ti.ccstudio.project.core.internal.build.temp.ExternalBuildRunner.invokeBuild(ExternalBuildRunner.java:88)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:753)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:510)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:459)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:513)
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:432)
+	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:305)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.cdt.core 4 0 2015-01-22 15:58:47.561
+!MESSAGE Errorparser com.ti.ccstudio.errorparser.CoffErrorParser failed parsing line []
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.core.resources.ACBuilder.addMarker(ACBuilder.java:79)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.addMarker(CommonBuilder.java:1060)
+	at org.eclipse.cdt.core.ErrorParserManager.addProblemMarker(ErrorParserManager.java:607)
+	at com.ti.ccstudio.errorparser.parsers.ErrorPattern.recordError(ErrorPattern.java:121)
+	at com.ti.ccstudio.errorparser.parsers.CoffErrorParser.processPendingMesg(CoffErrorParser.java:269)
+	at com.ti.ccstudio.errorparser.parsers.CoffErrorParser.processLine2(CoffErrorParser.java:425)
+	at com.ti.ccstudio.errorparser.parsers.CoffErrorParser.processLine(CoffErrorParser.java:206)
+	at org.eclipse.cdt.core.ErrorParserManager.processLine(ErrorParserManager.java:361)
+	at org.eclipse.cdt.core.ErrorParserManager.checkLine(ErrorParserManager.java:700)
+	at org.eclipse.cdt.core.ErrorParserManager.write(ErrorParserManager.java:684)
+	at org.eclipse.cdt.internal.core.StreamProgressMonitor.write(StreamProgressMonitor.java:101)
+	at java.io.OutputStream.write(Unknown Source)
+	at com.ti.ccstudio.project.core.internal.build.temp.ExternalBuildRunner.invokeExternalBuild(ExternalBuildRunner.java:267)
+	at com.ti.ccstudio.project.core.internal.build.CCSBuildRunner.invokeExternalBuild(CCSBuildRunner.java:141)
+	at com.ti.ccstudio.project.core.internal.build.temp.ExternalBuildRunner.invokeBuild(ExternalBuildRunner.java:88)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:753)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:510)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:459)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:513)
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:432)
+	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:305)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.cdt.core 4 0 2015-01-22 15:58:47.561
+!MESSAGE Errorparser com.ti.ccstudio.errorparser.CoffErrorParser failed parsing line [PATH=[C:\ti\ccsv5\ccs_base\common\bin;C:\ti\ccsv5\ccs_base\common\uscif;C:\ti\ccsv5\ccs_base\DebugServer\license;C:/ti/ccsv5/eclipse/jre/bin/client;C:/ti/ccsv5/eclipse/jre/bin;C:/ti/ccsv5/eclipse/jre/lib/i386;C:\Perl64\site\bin;C:\Perl64\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Microsoft CHESS\bin\;C:\Program Files\TortoiseGit\bin;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;;C:\ti\ccsv5\eclipse;]]
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.core.resources.ACBuilder.addMarker(ACBuilder.java:79)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.addMarker(CommonBuilder.java:1060)
+	at org.eclipse.cdt.core.ErrorParserManager.addProblemMarker(ErrorParserManager.java:607)
+	at com.ti.ccstudio.errorparser.parsers.ErrorPattern.recordError(ErrorPattern.java:121)
+	at com.ti.ccstudio.errorparser.parsers.CoffErrorParser.processPendingMesg(CoffErrorParser.java:269)
+	at com.ti.ccstudio.errorparser.parsers.CoffErrorParser.processLine2(CoffErrorParser.java:425)
+	at com.ti.ccstudio.errorparser.parsers.CoffErrorParser.processLine(CoffErrorParser.java:206)
+	at org.eclipse.cdt.core.ErrorParserManager.processLine(ErrorParserManager.java:361)
+	at org.eclipse.cdt.core.ErrorParserManager.checkLine(ErrorParserManager.java:700)
+	at org.eclipse.cdt.core.ErrorParserManager.write(ErrorParserManager.java:684)
+	at org.eclipse.cdt.internal.core.StreamProgressMonitor.write(StreamProgressMonitor.java:101)
+	at java.io.OutputStream.write(Unknown Source)
+	at com.ti.ccstudio.project.core.internal.build.temp.ExternalBuildRunner.invokeExternalBuild(ExternalBuildRunner.java:267)
+	at com.ti.ccstudio.project.core.internal.build.CCSBuildRunner.invokeExternalBuild(CCSBuildRunner.java:141)
+	at com.ti.ccstudio.project.core.internal.build.temp.ExternalBuildRunner.invokeBuild(ExternalBuildRunner.java:88)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:753)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:510)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:459)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:513)
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:432)
+	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:305)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.cdt.core 4 0 2015-01-22 15:58:47.561
+!MESSAGE Errorparser com.ti.ccstudio.errorparser.CoffErrorParser failed parsing line []
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.core.resources.ACBuilder.addMarker(ACBuilder.java:79)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.addMarker(CommonBuilder.java:1060)
+	at org.eclipse.cdt.core.ErrorParserManager.addProblemMarker(ErrorParserManager.java:607)
+	at com.ti.ccstudio.errorparser.parsers.ErrorPattern.recordError(ErrorPattern.java:121)
+	at com.ti.ccstudio.errorparser.parsers.CoffErrorParser.processPendingMesg(CoffErrorParser.java:269)
+	at com.ti.ccstudio.errorparser.parsers.CoffErrorParser.processLine2(CoffErrorParser.java:425)
+	at com.ti.ccstudio.errorparser.parsers.CoffErrorParser.processLine(CoffErrorParser.java:206)
+	at org.eclipse.cdt.core.ErrorParserManager.processLine(ErrorParserManager.java:361)
+	at org.eclipse.cdt.core.ErrorParserManager.checkLine(ErrorParserManager.java:700)
+	at org.eclipse.cdt.core.ErrorParserManager.write(ErrorParserManager.java:684)
+	at org.eclipse.cdt.internal.core.StreamProgressMonitor.write(StreamProgressMonitor.java:101)
+	at java.io.OutputStream.write(Unknown Source)
+	at com.ti.ccstudio.project.core.internal.build.temp.ExternalBuildRunner.invokeExternalBuild(ExternalBuildRunner.java:273)
+	at com.ti.ccstudio.project.core.internal.build.CCSBuildRunner.invokeExternalBuild(CCSBuildRunner.java:141)
+	at com.ti.ccstudio.project.core.internal.build.temp.ExternalBuildRunner.invokeBuild(ExternalBuildRunner.java:88)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:753)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:510)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:459)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:513)
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:432)
+	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:305)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.cdt.core 4 0 2015-01-22 15:58:47.577
+!MESSAGE Errorparser com.ti.ccstudio.errorparser.CoffErrorParser failed parsing line [**** Build Finished ****]
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.core.resources.ACBuilder.addMarker(ACBuilder.java:79)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.addMarker(CommonBuilder.java:1060)
+	at org.eclipse.cdt.core.ErrorParserManager.addProblemMarker(ErrorParserManager.java:607)
+	at com.ti.ccstudio.errorparser.parsers.ErrorPattern.recordError(ErrorPattern.java:121)
+	at com.ti.ccstudio.errorparser.parsers.CoffErrorParser.processPendingMesg(CoffErrorParser.java:269)
+	at com.ti.ccstudio.errorparser.parsers.CoffErrorParser.processLine2(CoffErrorParser.java:425)
+	at com.ti.ccstudio.errorparser.parsers.CoffErrorParser.processLine(CoffErrorParser.java:206)
+	at org.eclipse.cdt.core.ErrorParserManager.processLine(ErrorParserManager.java:361)
+	at org.eclipse.cdt.core.ErrorParserManager.checkLine(ErrorParserManager.java:700)
+	at org.eclipse.cdt.core.ErrorParserManager.write(ErrorParserManager.java:684)
+	at org.eclipse.cdt.internal.core.StreamProgressMonitor.write(StreamProgressMonitor.java:101)
+	at java.io.OutputStream.write(Unknown Source)
+	at com.ti.ccstudio.project.core.internal.build.temp.ExternalBuildRunner.invokeExternalBuild(ExternalBuildRunner.java:273)
+	at com.ti.ccstudio.project.core.internal.build.CCSBuildRunner.invokeExternalBuild(CCSBuildRunner.java:141)
+	at com.ti.ccstudio.project.core.internal.build.temp.ExternalBuildRunner.invokeBuild(ExternalBuildRunner.java:88)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:753)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:510)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:459)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:513)
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:432)
+	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:305)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-01-22 16:01:51.275
+!MESSAGE Indexed 'test' (1 sources, 0 headers) in 0.08 sec: 3 declarations; 3 references; 1 unresolved inclusions; 0 syntax errors; 5 unresolved names (45.45%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-01-22 16:01:52.327
+!MESSAGE Indexed 'test' (1 sources, 4 headers) in 0.08 sec: 174 declarations; 561 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY com.ti.ccstudio.debug 1 0 2015-01-22 16:02:39.899
+!MESSAGE DS_ERROR: MSP430: Error connecting to the target: The target setup (MSP430F2272_G2744) does not match the actual target type (MSP430G2xx3)
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2015-01-22 16:02:39.930
+!MESSAGE DS_ERROR: Error connecting to the target:
+The target setup (MSP430F2272_G2744) does not match the actual target type (MSP430G2xx3)
+!SESSION 2015-01-22 16:07:46.493 -----------------------------------------------
+eclipse.buildId=M20120914-1540
+java.version=1.6.0_13
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product com.ti.ccstudio.branding.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product com.ti.ccstudio.branding.product
+
+!ENTRY org.eclipse.ui 2 0 2015-01-22 16:07:50.955
+!MESSAGE Warnings while parsing the viewer contributions from the 'org.eclipse.ui.popupMenus' extension point
+!SUBENTRY 1 org.eclipse.ui 2 0 2015-01-22 16:07:50.955
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.CEditorRulerActions/org.eclipse.cdt.debug.internal.ui.actions.CBreakpointPropertiesRulerActionDelegate'
+!SUBENTRY 1 org.eclipse.ui 2 0 2015-01-22 16:07:50.955
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.CEditorRulerActions/org.eclipse.cdt.debug.internal.ui.actions.EnableDisableBreakpointRulerActionDelegate'
+!SUBENTRY 1 org.eclipse.ui 2 0 2015-01-22 16:07:50.955
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.CEditorRulerActions/org.eclipse.cdt.debug.ui.actions.RulerCreateBreakpointInteractiveAction'
+!SUBENTRY 1 org.eclipse.ui 2 0 2015-01-22 16:07:50.955
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.AsmEditorRulerActions/org.eclipse.cdt.debug.internal.ui.actions.asm.CBreakpointPropertiesRulerActionDelegate'
+!SUBENTRY 1 org.eclipse.ui 2 0 2015-01-22 16:07:50.955
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.AsmEditorRulerActions/org.eclipse.cdt.debug.internal.ui.actions.asm.EnableDisableBreakpointRulerActionDelegate'
+!SUBENTRY 1 org.eclipse.ui 2 0 2015-01-22 16:07:50.955
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.AsmEditorRulerActions/org.eclipse.cdt.debug.ui.actions.asm.RulerCreateBreakpointInteractiveAction'
+!SUBENTRY 1 org.eclipse.ui 2 0 2015-01-22 16:07:50.955
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.dsf.ui', id='AUTOGEN:::org.eclipse.cdt.dsf.debug.ui.disassemblyRulerActions/org.eclipse.debug.ui.actions.RulerAddBreakpointAction'
+!SUBENTRY 1 org.eclipse.ui 2 0 2015-01-22 16:07:50.955
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.dsf.ui', id='org.eclipse.cdt.dsf.debug.ui.disassembly.commands.rulerToggleBreakpoint'
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-01-22 16:10:41.827
+!MESSAGE Indexed 'Lab1(rael)' (1 sources, 0 headers) in 0.05 sec: 2 declarations; 0 references; 1 unresolved inclusions; 0 syntax errors; 3 unresolved names (60.00%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-01-22 16:10:42.935
+!MESSAGE Indexed 'Lab1(rael)' (1 sources, 4 headers) in 0.12 sec: 173 declarations; 556 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)

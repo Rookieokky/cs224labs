@@ -13,7 +13,7 @@ int main(void)
 	lab01_init();
 
 	/********** Part 1 **********/
-	TERMINAL("\n\r** PART 1 *************");
+	TERMINAL("\n\n\r** PART 1 *************");
 
 	// largest signed int
 	signed int signed_int = -1;
@@ -44,9 +44,8 @@ int main(void)
 	TERMINAL2("Largest unsigned char: %u", (char)(unsigned_char - 1));
 
 	// largest signed long
-	signed long int signed_long = 1;
-	signed_long <<= 31;
-	signed_long = ~signed_long;
+	long int signed_long = -1;
+	signed_long = (unsigned long)signed_long >> 1;
 	TERMINAL1("Largest signed long: %ld", signed_long);
 
 	// most negative signed long
@@ -58,7 +57,7 @@ int main(void)
 
 
 	/********** Part 2 **********/
-	TERMINAL("\n\r** PART 2 *************");
+	TERMINAL("\n\n\r** PART 2 *************");
 
 	// integer overflow
 	TERMINAL1("Overflow: Largest signed int + 1: %d", signed_int + 1);
@@ -71,9 +70,35 @@ int main(void)
 
 
 	/********** Part 3 **********/
-	TERMINAL("\n\r** PART 3 *************");
+	TERMINAL("\n\n\r** PART 3 *************");
 
-	TERMINAL3("Largest Q16.16 = %f (0x%4x)", ((long)signed_long/65536.0), signed_long);
+	TERMINAL1("Largest Q16.16 = %f", ((long)signed_long/65536.0));
+	TERMINAL1("Most negative Q16.16 = %f", ((long)(~signed_long)/65536.0));
+
+	/********** Part 4 **********/
+	TERMINAL("\n\n\r** PART 4 *************");
+
+	float num_one = 0.0;
+	for (i = 0; i < 100; i++) num_one += 5.0 / 6.0;
+	float num_two = 5.0 / 6.0 * 100.0;
+
+	TERMINAL1("Num1 (5/6 added 100 times): %f", num_one);
+	TERMINAL1("Num2 (5/6 x 100): %f", num_two);
+	TERMINAL1("Num1 == Num2: %d", num_one == num_two);
+
+	/********** Part 5 **********/
+	TERMINAL("\n\n\r** PART 5 *************");
+
+	num_one = (.0000000023 + 3) - 3;
+	num_two = .0000000023 + (3 - 3);
+
+	TERMINAL1("Num1 == Num2: %d", num_one == num_two);
+	TERMINAL2("Num1: %f 0x%08lx", num_one);
+	TERMINAL2("Num2: %f 0x%08lx", num_two);
+
+	num_one = (.0000000023 + 500000);
+
+	TERMINAL2("Num1 (.0000000023 + 500000): %f 0x%08lx", num_one);
 
 
     return 0;
