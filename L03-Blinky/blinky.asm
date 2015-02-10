@@ -21,34 +21,37 @@
 ;*******************************************************************************
            .cdecls  C,"msp430.h"            ; MSP430
 
-SMALL_COUNT      	.equ    0xFFFF                       ; delay count
-BIG_COUNT			.equ	0x0a
+SMALL_COUNT      	.equ    0x7000                       ; delay count
+FLASH_COUNT			.equ	0x0a
+BIG_COUNT			.equ	0x064
 
 ;------------------------------------------------------------------------------
             .text                           ; beginning of executable code
 ;------------------------------------------------------------------------------
-start:      mov.w   #0x0280,SP              ;    init stack pointer
-            mov.w   #WDTPW|WDTHOLD,&WDTCTL  ;    stop WDT
-            bis.b   #0x01,&P1DIR            ;    set P1.0 as output
+start:      mov.w   #0x0280,SP              ; init stack pointer
+            mov.w   #WDTPW|WDTHOLD,&WDTCTL  ; stop WDT
+            bis.b   #0x01,&P1DIR            ; set P1.0 as output
+            mov.w	#0x01,r5				; led status
 
 toggle_led:
 			xor.b   #0x01,&P1OUT            ; toggle LED
-			mov.w	#SMALL_COUNT,r15		; put count in r15
-			xor.w	r14,r14					; zero r14
-			cmp.b	#0x0,&P1OUT
-			jne small_timing_loop
+			xor.w	#0x01,r5				; toggle status
+			mov.w	#FLASH_COUNT,r14
+			cmp.w	#0x0,r5
+			jne		big_timing_loop
 			mov.w	#BIG_COUNT,r14
-			jmp big_timing_loop
+			jmp		big_timing_loop
 
 small_timing_loop:
 			sub.w 	#0x01,r15				; subtract 1 from r15
+			and.w	r15,r15					; waste 1 cycle
 			jnz small_timing_loop			; redo loop if r15 != 0
 			jmp big_timing_loop
 
 big_timing_loop:
-			sub.w 	#0x01,r14				; subtract 1 from r15
+			sub.w 	#0x01,r14				; subtract 1 from r14
 			mov.w	#SMALL_COUNT,r15
-			jnz small_timing_loop			; redo loop if r15 != 0
+			jnz small_timing_loop			; redo loop if r14 != 0
 			jmp toggle_led					; toggle the led
 
 ;------------------------------------------------------------------------------
