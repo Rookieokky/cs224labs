@@ -2,18 +2,7 @@
 ;   Robert Williams -- CS 224 Lab 03
 ;	IP belongs to the author :)
 ;
-;   Description: Quickly blink P1.0 every 10 seconds.  Calculate MCLK, CPI, MIPS
-;        Author:
-;
-;             MSP430G5223
-;             -----------
-;            |       P1.0|-->LED1-RED LED
-;            |       P1.3|<--S2
-;            |       P1.6|-->LED2-GREEN LED
-;
-; Show all calculations:
-;
-;   MCLK = 90384 cycles / .1s interval = 1.2 Mhz
+;   MCLK = 120512 cycles / .1s interval = 1.2 Mhz
 ;    CPI = 26 cycles/ 15 instructions = 1.73 Cycles/Instruction
 ;   MIPS = MCLK / CPI / 1000000 = .69 MIPS
 
