@@ -21,9 +21,9 @@
 ;*******************************************************************************
            .cdecls  C,"msp430.h"            ; MSP430
 
-SMALL_COUNT      	.equ    0x7000                       ; delay count
-FLASH_COUNT			.equ	0x0a
-BIG_COUNT			.equ	0x064
+SMALL_COUNT      	.equ    0x7600			; small subrouting count
+FLASH_COUNT			.equ	0x03			; count of three subloops per flash
+WAIT_COUNT			.equ	0x061			; count of 97 subloops per 10 seconds (plus flash)
 
 ;------------------------------------------------------------------------------
             .text                           ; beginning of executable code
@@ -31,28 +31,29 @@ BIG_COUNT			.equ	0x064
 start:      mov.w   #0x0280,SP              ; init stack pointer
             mov.w   #WDTPW|WDTHOLD,&WDTCTL  ; stop WDT
             bis.b   #0x01,&P1DIR            ; set P1.0 as output
-            mov.w	#0x01,r5				; led status
+            xor.w	r5,r5					; led status (length 1, cycles 1)
+            bic.b   #0x01,&P1OUT			; make sure led is off (length 2, cycles 4)
 
 toggle_led:
-			xor.b   #0x01,&P1OUT            ; toggle LED
-			xor.w	#0x01,r5				; toggle status
-			mov.w	#FLASH_COUNT,r14
-			cmp.w	#0x0,r5
-			jne		big_timing_loop
-			mov.w	#BIG_COUNT,r14
-			jmp		big_timing_loop
+			xor.b   #0x01,&P1OUT            ; toggle LED (length 2, cycles 4)
+			xor.w	#0x01,r5				; toggle status (length 1, cycles 1)
+			mov.w	#FLASH_COUNT,r14		; (length 2, cycles 2)
+			cmp.w	#0x0,r5					; (length 1, cycles 1)
+			jne		big_timing_loop			; (length 1, cycles 1)
+			mov.w	#WAIT_COUNT,r14			; (length 2, cycles 2)
+			jmp		big_timing_loop			; (length 1, cycles 1)
 
 small_timing_loop:
-			sub.w 	#0x01,r15				; subtract 1 from r15
-			and.w	r15,r15					; waste 1 cycle
-			jnz small_timing_loop			; redo loop if r15 != 0
-			jmp big_timing_loop
+			sub.w 	#0x01,r15				; subtract 1 from r15 (length 1, cycles 1)
+			and.w	r15,r15					; waste 1 cycle (length 1, cycles 1)
+			jnz small_timing_loop			; redo loop if r15 != 0 (length 1, cycles 1)
+			jmp big_timing_loop				; (length 1, cycles 1)
 
 big_timing_loop:
-			sub.w 	#0x01,r14				; subtract 1 from r14
-			mov.w	#SMALL_COUNT,r15
-			jnz small_timing_loop			; redo loop if r14 != 0
-			jmp toggle_led					; toggle the led
+			sub.w 	#0x01,r14				; subtract 1 from r14 (length 1, cycles 1)
+			mov.w	#SMALL_COUNT,r15		; (length 2, cycles 2)
+			jnz small_timing_loop			; redo loop if r14 != 0 (length 1, cycles 1)
+			jmp toggle_led					; toggle the led (length 1, cycles 1)
 
 ;------------------------------------------------------------------------------
 ;           Interrupt Vectors
