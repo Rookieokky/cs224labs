@@ -75,7 +75,12 @@
 			        .asg   "xor.b #0x10,&P3OUT",GREEN2_TOGGLE
 			        .asg   "bit.b #0x10,&P3OUT",GREEN2_TEST
 
-TENTH_SECOND      	.equ    0x75b0			; small subrouting count
+TENTH_SECOND      	.equ    0x6a00			; small subrouting count
+GREEN_STATE			.equ	0x01
+GREEN_STATE_2		.equ 	0x02
+YELLOW_STATE		.equ	0x03
+RED_STATE			.equ	0x04
+PED_STATE			.equ	0x05
 COUNT				.equ    0
 
 ;------------------------------------------------------------------------------
@@ -89,12 +94,26 @@ start:      mov.w   #__STACK_END,SP         ; init stack pointer
 			bic.b #0xff,&P4OUT				; turn off p4
 			bic.b #0xff,&P3OUT				; turn off p3
 
+			bic.b  #0x01,&P1SEL          	; select GPIO
+          	bic.b  #0x01,&P1DIR          	; configure P1.0 as inputs
+          	bis.b  #0x01,&P1OUT          	; use pull-up
+          	bis.b  #0x01,&P1REN          	; enable pull-up
+          	bis.b  #0x01,&P1IES          	; trigger on high to low transition
+          	bis.b  #0x01,&P1IE           	; P1.0 interrupt enabled
+          	bic.b  #0x01,&P1IFG          	; P1.0 IFG cleared
+          	bis.w  #GIE,SR               	; enable general interrupts
+
 mainloop:
 			call #green_light
 			call #yellow_light
-			call #red_light
-			call #pedestrian
-            jmp     mainloop
+			ORANGE_TEST						; check if the orange led is lit
+			jz else							; n
+
+			call #pedestrian				; if
+			jmp mainloop
+else:
+			call #red_light					; else
+            jmp mainloop
 
 
 green_light:
@@ -105,8 +124,21 @@ green_light:
 			ORANGE_OFF
 			GREEN_ON
 
-			push #0x014						; delay for two seconds (delay 20)
+			mov.w #GREEN_STATE,r8
+
+			push #0x064						; delay for ten seconds (delay 100)
 			call #delay
+
+			ORANGE_TEST						; check if the orange led is lit
+			jz second_state							;
+			ret
+
+second_state:
+			mov.w #GREEN_STATE_2,r8
+
+			push #0x064						; delay for ten seconds (delay 100)
+			call #delay
+
 			ret
 
 yellow_light:
@@ -116,7 +148,9 @@ yellow_light:
 			YELLOW_ON
 			GREEN_OFF
 
-			push #0x0a						; delay for one second (delay 10)
+			mov.w #YELLOW_STATE,r8
+
+			push #0x032						; delay for five seconds (delay 50)
 			call #delay
 			ret
 
@@ -127,8 +161,10 @@ red_light:
 			YELLOW_OFF
 			GREEN_OFF
 
-			push #0x0a
-			call #delay						; delay for one second (delay 10)
+			mov.w #RED_STATE,r8
+
+			push #0x032
+			call #delay						; delay for five seconds (delay 50)
 			ret
 
 pedestrian:
@@ -136,44 +172,47 @@ pedestrian:
 			GREEN2_ON
 			RED_ON
 			YELLOW_OFF
+			ORANGE_OFF
 			GREEN_OFF
 
-			;push #0x032						; delay for five seconds (delay 50)
-			;call #delay
+			mov.w #PED_STATE,r8
+
+			push #0x032						; delay for five seconds (delay 50)
+			call #delay
 
 			GREEN2_TOGGLE
 			push #0x06						; toggle 6 times
 			push #0x0a						; delay 1 second between each toggle
 			call #pedestrian_toggle
 
-			;push #0x014						; toggle 20 times
-			;push #0x02						; delay .2 seconds between each toggle
-			;call #pedestrian_toggle
+			push #0x014						; toggle 20 times
+			push #0x02						; delay .2 seconds between each toggle
+			call #pedestrian_toggle
 
 			ret
 
 pedestrian_toggle:
-			push r15						; callee save
-			push r14						; callee save
-			mov.w 8(SP), r14				; access parameter 1
-			mov.w 6(SP), r15				; access parameter 2
+			push r11						; callee save
+			push r10						; callee save
+			mov.w 8(SP), r10				; access parameter 1
+			mov.w 6(SP), r11				; access parameter 2
 			mov.w 4(SP), 8(SP)				; move return address
-			mov.w 2(SP), 6(SP)				; move r15
-			mov.w @SP, 4(SP)				; move r14
+			mov.w 2(SP), 6(SP)				; move r11
+			mov.w @SP, 4(SP)				; move r10
 			add.w #0x04, SP					; set the stack pointer
 
-			inc.w r14
+			inc.w r10
 toggle_loop:
-			dec.w r14
+			dec.w r10
 			jz end_pedestrian_toggle
 			GREEN2_TOGGLE
-			push r15
+			push r11
 			call #delay
 			jmp toggle_loop
 
 end_pedestrian_toggle:
-			pop r14							; callee save
-			pop r15							; callee save
+			pop r10							; callee save
+			pop r11							; callee save
 			ret
 
 
@@ -183,13 +222,14 @@ delay:		push r15						; callee save
 			mov.w 6(SP), r14				; access parameter
 			mov.w 4(SP), 6(SP)				; move return address
 			mov.w 2(SP), 4(SP)				; move r15
-			mov.w @SP+, 2(SP)				; move r14
+			mov.w @SP, 2(SP)				; move r14
+			add.w #0x02, SP					; set the stack pointer
 			inc.w r14
 			jmp big_timing_loop
 
 small_timing_loop:
 			dec.w r15
-			and.w	r15,r15					; waste 1 cycle
+			and.w r15,r15					; waste 1 cycle
 			jnz small_timing_loop
 
 big_timing_loop:
@@ -204,6 +244,22 @@ end_delay:
 			pop r15							; callee save
 			ret								; return from #delay
 
+;------------------------------------------------------------------------------
+;	Port 1 ISR
+;
+P1_ISR:
+          	bic.b  #0x01,&P1IFG			; clear P1.0 Interrupt Flag
+          	ORANGE_ON
+
+          	sub.w #GREEN_STATE_2,r8		; check for green state 2
+          	jz if
+			reti
+if:
+			mov.w #0x01,r14				; end the big timing loop
+          	reti
+
+          	.sect  ".int02"				; P1 interrupt vector
+          	.word  P1_ISR
 
 ;-------------------------------------------------------------------------------
 ;           Stack Pointer definition
