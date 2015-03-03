@@ -89,20 +89,102 @@ start:      mov.w   #__STACK_END,SP         ; init stack pointer
 			bic.b #0xff,&P4OUT				; turn off p4
 			bic.b #0xff,&P3OUT				; turn off p3
 
-mainloop:   xor.b	#0x40,&P4OUT			; toggle red led
-			push 	#0x01					; delay for one second
-			call	#delay
-            jmp     mainloop                ; y, toggle led
+mainloop:
+			call #green_light
+			call #yellow_light
+			call #red_light
+			call #pedestrian
+            jmp     mainloop
+
+
+green_light:
+			RED2_ON							; turn on/off appropriate lights
+			GREEN2_OFF
+			RED_OFF
+			YELLOW_OFF
+			ORANGE_OFF
+			GREEN_ON
+
+			push #0x014						; delay for two seconds (delay 20)
+			call #delay
+			ret
+
+yellow_light:
+			RED2_ON							; turn on/off appropriate lights
+			GREEN2_OFF
+			RED_OFF
+			YELLOW_ON
+			GREEN_OFF
+
+			push #0x0a						; delay for one second (delay 10)
+			call #delay
+			ret
+
+red_light:
+			RED2_ON							; turn on/off appropriate lights
+			GREEN2_OFF
+			RED_ON
+			YELLOW_OFF
+			GREEN_OFF
+
+			push #0x0a
+			call #delay						; delay for one second (delay 10)
+			ret
+
+pedestrian:
+			RED2_OFF						; turn on/off appropriate lights
+			GREEN2_ON
+			RED_ON
+			YELLOW_OFF
+			GREEN_OFF
+
+			;push #0x032						; delay for five seconds (delay 50)
+			;call #delay
+
+			GREEN2_TOGGLE
+			push #0x06						; toggle 6 times
+			push #0x0a						; delay 1 second between each toggle
+			call #pedestrian_toggle
+
+			;push #0x014						; toggle 20 times
+			;push #0x02						; delay .2 seconds between each toggle
+			;call #pedestrian_toggle
+
+			ret
+
+pedestrian_toggle:
+			push r15						; callee save
+			push r14						; callee save
+			mov.w 8(SP), r14				; access parameter 1
+			mov.w 6(SP), r15				; access parameter 2
+			mov.w 4(SP), 8(SP)				; move return address
+			mov.w 2(SP), 6(SP)				; move r15
+			mov.w @SP, 4(SP)				; move r14
+			add.w #0x04, SP					; set the stack pointer
+
+			inc.w r14
+toggle_loop:
+			dec.w r14
+			jz end_pedestrian_toggle
+			GREEN2_TOGGLE
+			push r15
+			call #delay
+			jmp toggle_loop
+
+end_pedestrian_toggle:
+			pop r14							; callee save
+			pop r15							; callee save
+			ret
+
+
 
 delay:		push r15						; callee save
 			push r14						; callee save
-			push r13						; callee save
-			mov.w 8(SP), r13				; access parameter
-			mov.w 6(SP), 8(SP)				; move return address
-			mov.w 4(SP), 6(SP)				; move r15
-			mov.w 2(SP), 4(SP)				; move r14
-			mov.w @SP+, 2(SP)				; move r13
-			inc.w r13
+			mov.w 6(SP), r14				; access parameter
+			mov.w 4(SP), 6(SP)				; move return address
+			mov.w 2(SP), 4(SP)				; move r15
+			mov.w @SP+, 2(SP)				; move r14
+			inc.w r14
 			jmp big_timing_loop
 
 small_timing_loop:
@@ -110,22 +192,14 @@ small_timing_loop:
 			and.w	r15,r15					; waste 1 cycle
 			jnz small_timing_loop
 
-medium_timing_loop:
+big_timing_loop:
 			dec.w r14
-			jz big_timing_loop
+			jz end_delay
 			mov.w #TENTH_SECOND, r15
 			inc.w r15
 			jmp small_timing_loop
 
-big_timing_loop:
-			dec.w r13
-			jz end_delay
-			mov.w #0x0a, r14
-			inc.w r14
-			jmp medium_timing_loop
-
 end_delay:
-			pop r13							; callee save
 			pop r14							; callee save
 			pop r15							; callee save
 			ret								; return from #delay
