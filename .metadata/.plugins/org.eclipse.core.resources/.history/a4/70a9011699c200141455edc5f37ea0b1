@@ -115,9 +115,6 @@ else:
 			call #red_light					; else
             jmp mainloop
 
-;------------------------------------------------------------------------------
-;	green_light subroutine
-;
 
 green_light:
 			RED2_ON							; turn on/off appropriate lights
@@ -144,10 +141,6 @@ second_state:
 
 			ret
 
-;------------------------------------------------------------------------------
-;	yellow_light subroutine
-;
-
 yellow_light:
 			RED2_ON							; turn on/off appropriate lights
 			GREEN2_OFF
@@ -161,10 +154,6 @@ yellow_light:
 			call #delay
 			ret
 
-;------------------------------------------------------------------------------
-;	red_light subroutine
-;
-
 red_light:
 			RED2_ON							; turn on/off appropriate lights
 			GREEN2_OFF
@@ -177,10 +166,6 @@ red_light:
 			push #0x032
 			call #delay						; delay for five seconds (delay 50)
 			ret
-
-;------------------------------------------------------------------------------
-;	pedestrian subroutine
-;
 
 pedestrian:
 			RED2_OFF						; turn on/off appropriate lights
@@ -230,9 +215,7 @@ end_pedestrian_toggle:
 			pop r11							; callee save
 			ret
 
-;------------------------------------------------------------------------------
-;	delay subroutine
-;
+
 
 delay:		push r15						; callee save
 			push r14						; callee save
@@ -265,7 +248,7 @@ end_delay:
 ;	Port 1 ISR
 ;
 P1_ISR:
-          	bic.b  #0x0f,&P1IFG			; clear P1.0 Interrupt Flag
+          	bic.b  #0x01,&P1IFG			; clear P1.0 Interrupt Flag
           	ORANGE_ON
 
           	sub.w #GREEN_STATE_2,r8		; check for green state 2

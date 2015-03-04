@@ -2,7 +2,7 @@
 <link_info>
    <banner>MSP430 Linker PC v4.2.1</banner>
    <copyright>Copyright (c) 2003-2013 Texas Instruments Incorporated</copyright>
-   <link_time>0x54f644d2</link_time>
+   <link_time>0x54f74edb</link_time>
    <link_errors>0x0</link_errors>
    <output_file>L05-Traffic.out</output_file>
    <input_file_list>
@@ -97,13 +97,13 @@
          <name>.text</name>
          <load_address>0x8000</load_address>
          <run_address>0x8000</run_address>
-         <size>0x1a0</size>
+         <size>0x1b0</size>
          <input_file_ref idref="fl-2"/>
       </object_component>
       <object_component id="oc-3e">
          <name>.text:__TI_ISR_TRAP</name>
-         <load_address>0x81a0</load_address>
-         <run_address>0x81a0</run_address>
+         <load_address>0x81b0</load_address>
+         <run_address>0x81b0</run_address>
          <size>0x6</size>
          <input_file_ref idref="fl-26"/>
       </object_component>
@@ -282,7 +282,7 @@
          <name>.text</name>
          <load_address>0x8000</load_address>
          <run_address>0x8000</run_address>
-         <size>0x1a6</size>
+         <size>0x1b6</size>
          <contents>
             <object_component_ref idref="oc-38"/>
             <object_component_ref idref="oc-3e"/>
@@ -647,18 +647,18 @@
          <page_id>0x0</page_id>
          <origin>0x8000</origin>
          <length>0x7fde</length>
-         <used_space>0x1a6</used_space>
-         <unused_space>0x7e38</unused_space>
+         <used_space>0x1b6</used_space>
+         <unused_space>0x7e28</unused_space>
          <attributes>RWIX</attributes>
          <usage_details>
             <allocated_space>
                <start_address>0x8000</start_address>
-               <size>0x1a6</size>
+               <size>0x1b6</size>
                <logical_group_ref idref="lg-6"/>
             </allocated_space>
             <available_space>
-               <start_address>0x81a6</start_address>
-               <size>0x7e38</size>
+               <start_address>0x81b6</start_address>
+               <size>0x7e28</size>
             </available_space>
          </usage_details>
       </memory_area>
@@ -1334,11 +1334,11 @@
       </symbol>
       <symbol id="sm-6c">
          <name>etext</name>
-         <value>0x81a6</value>
+         <value>0x81b6</value>
       </symbol>
       <symbol id="sm-6d">
          <name>__etext__</name>
-         <value>0x81a6</value>
+         <value>0x81b6</value>
       </symbol>
       <symbol id="sm-6e">
          <name>.data</name>
@@ -1429,7 +1429,7 @@
       </symbol>
       <symbol id="sm-10a">
          <name>__TI_ISR_TRAP</name>
-         <value>0x81a0</value>
+         <value>0x81b0</value>
          <object_component_ref idref="oc-3e"/>
       </symbol>
    </symbol_table>
