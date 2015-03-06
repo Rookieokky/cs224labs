@@ -1,443 +1,324 @@
 
+**** Build of configuration Release for project L06-Morse ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../morse.asm'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi -O2 --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="morse.pp"  "../morse.asm"
+'Finished building: ../morse.asm'
+' '
+'Building file: ../morse_codes.asm'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi -O2 --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="morse_codes.pp"  "../morse_codes.asm"
+'Finished building: ../morse_codes.asm'
+' '
+'Building target: L06-Morse.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi -O2 --advice:power=all --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L06-Morse.map" --heap_size=0 --stack_size=0 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L06-Morse_linkInfo.xml" -o "L06-Morse.out"  "./morse_codes.obj" "./morse.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+<Linking>
+warning #10202-D: no suitable entry-point found; setting to 0
+'Finished building target: L06-Morse.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L06-Morse ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../morse.asm'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="morse.pp"  "../morse.asm"
+'Finished building: ../morse.asm'
+' '
+'Building file: ../morse_codes.asm'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="morse_codes.pp"  "../morse_codes.asm"
+'Finished building: ../morse_codes.asm'
+' '
+'Building target: L06-Morse.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L06-Morse.map" --heap_size=0 --stack_size=0 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L06-Morse_linkInfo.xml" -o "L06-Morse.out"  "./morse_codes.obj" "./morse.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+<Linking>
+warning #10202-D: no suitable entry-point found; setting to 0
+'Finished building target: L06-Morse.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L06-Morse ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L05-Traffic ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L06-Morse ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L06-Morse ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../morse.asm'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="morse.pp"  "../morse.asm"
+'Finished building: ../morse.asm'
+' '
+'Building target: L06-Morse.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L06-Morse.map" --heap_size=0 --stack_size=0 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L06-Morse_linkInfo.xml" -o "L06-Morse.out"  "./morse_codes.obj" "./morse.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+<Linking>
+warning #10202-D: no suitable entry-point found; setting to 0
+'Finished building target: L06-Morse.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L06-Morse ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../morse.asm'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="morse.pp"  "../morse.asm"
+'Finished building: ../morse.asm'
+' '
+'Building target: L06-Morse.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L06-Morse.map" --heap_size=0 --stack_size=0 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L06-Morse_linkInfo.xml" -o "L06-Morse.out"  "./morse_codes.obj" "./morse.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+<Linking>
+warning #10202-D: no suitable entry-point found; setting to 0
+'Finished building target: L06-Morse.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L05-Traffic ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.asm'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.asm"
+'Finished building: ../main.asm'
+' '
+'Building target: L05-Traffic.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L05-Traffic.map" --heap_size=0 --stack_size=0 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L05-Traffic_linkInfo.xml" -o "L05-Traffic.out"  "./main.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+<Linking>
+warning #10202-D: no suitable entry-point found; setting to 0
+'Finished building target: L05-Traffic.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L06-Morse ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../morse.asm'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="morse.pp"  "../morse.asm"
+'Finished building: ../morse.asm'
+' '
+'Building target: L06-Morse.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L06-Morse.map" --heap_size=0 --stack_size=0 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L06-Morse_linkInfo.xml" -o "L06-Morse.out"  "./morse_codes.obj" "./morse.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+<Linking>
+warning #10202-D: no suitable entry-point found; setting to 0
+'Finished building target: L06-Morse.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L06-Morse ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.asm'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.asm"
+'Finished building: ../main.asm'
+' '
+'Building target: L06-Morse.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L06-Morse.map" --heap_size=0 --stack_size=0 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L06-Morse_linkInfo.xml" -o "L06-Morse.out"  "./morse_codes.obj" "./main.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+<Linking>
+warning #10202-D: no suitable entry-point found; setting to 0
+'Finished building target: L06-Morse.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L06-Morse ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.asm'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.asm"
+'Finished building: ../main.asm'
+' '
+'Building target: L06-Morse.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L06-Morse.map" --heap_size=0 --stack_size=0 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L06-Morse_linkInfo.xml" -o "L06-Morse.out"  "./morse_codes.obj" "./main.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+<Linking>
+warning #10202-D: no suitable entry-point found; setting to 0
+'Finished building target: L06-Morse.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L06-Morse ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.asm'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.asm"
+'Finished building: ../main.asm'
+' '
+'Building target: L06-Morse.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L06-Morse.map" --heap_size=0 --stack_size=0 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L06-Morse_linkInfo.xml" -o "L06-Morse.out"  "./morse_codes.obj" "./main.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+<Linking>
+warning #10202-D: no suitable entry-point found; setting to 0
+'Finished building target: L06-Morse.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L06-Morse ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.asm'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.asm"
+'Finished building: ../main.asm'
+' '
+'Building target: L06-Morse.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L06-Morse.map" --heap_size=0 --stack_size=0 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L06-Morse_linkInfo.xml" -o "L06-Morse.out"  "./morse_codes.obj" "./main.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+<Linking>
+warning #10202-D: no suitable entry-point found; setting to 0
+'Finished building target: L06-Morse.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L06-Morse ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.asm'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.asm"
+'Finished building: ../main.asm'
+' '
+'Building target: L06-Morse.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L06-Morse.map" --heap_size=0 --stack_size=0 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L06-Morse_linkInfo.xml" -o "L06-Morse.out"  "./morse_codes.obj" "./main.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+<Linking>
+warning #10202-D: no suitable entry-point found; setting to 0
+'Finished building target: L06-Morse.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L06-Morse ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.asm'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.asm"
+'Finished building: ../main.asm'
+' '
+'Building target: L06-Morse.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L06-Morse.map" --heap_size=0 --stack_size=0 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L06-Morse_linkInfo.xml" -o "L06-Morse.out"  "./morse_codes.obj" "./main.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+<Linking>
+warning #10202-D: no suitable entry-point found; setting to 0
+'Finished building target: L06-Morse.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L06-Morse ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.asm'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.asm"
+'Finished building: ../main.asm'
+' '
+'Building target: L06-Morse.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L06-Morse.map" --heap_size=0 --stack_size=0 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L06-Morse_linkInfo.xml" -o "L06-Morse.out"  "./morse_codes.obj" "./main.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+<Linking>
+warning #10202-D: no suitable entry-point found; setting to 0
+'Finished building target: L06-Morse.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L06-Morse ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.asm'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.asm"
+'Finished building: ../main.asm'
+' '
+'Building target: L06-Morse.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L06-Morse.map" --heap_size=0 --stack_size=0 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L06-Morse_linkInfo.xml" -o "L06-Morse.out"  "./morse_codes.obj" "./main.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+<Linking>
+warning #10202-D: no suitable entry-point found; setting to 0
+'Finished building target: L06-Morse.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L06-Morse ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.asm'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.asm"
+'Finished building: ../main.asm'
+' '
+'Building target: L06-Morse.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L06-Morse.map" --heap_size=0 --stack_size=0 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L06-Morse_linkInfo.xml" -o "L06-Morse.out"  "./morse_codes.obj" "./main.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+<Linking>
+warning #10202-D: no suitable entry-point found; setting to 0
+'Finished building target: L06-Morse.out'
+' '
+
+**** Build Finished ****
+
 **** Build of configuration Debug for project test ****
 
 "C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../blink.c'
+'Building file: ../morse.asm'
 'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=eabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430G2744__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="blink.pp"  "../blink.c"
-"../blink.c", line 37: warning #112-D: statement is unreachable
-'Finished building: ../blink.c'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="morse.pp"  "../morse.asm"
+'Finished building: ../morse.asm'
+' '
+'Building file: ../morse_codes.asm'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="morse_codes.pp"  "../morse_codes.asm"
+'Finished building: ../morse_codes.asm'
 ' '
 'Building target: test.out'
 'Invoking: MSP430 Linker'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=eabi --advice:power=all -g --define=__MSP430G2744__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"test.map" --heap_size=80 --stack_size=80 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="test_linkInfo.xml" --rom_model -o "test.out"  "./blink.obj" "../lnk_msp430g2744.cmd" -l"libc.a" 
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"test.map" --heap_size=0 --stack_size=0 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="test_linkInfo.xml" -o "test.out"  "./morse_codes.obj" "./morse.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
 <Linking>
-remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changes using LPMx or _bis_SR_register() or __low_power_mode_x() in this project.
-remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
-remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
-remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+warning #10202-D: no suitable entry-point found; setting to 0
 'Finished building target: test.out'
-' '
-
-**** Build Finished ****
-
-**** Build of configuration Debug for project test ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-gmake: Nothing to be done for `all'.
-
-**** Build Finished ****
-
-**** Clean-only build of configuration Debug for project L05-Traffic ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k clean 
-DEL /F  "L05-Traffic.out"
-DEL /F "main.obj" 
-DEL /F "main.pp" 
-Could Not Find F:\cs224labs\L05-Traffic\Debug\main.pp
-'Finished clean'
-' '
-
-**** Build Finished ****
-
-**** Build of configuration Debug for project L05-Traffic ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../main.asm'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.asm"
-'Finished building: ../main.asm'
-' '
-'Building target: L05-Traffic.out'
-'Invoking: MSP430 Linker'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L05-Traffic.map" --heap_size=0 --stack_size=0 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L05-Traffic_linkInfo.xml" -o "L05-Traffic.out"  "./main.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
-<Linking>
-warning #10202-D: no suitable entry-point found; setting to 0
-'Finished building target: L05-Traffic.out'
-' '
-
-**** Build Finished ****
-
-**** Build of configuration Debug for project L05-Traffic ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../main.asm'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.asm"
-'Finished building: ../main.asm'
-' '
-'Building target: L05-Traffic.out'
-'Invoking: MSP430 Linker'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L05-Traffic.map" --heap_size=0 --stack_size=0 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L05-Traffic_linkInfo.xml" -o "L05-Traffic.out"  "./main.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
-<Linking>
-warning #10202-D: no suitable entry-point found; setting to 0
-'Finished building target: L05-Traffic.out'
-' '
-
-**** Build Finished ****
-
-**** Build of configuration Debug for project L05-Traffic ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../main.asm'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.asm"
-'Finished building: ../main.asm'
-' '
-'Building target: L05-Traffic.out'
-'Invoking: MSP430 Linker'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L05-Traffic.map" --heap_size=0 --stack_size=0 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L05-Traffic_linkInfo.xml" -o "L05-Traffic.out"  "./main.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
-<Linking>
-warning #10202-D: no suitable entry-point found; setting to 0
-'Finished building target: L05-Traffic.out'
-' '
-
-**** Build Finished ****
-
-**** Build of configuration Debug for project L05-Traffic ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../main.asm'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.asm"
-'Finished building: ../main.asm'
-' '
-'Building target: L05-Traffic.out'
-'Invoking: MSP430 Linker'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L05-Traffic.map" --heap_size=0 --stack_size=0 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L05-Traffic_linkInfo.xml" -o "L05-Traffic.out"  "./main.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
-<Linking>
-warning #10202-D: no suitable entry-point found; setting to 0
-'Finished building target: L05-Traffic.out'
-' '
-
-**** Build Finished ****
-
-**** Build of configuration Debug for project L05-Traffic ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../main.asm'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.asm"
-'Finished building: ../main.asm'
-' '
-'Building target: L05-Traffic.out'
-'Invoking: MSP430 Linker'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L05-Traffic.map" --heap_size=0 --stack_size=0 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L05-Traffic_linkInfo.xml" -o "L05-Traffic.out"  "./main.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
-<Linking>
-warning #10202-D: no suitable entry-point found; setting to 0
-'Finished building target: L05-Traffic.out'
-' '
-
-**** Build Finished ****
-
-**** Build of configuration Debug for project L05-Traffic ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../main.asm'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.asm"
-'Finished building: ../main.asm'
-' '
-'Building target: L05-Traffic.out'
-'Invoking: MSP430 Linker'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L05-Traffic.map" --heap_size=0 --stack_size=0 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L05-Traffic_linkInfo.xml" -o "L05-Traffic.out"  "./main.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
-<Linking>
-warning #10202-D: no suitable entry-point found; setting to 0
-'Finished building target: L05-Traffic.out'
-' '
-
-**** Build Finished ****
-
-**** Build of configuration Debug for project L05-Traffic ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../main.asm'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.asm"
-'Finished building: ../main.asm'
-' '
-'Building target: L05-Traffic.out'
-'Invoking: MSP430 Linker'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L05-Traffic.map" --heap_size=0 --stack_size=0 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L05-Traffic_linkInfo.xml" -o "L05-Traffic.out"  "./main.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
-<Linking>
-warning #10202-D: no suitable entry-point found; setting to 0
-'Finished building target: L05-Traffic.out'
-' '
-
-**** Build Finished ****
-
-**** Build of configuration Debug for project L05-Traffic ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../main.asm'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.asm"
-'Finished building: ../main.asm'
-' '
-'Building target: L05-Traffic.out'
-'Invoking: MSP430 Linker'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L05-Traffic.map" --heap_size=0 --stack_size=0 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L05-Traffic_linkInfo.xml" -o "L05-Traffic.out"  "./main.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
-<Linking>
-warning #10202-D: no suitable entry-point found; setting to 0
-'Finished building target: L05-Traffic.out'
-' '
-
-**** Build Finished ****
-
-**** Build of configuration Debug for project L05-Traffic ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../main.asm'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.asm"
-'Finished building: ../main.asm'
-' '
-'Building target: L05-Traffic.out'
-'Invoking: MSP430 Linker'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L05-Traffic.map" --heap_size=0 --stack_size=0 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L05-Traffic_linkInfo.xml" -o "L05-Traffic.out"  "./main.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
-<Linking>
-warning #10202-D: no suitable entry-point found; setting to 0
-'Finished building target: L05-Traffic.out'
-' '
-
-**** Build Finished ****
-
-**** Build of configuration Debug for project L05-Traffic ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../main.asm'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.asm"
-'Finished building: ../main.asm'
-' '
-'Building target: L05-Traffic.out'
-'Invoking: MSP430 Linker'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L05-Traffic.map" --heap_size=0 --stack_size=0 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L05-Traffic_linkInfo.xml" -o "L05-Traffic.out"  "./main.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
-<Linking>
-warning #10202-D: no suitable entry-point found; setting to 0
-'Finished building target: L05-Traffic.out'
-' '
-
-**** Build Finished ****
-
-**** Build of configuration Debug for project L05-Traffic ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../main.asm'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.asm"
-'Finished building: ../main.asm'
-' '
-'Building target: L05-Traffic.out'
-'Invoking: MSP430 Linker'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L05-Traffic.map" --heap_size=0 --stack_size=0 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L05-Traffic_linkInfo.xml" -o "L05-Traffic.out"  "./main.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
-<Linking>
-warning #10202-D: no suitable entry-point found; setting to 0
-'Finished building target: L05-Traffic.out'
-' '
-
-**** Build Finished ****
-
-**** Build of configuration Debug for project L05-Traffic ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../main.asm'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.asm"
-'Finished building: ../main.asm'
-' '
-'Building target: L05-Traffic.out'
-'Invoking: MSP430 Linker'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L05-Traffic.map" --heap_size=0 --stack_size=0 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L05-Traffic_linkInfo.xml" -o "L05-Traffic.out"  "./main.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
-<Linking>
-warning #10202-D: no suitable entry-point found; setting to 0
-'Finished building target: L05-Traffic.out'
-' '
-
-**** Build Finished ****
-
-**** Build of configuration Debug for project L05-Traffic ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-gmake: Nothing to be done for `all'.
-
-**** Build Finished ****
-
-**** Build of configuration Debug for project L05-Traffic ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../main.asm'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.asm"
-"../main.asm", ERROR!   at line 127: [E0004] Illegal un-relocatable operand
-				mov.w GREEN_STATE,r8
-
-"../main.asm", ERROR!   at line 137: [E0300] Symbol else has already been defined
-				mov.w GREEN_STATE_2,r8
-
-"../main.asm", ERROR!   at line 137: [E0004] Illegal un-relocatable operand
-				mov.w GREEN_STATE_2,r8
-
-"../main.asm", ERROR!   at line 151: [E0004] Illegal un-relocatable operand
-				mov.w YELLOW_STATE,r8
-
-"../main.asm", ERROR!   at line 164: [E0004] Illegal un-relocatable operand
-				mov.w RED_STATE,r8
-
-"../main.asm", ERROR!   at line 178: [E0004] Illegal un-relocatable operand
-				mov.w PED_STATE,r8
-
-"../main.asm", ERROR!   at line 254: [E0004] Illegal un-relocatable operand
-	          	sub.w GREEN_STATE_2,r8		; check for green state 2
-
-"../main.asm", ERROR!   at line 258: [E0003] Unexpected trailing operand(s)
-				mov.w 0x01 r14				; end the big timing loop
-
-8 Assembly Errors, No Assembly Warnings
-
-Errors in Source - Assembler Aborted
-
->> Compilation failure
-gmake: *** [main.obj] Error 1
-gmake: Target `all' not remade because of errors.
-
-**** Build Finished ****
-
-**** Build of configuration Debug for project L05-Traffic ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../main.asm'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.asm"
-"../main.asm", ERROR!   at line 137: [E0300] Symbol else has already been defined
-				mov.w #GREEN_STATE_2,r8
-
-"../main.asm", ERROR!   at line 258: [E0003] Unexpected trailing operand(s)
-				mov.w #0x01 r14				; end the big timing loop
-
-
-Errors in Source - Assembler Aborted
-2 Assembly Errors, No Assembly Warnings
-
->> Compilation failure
-gmake: *** [main.obj] Error 1
-gmake: Target `all' not remade because of errors.
-
-**** Build Finished ****
-
-**** Build of configuration Debug for project L05-Traffic ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../main.asm'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.asm"
-"../main.asm", ERROR!   at line 137: [E0300] Symbol else has already been defined
-				mov.w #GREEN_STATE_2,r8
-
-
-Errors in Source - Assembler Aborted
-1 Assembly Error, No Assembly Warnings
-
->> Compilation failure
-gmake: *** [main.obj] Error 1
-gmake: Target `all' not remade because of errors.
-
-**** Build Finished ****
-
-**** Build of configuration Debug for project L05-Traffic ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../main.asm'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.asm"
-"../main.asm", ERROR!   at line 137: [E0300] Symbol else has already been defined
-				mov.w #GREEN2_STATE,r8
-1 Assembly Error, No Assembly Warnings
-
->> Compilation failure
-
-
-Errors in Source - Assembler Aborted
-gmake: *** [main.obj] Error 1
-gmake: Target `all' not remade because of errors.
-
-**** Build Finished ****
-
-**** Build of configuration Debug for project L05-Traffic ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../main.asm'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.asm"
-'Finished building: ../main.asm'
-' '
-'Building target: L05-Traffic.out'
-'Invoking: MSP430 Linker'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L05-Traffic.map" --heap_size=0 --stack_size=0 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L05-Traffic_linkInfo.xml" -o "L05-Traffic.out"  "./main.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
-<Linking>
-warning #10202-D: no suitable entry-point found; setting to 0
-'Finished building target: L05-Traffic.out'
-' '
-
-**** Build Finished ****
-
-**** Build of configuration Debug for project L05-Traffic ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../main.asm'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.asm"
-'Finished building: ../main.asm'
-' '
-'Building target: L05-Traffic.out'
-'Invoking: MSP430 Linker'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L05-Traffic.map" --heap_size=0 --stack_size=0 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L05-Traffic_linkInfo.xml" -o "L05-Traffic.out"  "./main.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
-<Linking>
-warning #10202-D: no suitable entry-point found; setting to 0
-'Finished building target: L05-Traffic.out'
-' '
-
-**** Build Finished ****
-
-**** Build of configuration Debug for project L05-Traffic ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../main.asm'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.asm"
-'Finished building: ../main.asm'
-' '
-'Building target: L05-Traffic.out'
-'Invoking: MSP430 Linker'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L05-Traffic.map" --heap_size=0 --stack_size=0 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L05-Traffic_linkInfo.xml" -o "L05-Traffic.out"  "./main.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
-<Linking>
-warning #10202-D: no suitable entry-point found; setting to 0
-'Finished building target: L05-Traffic.out'
-' '
-
-**** Build Finished ****
-
-**** Build of configuration Debug for project L05-Traffic ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-gmake: Nothing to be done for `all'.
-
-**** Build Finished ****
-
-**** Build of configuration Debug for project L05-Traffic ****
-
-"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../main.asm'
-'Invoking: MSP430 Compiler'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.asm"
-'Finished building: ../main.asm'
-' '
-'Building target: L05-Traffic.out'
-'Invoking: MSP430 Linker'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L05-Traffic.map" --heap_size=0 --stack_size=0 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L05-Traffic_linkInfo.xml" -o "L05-Traffic.out"  "./main.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
-<Linking>
-warning #10202-D: no suitable entry-point found; setting to 0
-'Finished building target: L05-Traffic.out'
 ' '
 
 **** Build Finished ****

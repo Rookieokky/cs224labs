@@ -43,37 +43,36 @@
 ;*******************************************************************************
 ;*******************************************************************************
             .cdecls  C,LIST,"msp430.h"      ; MSP430
+			.asg   "bis.b #0x08,&P4OUT",RED_ON
+			.asg   "bic.b #0x08,&P4OUT",RED_OFF
+			.asg   "xor.b #0x08,&P4OUT",RED_TOGGLE
+			.asg   "bit.b #0x08,&P4OUT",RED_TEST
 
-                    .asg   "bis.b #0x08,&P4OUT",RED_ON
-			        .asg   "bic.b #0x08,&P4OUT",RED_OFF
-			        .asg   "xor.b #0x08,&P4OUT",RED_TOGGLE
-			        .asg   "bit.b #0x08,&P4OUT",RED_TEST
+			.asg   "bis.b #0x04,&P4OUT",YELLOW_ON
+			.asg   "bic.b #0x04,&P4OUT",YELLOW_OFF
+			.asg   "xor.b #0x04,&P4OUT",YELLOW_TOGGLE
+			.asg   "bit.b #0x04,&P4OUT",YELLOW_TEST
 
-			        .asg   "bis.b #0x04,&P4OUT",YELLOW_ON
-			        .asg   "bic.b #0x04,&P4OUT",YELLOW_OFF
-			        .asg   "xor.b #0x04,&P4OUT",YELLOW_TOGGLE
-			        .asg   "bit.b #0x04,&P4OUT",YELLOW_TEST
+			.asg   "bis.b #0x02,&P4OUT",ORANGE_ON
+			.asg   "bic.b #0x02,&P4OUT",ORANGE_OFF
+			.asg   "xor.b #0x02,&P4OUT",ORANGE_TOGGLE
+			.asg   "bit.b #0x02,&P4OUT",ORANGE_TEST
+			.asg   "bit.b #0x02,&P4OUT",ORANGE_TEST
 
-			        .asg   "bis.b #0x02,&P4OUT",ORANGE_ON
-			        .asg   "bic.b #0x02,&P4OUT",ORANGE_OFF
-			        .asg   "xor.b #0x02,&P4OUT",ORANGE_TOGGLE
-			        .asg   "bit.b #0x02,&P4OUT",ORANGE_TEST
-			        .asg   "bit.b #0x02,&P4OUT",ORANGE_TEST
+			.asg   "bis.b #0x01,&P4OUT",GREEN_ON
+			.asg   "bic.b #0x01,&P4OUT",GREEN_OFF
+			.asg   "xor.b #0x01,&P4OUT",GREEN_TOGGLE
+			.asg   "bit.b #0x01,&P4OUT",GREEN_TEST
 
-			        .asg   "bis.b #0x01,&P4OUT",GREEN_ON
-			        .asg   "bic.b #0x01,&P4OUT",GREEN_OFF
-			        .asg   "xor.b #0x01,&P4OUT",GREEN_TOGGLE
-			        .asg   "bit.b #0x01,&P4OUT",GREEN_TEST
+			.asg   "bis.b #0x40,&P4OUT",RED2_ON
+			.asg   "bic.b #0x40,&P4OUT",RED2_OFF
+			.asg   "xor.b #0x40,&P4OUT",RED2_TOGGLE
+			.asg   "bit.b #0x40,&P4OUT",RED2_TEST
 
-			        .asg   "bis.b #0x40,&P4OUT",RED2_ON
-			        .asg   "bic.b #0x40,&P4OUT",RED2_OFF
-			        .asg   "xor.b #0x40,&P4OUT",RED2_TOGGLE
-			        .asg   "bit.b #0x40,&P4OUT",RED2_TEST
-
-			        .asg   "bis.b #0x10,&P3OUT",GREEN2_ON
-			        .asg   "bic.b #0x10,&P3OUT",GREEN2_OFF
-			        .asg   "xor.b #0x10,&P3OUT",GREEN2_TOGGLE
-			        .asg   "bit.b #0x10,&P3OUT",GREEN2_TEST
+			.asg   "bis.b #0x10,&P3OUT",GREEN2_ON
+			.asg   "bic.b #0x10,&P3OUT",GREEN2_OFF
+			.asg   "xor.b #0x10,&P3OUT",GREEN2_TOGGLE
+			.asg   "bit.b #0x10,&P3OUT",GREEN2_TEST
 
 TENTH_SECOND      	.equ    0x6a00			; small subrouting count
 GREEN_STATE			.equ	0x01
