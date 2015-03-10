@@ -76,10 +76,11 @@ ELEMENT     .equ    ((WDT_IPS*240)/1000)    ; (WDT_IPS * 6 / WPM) / 5
 ; Global variables ------------------------------------------------------------
             .bss    beep_cnt,2              ; beeper flag
             .bss    delay_cnt,2             ; delay flag
+            .bss	second_cnt,2			; one second delay
 
 ; Program section -------------------------------------------------------------
             .text                           ; program section
-message:    .string "PARIS"                 ; PARIS message
+message:    .string "SOS",0               ; PARIS message
             .byte   0
             .align  2                       ; align on word boundary
 
@@ -92,36 +93,76 @@ RESET:      mov.w   #STACK,SP               ; initialize stack pointer
 main_asm:
 			mov.w   #WDT_CTL,&WDTCTL        ; set WD timer interval
             mov.b   #WDTIE,&IE1             ; enable WDT interrupt
-            bis.b   #0xff,&P4DIR            ; set P4 as output
-			bis.b 	#0xff,&P3DIR			; set P3 as output
+            bis.b   #0x60,&P4DIR            ; set P4 as output
+			bis.b 	#0x10,&P3DIR			; set P3 as output
 			bic.b	#0xff,&P4OUT			; turn off p4
 			bic.b	#0xff,&P3OUT			; turn off p3
             clr.w   &beep_cnt				; clear counters
             clr.w   &delay_cnt
             bis.w   #GIE,SR                 ; enable interrupts
+            mov.w	#1, &second_cnt			; initialize second counter
 
 ; output 'A' in morse code (DOT, DASH, space)
 loop:
-			RED2_ON
-			RED_ON
+			mov.w	#message, r6			; pointer to message
+
+word_loop:
+			mov.w   #ELEMENT*3,r15          ; output space
+             call	#delay                  ; delay
+
+			mov.b	@r6+, r7				; one character
+			sub.w	#'A', r7				; remove ascii offset
+			add.w	r7, r7					; make the index a word
+			mov.w	letters(r7), r7			; pointer to letter code
+
+			cmp.w	#0, r7					; check for end of string
+			  jnz	letter_loop
+
+            mov.w   #ELEMENT*7,r15          ; output space
+            call    #delay                  ; delay
+            jmp     loop                    ; repeat
+
+letter_loop:
+			mov.b	@r7+, r8				; get dot, dash, or end
+			cmp.b	#DOT, r8				; check for a dot
+			  jnz	not_dot
+			 call	#doDot
+			  jmp	letter_loop
+not_dot:
+			cmp.b	#DASH, r8				; check for a dash
+			  jnz	word_loop
+			 call	#doDash
+			  jmp	letter_loop
+
+; end main function ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+; start doDot subroutine ------------------------------------------------------
+doDot:
+			push r15						; callee save
+
 			mov.w   #ELEMENT,r15            ; output DOT
             call    #beep
             mov.w   #ELEMENT,r15            ; delay 1 element
             call    #delay
+
+			pop r15							; callee save
+			ret
+
+; start doDash subroutine -----------------------------------------------------
+doDash:
+			push r15						; callee save
 
             mov.w   #ELEMENT*3,r15          ; output DASH
             call    #beep
             mov.w   #ELEMENT,r15            ; delay 1 element
             call    #delay
 
-            mov.w   #ELEMENT*7,r15          ; output space
-            call    #delay                  ; delay
-            jmp     loop                    ; repeat
-; end main function ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
+			pop r15							; callee save
+			ret
 
 ; beep (r15) ticks subroutine -------------------------------------------------
 beep:       mov.w   r15,&beep_cnt           ; start beep
+			clr.w	&delay_cnt				; clear delay
 
 beep02:     tst.w   &beep_cnt               ; beep finished?
               jne   beep02                  ; n
@@ -130,6 +171,7 @@ beep02:     tst.w   &beep_cnt               ; beep finished?
 
 ; delay (r15) ticks subroutine ------------------------------------------------
 delay:      mov.w   r15,&delay_cnt          ; start delay
+			clr.w	&beep_cnt				; clear beep
 
 delay02:    tst.w   &delay_cnt              ; delay done?
               jne   delay02                 ; n
@@ -141,19 +183,25 @@ WDT_ISR:
 			tst.w   &beep_cnt               ; beep on?
               jeq   WDT_01                  ; n
             dec.w   &beep_cnt               ; y, decrement count
-            RED2_OFF
+            RED2_ON
             xor.b   #0x20,&P4OUT            ; beep using 50% PWM
             jmp WDT_02
 
 WDT_01:
-			RED2_ON
+			RED2_OFF
 
 WDT_02:
 			tst.w   &delay_cnt              ; delay?
-              jeq   WDT_10                  ; n
+              jeq   WDT_03                  ; n
             dec.w   &delay_cnt              ; y, decrement count
 
-WDT_10:
+WDT_03:
+			dec.w	&second_cnt
+			  jnz	WDT_END
+			GREEN2_TOGGLE
+			mov.w	#WDT_IPS, &second_cnt	; re-initialize second counter
+
+WDT_END:
 			reti                            ; return from interrupt
 
 ; Interrupt Vectors -----------------------------------------------------------
