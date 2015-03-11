@@ -24,36 +24,36 @@
 
 ; LED commands --------------------------------------------------------------
 
-		.asg   "bis.b #0x08,&P4OUT",RED_ON
-		.asg   "bic.b #0x08,&P4OUT",RED_OFF
-		.asg   "xor.b #0x08,&P4OUT",RED_TOGGLE
-		.asg   "bit.b #0x08,&P4OUT",RED_TEST
+			.asg   "bis.b #0x08,&P4OUT",RED_ON
+			.asg   "bic.b #0x08,&P4OUT",RED_OFF
+			.asg   "xor.b #0x08,&P4OUT",RED_TOGGLE
+			.asg   "bit.b #0x08,&P4OUT",RED_TEST
 
-		.asg   "bis.b #0x04,&P4OUT",YELLOW_ON
-		.asg   "bic.b #0x04,&P4OUT",YELLOW_OFF
-		.asg   "xor.b #0x04,&P4OUT",YELLOW_TOGGLE
-		.asg   "bit.b #0x04,&P4OUT",YELLOW_TEST
+			.asg   "bis.b #0x04,&P4OUT",YELLOW_ON
+			.asg   "bic.b #0x04,&P4OUT",YELLOW_OFF
+			.asg   "xor.b #0x04,&P4OUT",YELLOW_TOGGLE
+			.asg   "bit.b #0x04,&P4OUT",YELLOW_TEST
 
-		.asg   "bis.b #0x02,&P4OUT",ORANGE_ON
-		.asg   "bic.b #0x02,&P4OUT",ORANGE_OFF
-		.asg   "xor.b #0x02,&P4OUT",ORANGE_TOGGLE
-		.asg   "bit.b #0x02,&P4OUT",ORANGE_TEST
-		.asg   "bit.b #0x02,&P4OUT",ORANGE_TEST
+			.asg   "bis.b #0x02,&P4OUT",ORANGE_ON
+			.asg   "bic.b #0x02,&P4OUT",ORANGE_OFF
+			.asg   "xor.b #0x02,&P4OUT",ORANGE_TOGGLE
+			.asg   "bit.b #0x02,&P4OUT",ORANGE_TEST
+			.asg   "bit.b #0x02,&P4OUT",ORANGE_TEST
 
-		.asg   "bis.b #0x01,&P4OUT",GREEN_ON
-		.asg   "bic.b #0x01,&P4OUT",GREEN_OFF
-		.asg   "xor.b #0x01,&P4OUT",GREEN_TOGGLE
-		.asg   "bit.b #0x01,&P4OUT",GREEN_TEST
+			.asg   "bis.b #0x01,&P4OUT",GREEN_ON
+			.asg   "bic.b #0x01,&P4OUT",GREEN_OFF
+			.asg   "xor.b #0x01,&P4OUT",GREEN_TOGGLE
+			.asg   "bit.b #0x01,&P4OUT",GREEN_TEST
 
-		.asg   "bis.b #0x40,&P4OUT",RED2_ON
-		.asg   "bic.b #0x40,&P4OUT",RED2_OFF
-		.asg   "xor.b #0x40,&P4OUT",RED2_TOGGLE
-		.asg   "bit.b #0x40,&P4OUT",RED2_TEST
+			.asg   "bis.b #0x40,&P4OUT",RED2_ON
+			.asg   "bic.b #0x40,&P4OUT",RED2_OFF
+			.asg   "xor.b #0x40,&P4OUT",RED2_TOGGLE
+			.asg   "bit.b #0x40,&P4OUT",RED2_TEST
 
-		.asg   "bis.b #0x10,&P3OUT",GREEN2_ON
-		.asg   "bic.b #0x10,&P3OUT",GREEN2_OFF
-		.asg   "xor.b #0x10,&P3OUT",GREEN2_TOGGLE
-		.asg   "bit.b #0x10,&P3OUT",GREEN2_TEST
+			.asg   "bis.b #0x10,&P3OUT",GREEN2_ON
+			.asg   "bic.b #0x10,&P3OUT",GREEN2_OFF
+			.asg   "xor.b #0x10,&P3OUT",GREEN2_TOGGLE
+			.asg   "bit.b #0x10,&P3OUT",GREEN2_TEST
 
 ; System equates --------------------------------------------------------------
             .cdecls C,"msp430.h"            ; include c header
@@ -62,6 +62,7 @@ WDT_CTL     .equ    WDT_MDLY_0_5            ; WD: Timer, SMCLK, 0.5 ms
 WDT_CPI     .equ    500                     ; WDT Clocks Per Interrupt (@1 Mhz)
 WDT_IPS     .equ    (myCLOCK/WDT_CPI)       ; WDT Interrupts Per Second
 STACK       .equ    0x0600                  ; top of stack
+DEBOUNCE 	.equ 	10 						; initial debounce count
 
 ; Morse Code equates ----------------------------------------------------------
 END         .equ    0
@@ -77,6 +78,8 @@ ELEMENT     .equ    ((WDT_IPS*240)/1000)    ; (WDT_IPS * 6 / WPM) / 5
             .bss    beep_cnt,2              ; beeper flag
             .bss    delay_cnt,2             ; delay flag
             .bss	second_cnt,2			; one second delay
+            .bss	beep_enable,2 			; enable pwm
+            .bss	sw1_debounce_cnt,2 		; debounce for switch 1
 
 ; Program section -------------------------------------------------------------
             .text                           ; program section
@@ -101,8 +104,17 @@ main_asm:
             clr.w   &delay_cnt
             bis.w   #GIE,SR                 ; enable interrupts
             mov.w	#1, &second_cnt			; initialize second counter
+            mov.w 	#1, &beep_enable 		; initialize beep on
 
-; output 'A' in morse code (DOT, DASH, space)
+            ; initialize switches
+            bic.b   #0x0f,&P1SEL 			; RBX430-1 push buttons
+			bic.b   #0x0f,&P1DIR 			; Configure P1.0-3 as Inputs
+			bis.b   #0x0f,&P1OUT 			; pull-ups
+			bis.b   #0x0f,&P1IES 			; h to l
+			bis.b   #0x0f,&P1REN 			; enable pull-ups
+			bis.b   #0x0f,&P1IE  			; enable switch interrupts
+			mov.w 	#0, sw1_debounce_cnt 	; initialize debounce count for switch 1
+
 loop:
 			mov.w	#message, r6			; pointer to message
 
@@ -204,9 +216,18 @@ WDT_03:
 WDT_END:
 			reti                            ; return from interrupt
 
+; Switch 1 ISR ----------------------------------------------------------------
+
+P1_ISR:
+			bic.b   #0x0f, &P1IFG           ; acknowledge (put hands down)
+        	mov.w   #DEBOUNCE, &sw1_debounce_cnt ; reset debounce count
+        	reti
+
 ; Interrupt Vectors -----------------------------------------------------------
             .sect   ".int10"                ; Watchdog Vector
             .word   WDT_ISR                 ; Watchdog ISR
+            .sect 	".int02"                ; P1 interrupt vector
+            .word 	P1_ISR 					; P1 ISR
 
             .sect   ".reset"                ; PUC Vector
             .word   RESET                   ; RESET ISR
