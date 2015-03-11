@@ -57,7 +57,7 @@
 
 ; System equates --------------------------------------------------------------
             .cdecls C,"msp430.h"            ; include c header
-myCLOCK     .equ    1200000                 ; 1.2 Mhz clock
+myCLOCK     .equ    1050000                 ; 1.05 Mhz clock
 WDT_CTL     .equ    WDT_MDLY_0_5            ; WD: Timer, SMCLK, 0.5 ms
 WDT_CPI     .equ    500                     ; WDT Clocks Per Interrupt (@1 Mhz)
 WDT_IPS     .equ    (myCLOCK/WDT_CPI)       ; WDT Interrupts Per Second
@@ -79,11 +79,11 @@ ELEMENT     .equ    ((WDT_IPS*240)/1000)    ; (WDT_IPS * 6 / WPM) / 5
             .bss    delay_cnt,2             ; delay flag
             .bss	second_cnt,2			; one second delay
             .bss	beep_enable,2 			; enable pwm
-            .bss	sw1_debounce_cnt,2 		; debounce for switch 1
+            .bss	debounce_cnt,2 		; debounce for switch 1
 
 ; Program section -------------------------------------------------------------
             .text                           ; program section
-message:    .string "SOS",0               ; PARIS message
+message:    .string "HELLO CS 124 WORLD ",0	; message
             .byte   0
             .align  2                       ; align on word boundary
 
@@ -96,7 +96,7 @@ RESET:      mov.w   #STACK,SP               ; initialize stack pointer
 main_asm:
 			mov.w   #WDT_CTL,&WDTCTL        ; set WD timer interval
             mov.b   #WDTIE,&IE1             ; enable WDT interrupt
-            bis.b   #0x60,&P4DIR            ; set P4 as output
+            bis.b   #0x69,&P4DIR            ; set P4 as output
 			bis.b 	#0x10,&P3DIR			; set P3 as output
 			bic.b	#0xff,&P4OUT			; turn off p4
 			bic.b	#0xff,&P3OUT			; turn off p3
@@ -113,27 +113,55 @@ main_asm:
 			bis.b   #0x0f,&P1IES 			; h to l
 			bis.b   #0x0f,&P1REN 			; enable pull-ups
 			bis.b   #0x0f,&P1IE  			; enable switch interrupts
-			mov.w 	#0, sw1_debounce_cnt 	; initialize debounce count for switch 1
+			mov.w 	#0, &debounce_cnt 		; initialize debounce count for switch 1
 
 loop:
 			mov.w	#message, r6			; pointer to message
 
 word_loop:
-			mov.w   #ELEMENT*3,r15          ; output space
-             call	#delay                  ; delay
-
 			mov.b	@r6+, r7				; one character
+			cmp.w	#0x020, r7				; check for end of word
+			   jz	end_word
+			cmp.w	#0, r7					; check for end of message
+			   jz	end_message
 			sub.w	#'A', r7				; remove ascii offset
+			   jn	is_number
+is_letter:
 			add.w	r7, r7					; make the index a word
 			mov.w	letters(r7), r7			; pointer to letter code
+			  jmp	letter_continue
 
-			cmp.w	#0, r7					; check for end of string
-			  jnz	letter_loop
+is_number:
+			add.w	#17,r7					; change ascii offset to numbers
+			add.w	r7,r7					; make the index a word
+			mov.w	numbers(r7),r7			; pointer to number code
 
-            mov.w   #ELEMENT*7,r15          ; output space
-            call    #delay                  ; delay
-            jmp     loop                    ; repeat
 
+letter_continue:
+			 call	#letter
+
+			mov.w   #ELEMENT*2,r15          ; output space
+             call	#delay                  ; delay
+
+			  jmp	word_loop
+
+end_word:
+            ;RED_TOGGLE						; debug code
+            mov.w   #ELEMENT*4,r15          ; output space
+             call   #delay                  ; delay
+              jmp	word_loop
+
+end_message:
+			;GREEN_TOGGLE					; debug code
+            mov.w   #ELEMENT*4,r15          ; output space
+             call   #delay                  ; delay
+              jmp   loop                    ; repeat
+
+; end main function ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+; start letter subroutine -----------------------------------------------------
+letter:
+			 push	r8						; callee save
 letter_loop:
 			mov.b	@r7+, r8				; get dot, dash, or end
 			cmp.b	#DOT, r8				; check for a dot
@@ -142,11 +170,13 @@ letter_loop:
 			  jmp	letter_loop
 not_dot:
 			cmp.b	#DASH, r8				; check for a dash
-			  jnz	word_loop
+			  jnz	end_letter
 			 call	#doDash
 			  jmp	letter_loop
 
-; end main function ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+end_letter:
+			  pop	r8						; callee save
+			  ret
 
 ; start doDot subroutine ------------------------------------------------------
 doDot:
@@ -196,6 +226,9 @@ WDT_ISR:
               jeq   WDT_01                  ; n
             dec.w   &beep_cnt               ; y, decrement count
             RED2_ON
+            tst.w	&beep_enable			; check if beep is on
+               jz	WDT_02					; no
+WDT_PWM:
             xor.b   #0x20,&P4OUT            ; beep using 50% PWM
             jmp WDT_02
 
@@ -209,9 +242,31 @@ WDT_02:
 
 WDT_03:
 			dec.w	&second_cnt
-			  jnz	WDT_END
+			  jnz	WDT_04
 			GREEN2_TOGGLE
 			mov.w	#WDT_IPS, &second_cnt	; re-initialize second counter
+
+WDT_04:
+			tst.w	&debounce_cnt			; check if debouncing
+			   jz	WDT_END					; n
+
+			dec.w   &debounce_cnt           ; y, decrement count, done?
+			   jz   WDT_END					; n
+			 push    r15                    ; callee save
+			mov.b   &P1IN,r15				; read switches
+			and.b   #0x0f,r15
+			xor.b   #0x0f,r15				; any switches?
+			  jeq   WDT_05					; n
+
+			and.b	#0x01,r15				; check for switch 1
+			  jnz	WDT_SW1
+			   jz	WDT_05
+
+WDT_SW1:
+			xor.b	#1, &beep_enable		; toggle the beep enable
+
+WDT_05:
+			pop  	r15						; callee save
 
 WDT_END:
 			reti                            ; return from interrupt
@@ -220,7 +275,7 @@ WDT_END:
 
 P1_ISR:
 			bic.b   #0x0f, &P1IFG           ; acknowledge (put hands down)
-        	mov.w   #DEBOUNCE, &sw1_debounce_cnt ; reset debounce count
+        	mov.w   #DEBOUNCE, &debounce_cnt; reset debounce count
         	reti
 
 ; Interrupt Vectors -----------------------------------------------------------
