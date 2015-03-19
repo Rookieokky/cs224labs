@@ -941,3 +941,479 @@ warning #10202-D: no suitable entry-point found; setting to 0
 gmake: Nothing to be done for `all'.
 
 **** Build Finished ****
+
+**** Build of configuration Debug for project L07-Morse2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+subdir_rules.mk:14: warning: overriding commands for target `main.obj'
+subdir_rules.mk:7: warning: ignoring old commands for target `main.obj'
+'Building file: ../main.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 4: error #20: identifier "WDTCTL" is undefined
+"../main.c", line 4: error #20: identifier "WDTPW" is undefined
+"../main.c", line 4: error #20: identifier "WDTHOLD" is undefined
+3 errors detected in the compilation of "../main.c".
+
+>> Compilation failure
+gmake: *** [main.obj] Error 1
+'Building file: ../morse_codes.asm'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="morse_codes.pp"  "../morse_codes.asm"
+'Finished building: ../morse_codes.asm'
+' '
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L07-Morse2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+subdir_rules.mk:14: warning: overriding commands for target `main.obj'
+subdir_rules.mk:7: warning: ignoring old commands for target `main.obj'
+'Building file: ../main.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 8: warning #225-D: function "main_asm" declared implicitly
+'Finished building: ../main.c'
+' '
+'Building target: L07-Morse2.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L07-Morse2.map" --heap_size=80 --stack_size=80 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L07-Morse2_linkInfo.xml" --rom_model -o "L07-Morse2.out"  "./morse_codes.obj" "./main.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changes using LPMx or _bis_SR_register() or __low_power_mode_x() in this project.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+
+ undefined first referenced
+  symbol       in file     
+ --------- ----------------
+ main_asm  ./main.obj      
+
+error #10234-D: unresolved symbols remain
+error #10010: errors encountered during linking; "L07-Morse2.out" not built
+
+>> Compilation failure
+gmake: *** [L07-Morse2.out] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L07-Morse2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+subdir_rules.mk:14: warning: overriding commands for target `main.obj'
+subdir_rules.mk:7: warning: ignoring old commands for target `main.obj'
+'Building file: ../main.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+'Finished building: ../main.c'
+' '
+'Building target: L07-Morse2.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L07-Morse2.map" --heap_size=80 --stack_size=80 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L07-Morse2_linkInfo.xml" --rom_model -o "L07-Morse2.out"  "./morse_codes.obj" "./main.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+<Linking>
+
+ undefined first referenced
+  symbol       in file     
+ --------- ----------------
+ main_asm  ./main.obj      
+
+error #10234-D: unresolved symbols remain
+error #10010: errors encountered during linking; "L07-Morse2.out" not built
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changes using LPMx or _bis_SR_register() or __low_power_mode_x() in this project.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+
+>> Compilation failure
+gmake: *** [L07-Morse2.out] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L07-Morse2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+subdir_rules.mk:14: warning: overriding commands for target `main.obj'
+subdir_rules.mk:7: warning: ignoring old commands for target `main.obj'
+'Building file: ../main.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 8: error #20: identifier "WDTCTL" is undefined
+"../main.c", line 8: error #20: identifier "WDTPW" is undefined
+"../main.c", line 8: error #20: identifier "WDTHOLD" is undefined
+3 errors detected in the compilation of "../main.c".
+
+>> Compilation failure
+gmake: *** [main.obj] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Clean-only build of configuration Debug for project L07-Morse2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k clean 
+subdir_rules.mk:14: warning: overriding commands for target `main.obj'
+subdir_rules.mk:7: warning: ignoring old commands for target `main.obj'
+DEL /F  "L07-Morse2.out"
+Could Not Find F:\cs224labs\L07-Morse2\Debug\L07-Morse2.out
+DEL /F "main.pp" 
+DEL /F "main.obj" "morse_codes.obj" 
+DEL /F "main.pp" "morse_codes.pp" 
+Could Not Find F:\cs224labs\L07-Morse2\Debug\main.pp
+'Finished clean'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L07-Morse2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+subdir_rules.mk:14: warning: overriding commands for target `main.obj'
+subdir_rules.mk:7: warning: ignoring old commands for target `main.obj'
+'Building file: ../main.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+'Finished building: ../main.c'
+' '
+'Building file: ../morse_codes.asm'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="morse_codes.pp"  "../morse_codes.asm"
+'Finished building: ../morse_codes.asm'
+' '
+'Building target: L07-Morse2.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L07-Morse2.map" --heap_size=80 --stack_size=80 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L07-Morse2_linkInfo.xml" --rom_model -o "L07-Morse2.out"  "./morse_codes.obj" "./main.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+<Linking>
+
+ undefined first referenced
+  symbol       in file     
+ --------- ----------------
+ main_asm  ./main.obj      
+
+error #10234-D: unresolved symbols remain
+error #10010: errors encountered during linking; "L07-Morse2.out" not built
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changes using LPMx or _bis_SR_register() or __low_power_mode_x() in this project.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+
+>> Compilation failure
+gmake: *** [L07-Morse2.out] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L06-Morse ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Clean-only build of configuration Debug for project L07-Morse2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k clean 
+subdir_rules.mk:14: warning: overriding commands for target `main.obj'
+subdir_rules.mk:7: warning: ignoring old commands for target `main.obj'
+DEL /F  "L07-Morse2.out"
+Could Not Find F:\cs224labs\L07-Morse2\Debug\L07-Morse2.out
+DEL /F "main.pp" 
+DEL /F "main.obj" "morse_codes.obj" 
+DEL /F "main.pp" "morse_codes.pp" 
+Could Not Find F:\cs224labs\L07-Morse2\Debug\main.pp
+'Finished clean'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L07-Morse2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+'Finished building: ../main.c'
+' '
+'Building file: ../morse.asm'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="morse.pp"  "../morse.asm"
+'Finished building: ../morse.asm'
+' '
+'Building file: ../morse_codes.asm'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="morse_codes.pp"  "../morse_codes.asm"
+'Finished building: ../morse_codes.asm'
+' '
+'Building target: L07-Morse2.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L07-Morse2.map" --heap_size=80 --stack_size=80 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L07-Morse2_linkInfo.xml" --rom_model -o "L07-Morse2.out"  "./morse_codes.obj" "./morse.obj" "./main.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changes using LPMx or _bis_SR_register() or __low_power_mode_x() in this project.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+'Finished building target: L07-Morse2.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L07-Morse2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L07-Morse2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 27: error #20: identifier "SR" is undefined
+"../main.c", line 27: error #138: expression must be a modifiable lvalue
+"../main.c", line 45: warning #225-D: function "doDot" declared implicitly
+"../main.c", line 43: warning #552-D: variable "current_character" was set but never used
+"../main.c", line 117: warning #112-D: statement is unreachable
+"../main.c", line 44: remark #2553-D: (ULP 14.1) Array index (involving "index") of type "int". Recommend using "unsigned int"
+"../main.c", line 44: remark #2553-D: (ULP 14.1) Array index (involving "index") of type "int". Recommend using "unsigned int"
+2 errors detected in the compilation of "../main.c".
+
+>> Compilation failure
+gmake: *** [main.obj] Error 1
+'Building file: ../morse.asm'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="morse.pp"  "../morse.asm"
+'Finished building: ../morse.asm'
+' '
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L07-Morse2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 44: warning #552-D: variable "current_character" was set but never used
+"../main.c", line 118: warning #112-D: statement is unreachable
+"../main.c", line 45: remark #2553-D: (ULP 14.1) Array index (involving "index") of type "int". Recommend using "unsigned int"
+"../main.c", line 45: remark #2553-D: (ULP 14.1) Array index (involving "index") of type "int". Recommend using "unsigned int"
+'Finished building: ../main.c'
+' '
+'Building target: L07-Morse2.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L07-Morse2.map" --heap_size=80 --stack_size=80 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L07-Morse2_linkInfo.xml" --rom_model -o "L07-Morse2.out"  "./morse_codes.obj" "./morse.obj" "./main.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+<Linking>
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+'Finished building target: L07-Morse2.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L07-Morse2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 44: warning #552-D: variable "current_character" was set but never used
+"../main.c", line 118: warning #112-D: statement is unreachable
+"../main.c", line 45: remark #2553-D: (ULP 14.1) Array index (involving "index") of type "int". Recommend using "unsigned int"
+"../main.c", line 45: remark #2553-D: (ULP 14.1) Array index (involving "index") of type "int". Recommend using "unsigned int"
+'Finished building: ../main.c'
+' '
+'Building file: ../morse.asm'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="morse.pp"  "../morse.asm"
+'Finished building: ../morse.asm'
+' '
+'Building target: L07-Morse2.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L07-Morse2.map" --heap_size=80 --stack_size=80 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L07-Morse2_linkInfo.xml" --rom_model -o "L07-Morse2.out"  "./morse_codes.obj" "./morse.obj" "./main.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+<Linking>
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+'Finished building target: L07-Morse2.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L07-Morse2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 45: error #76: operand of "*" must be a pointer
+"../main.c", line 44: warning #552-D: variable "current_character" was set but never used
+"../main.c", line 118: warning #112-D: statement is unreachable
+
+>> Compilation failure
+1 error detected in the compilation of "../main.c".
+gmake: *** [main.obj] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L07-Morse2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 43: warning #552-D: variable "current_character" was set but never used
+"../main.c", line 117: warning #112-D: statement is unreachable
+'Finished building: ../main.c'
+' '
+'Building file: ../morse.asm'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="morse.pp"  "../morse.asm"
+'Finished building: ../morse.asm'
+' '
+'Building target: L07-Morse2.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L07-Morse2.map" --heap_size=80 --stack_size=80 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L07-Morse2_linkInfo.xml" --rom_model -o "L07-Morse2.out"  "./morse_codes.obj" "./morse.obj" "./main.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+<Linking>
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+'Finished building target: L07-Morse2.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L07-Morse2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 46: warning #552-D: variable "current_character" was set but never used
+"../main.c", line 121: warning #112-D: statement is unreachable
+'Finished building: ../main.c'
+' '
+'Building file: ../morse.asm'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="morse.pp"  "../morse.asm"
+'Finished building: ../morse.asm'
+' '
+'Building target: L07-Morse2.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L07-Morse2.map" --heap_size=80 --stack_size=80 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L07-Morse2_linkInfo.xml" --rom_model -o "L07-Morse2.out"  "./morse_codes.obj" "./morse.obj" "./main.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+<Linking>
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+'Finished building target: L07-Morse2.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L07-Morse2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 46: warning #552-D: variable "current_character" was set but never used
+"../main.c", line 122: warning #112-D: statement is unreachable
+'Finished building: ../main.c'
+' '
+'Building target: L07-Morse2.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L07-Morse2.map" --heap_size=80 --stack_size=80 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L07-Morse2_linkInfo.xml" --rom_model -o "L07-Morse2.out"  "./morse_codes.obj" "./morse.obj" "./main.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+<Linking>
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+'Finished building target: L07-Morse2.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L07-Morse2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 136: warning #112-D: statement is unreachable
+"../main.c", line 54: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 57: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 54: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 57: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 54: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 57: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+'Finished building: ../main.c'
+' '
+'Building file: ../morse.asm'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="morse.pp"  "../morse.asm"
+'Finished building: ../morse.asm'
+' '
+'Building target: L07-Morse2.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L07-Morse2.map" --heap_size=80 --stack_size=80 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L07-Morse2_linkInfo.xml" --rom_model -o "L07-Morse2.out"  "./morse_codes.obj" "./morse.obj" "./main.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+<Linking>
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+'Finished building target: L07-Morse2.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L07-Morse2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 136: warning #112-D: statement is unreachable
+"../main.c", line 54: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 57: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 54: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 57: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 54: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 57: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+'Finished building: ../main.c'
+' '
+'Building file: ../morse.asm'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="morse.pp"  "../morse.asm"
+'Finished building: ../morse.asm'
+' '
+'Building target: L07-Morse2.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L07-Morse2.map" --heap_size=80 --stack_size=80 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L07-Morse2_linkInfo.xml" --rom_model -o "L07-Morse2.out"  "./morse_codes.obj" "./morse.obj" "./main.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+<Linking>
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+'Finished building target: L07-Morse2.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L07-Morse2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 137: warning #112-D: statement is unreachable
+"../main.c", line 54: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 57: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 54: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 57: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 54: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 57: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+'Finished building: ../main.c'
+' '
+'Building target: L07-Morse2.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L07-Morse2.map" --heap_size=80 --stack_size=80 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L07-Morse2_linkInfo.xml" --rom_model -o "L07-Morse2.out"  "./morse_codes.obj" "./morse.obj" "./main.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+<Linking>
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+'Finished building target: L07-Morse2.out'
+' '
+
+**** Build Finished ****
