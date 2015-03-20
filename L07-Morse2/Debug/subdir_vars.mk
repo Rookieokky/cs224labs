@@ -12,12 +12,12 @@ ASM_SRCS += \
 
 C_SRCS += \
 ../RBX430_lcd.c \
-../main.c 
+../morse2.c 
 
 OBJS += \
 ./RBX430_lcd.obj \
-./main.obj \
 ./morse.obj \
+./morse2.obj \
 ./morse_codes.obj 
 
 ASM_DEPS += \
@@ -26,16 +26,16 @@ ASM_DEPS += \
 
 C_DEPS += \
 ./RBX430_lcd.pp \
-./main.pp 
+./morse2.pp 
 
 C_DEPS__QUOTED += \
 "RBX430_lcd.pp" \
-"main.pp" 
+"morse2.pp" 
 
 OBJS__QUOTED += \
 "RBX430_lcd.obj" \
-"main.obj" \
 "morse.obj" \
+"morse2.obj" \
 "morse_codes.obj" 
 
 ASM_DEPS__QUOTED += \
@@ -44,7 +44,7 @@ ASM_DEPS__QUOTED += \
 
 C_SRCS__QUOTED += \
 "../RBX430_lcd.c" \
-"../main.c" 
+"../morse2.c" 
 
 ASM_SRCS__QUOTED += \
 "../morse.asm" \

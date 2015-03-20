@@ -57,6 +57,7 @@
 
 ; System equates --------------------------------------------------------------
             .cdecls C,"msp430.h"            ; include c header
+;            .cdecls C,"morse2.c"
 myCLOCK     .equ    1050000                 ; 1.05 Mhz clock
 WDT_CTL     .equ    WDT_MDLY_0_5            ; WD: Timer, SMCLK, 0.5 ms
 WDT_CPI     .equ    500                     ; WDT Clocks Per Interrupt (@1 Mhz)
@@ -88,8 +89,8 @@ ELEMENT     .equ    ((WDT_IPS*240)/1000)    ; (WDT_IPS * 6 / WPM) / 5
 
 ; Program section -------------------------------------------------------------
             .text                           ; program section
-            .def 	message
-message:    .string "HELLO CS 124 WORLD ",0	; message
+;            .def 	message
+;message:    .string "HELLO CS 124 WORLD ",0	; message
             .byte   0
             .align  2                       ; align on word boundary
 
@@ -223,15 +224,15 @@ WDT_END:
 
 ; Switch 1 ISR ----------------------------------------------------------------
 
-P1_ISR:
-			bic.b   #0x0f, &P1IFG           ; acknowledge (put hands down)
-        	mov.w   #DEBOUNCE, &debounce_cnt; reset debounce count
-        	reti
+;P1_ISR:
+;			bic.b   #0x0f, &P1IFG           ; acknowledge (put hands down)
+;        	mov.w   #DEBOUNCE, &debounce_cnt; reset debounce count
+;        	reti
 
 ; Interrupt Vectors -----------------------------------------------------------
             .sect   ".int10"                ; Watchdog Vector
             .word   WDT_ISR                 ; Watchdog ISR
-            .sect 	".int02"                ; P1 interrupt vector
-            .word 	P1_ISR 					; P1 ISR
+;            .sect 	".int02"                ; P1 interrupt vector
+;            .word 	P1_ISR 					; P1 ISR
 
             .end

@@ -1,1 +1,1 @@
-"./morse_codes.obj" "./morse.obj" "./main.obj" "./RBX430_lcd.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+"./morse_codes.obj" "./morse2.obj" "./morse.obj" "./RBX430_lcd.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
