@@ -123,7 +123,6 @@ end_letter:
 doDot:
 			push 	r12						; callee save
 
-			GREEN_ON
 			mov.w   #ELEMENT,r12            ; output DOT
             call    #beep
 

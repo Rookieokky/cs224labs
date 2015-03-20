@@ -1562,3 +1562,606 @@ remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recomm
 ' '
 
 **** Build Finished ****
+
+**** Build of configuration Debug for project L07-Morse2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../morse.asm'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="morse.pp"  "../morse.asm"
+'Finished building: ../morse.asm'
+' '
+'Building target: L07-Morse2.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L07-Morse2.map" --heap_size=80 --stack_size=80 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L07-Morse2_linkInfo.xml" --rom_model -o "L07-Morse2.out"  "./morse_codes.obj" "./morse.obj" "./main.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+<Linking>
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+'Finished building target: L07-Morse2.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L07-Morse2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../RBX430_lcd.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="RBX430_lcd.pp"  "../RBX430_lcd.c"
+"../RBX430_lcd.c", line 40: fatal error #1965: cannot open source file "RBX430-1.h"
+1 catastrophic error detected in the compilation of "../RBX430_lcd.c".
+Compilation terminated.
+
+>> Compilation failure
+gmake: *** [RBX430_lcd.obj] Error 1
+'Building file: ../main.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 55: warning #225-D: function "lcd_print" declared implicitly
+"../main.c", line 143: warning #112-D: statement is unreachable
+"../main.c", line 60: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 63: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 60: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 63: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 60: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 63: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+'Finished building: ../main.c'
+' '
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L07-Morse2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../RBX430_lcd.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="RBX430_lcd.pp"  "../RBX430_lcd.c"
+"../RBX430_lcd.c", line 40: fatal error #1965: cannot open source file "RBX430-1.h"
+1 catastrophic error detected in the compilation of "../RBX430_lcd.c".
+
+>> Compilation failure
+Compilation terminated.
+gmake: *** [RBX430_lcd.obj] Error 1
+'Building file: ../main.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 55: error #169: argument of type "char" is incompatible with parameter of type "const char *"
+"../main.c", line 143: warning #112-D: statement is unreachable
+"../main.c", line 60: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 63: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 60: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 63: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 60: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 63: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+1 error detected in the compilation of "../main.c".
+
+>> Compilation failure
+gmake: *** [main.obj] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L07-Morse2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../RBX430_lcd.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="RBX430_lcd.pp"  "../RBX430_lcd.c"
+"../RBX430_lcd.c", line 40: fatal error #1965: cannot open source file "RBX430-1.h"
+1 catastrophic error detected in the compilation of "../RBX430_lcd.c".
+Compilation terminated.
+
+>> Compilation failure
+gmake: *** [RBX430_lcd.obj] Error 1
+'Building file: ../main.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 55: error #76: operand of "*" must be a pointer
+"../main.c", line 143: warning #112-D: statement is unreachable
+"../main.c", line 60: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 63: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 60: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 63: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 60: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 63: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+1 error detected in the compilation of "../main.c".
+
+>> Compilation failure
+gmake: *** [main.obj] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L07-Morse2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../RBX430_lcd.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="RBX430_lcd.pp"  "../RBX430_lcd.c"
+"../RBX430_lcd.c", line 40: fatal error #1965: cannot open source file "RBX430-1.h"
+1 catastrophic error detected in the compilation of "../RBX430_lcd.c".
+Compilation terminated.
+
+>> Compilation failure
+gmake: *** [RBX430_lcd.obj] Error 1
+'Building file: ../main.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 143: warning #112-D: statement is unreachable
+"../main.c", line 60: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 63: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 60: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 63: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 60: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 63: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+'Finished building: ../main.c'
+' '
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L07-Morse2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../RBX430_lcd.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="RBX430_lcd.pp"  "../RBX430_lcd.c"
+"../RBX430_lcd.c", line 519: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../RBX430_lcd.c", line 521: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../RBX430_lcd.c", line 541: remark #2553-D: (ULP 14.1) Array index (involving "x") of type "int16". Recommend using "int16"
+"../RBX430_lcd.c", line 519: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../RBX430_lcd.c", line 521: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../RBX430_lcd.c", line 519: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../RBX430_lcd.c", line 521: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../RBX430_lcd.c", line 593: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../RBX430_lcd.c", line 942: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../RBX430_lcd.c", line 947: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../RBX430_lcd.c", line 949: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../RBX430_lcd.c", line 1056: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../RBX430_lcd.c", line 1091: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+'Finished building: ../RBX430_lcd.c'
+' '
+'Building target: L07-Morse2.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L07-Morse2.map" --heap_size=80 --stack_size=80 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L07-Morse2_linkInfo.xml" --rom_model -o "L07-Morse2.out"  "./morse_codes.obj" "./morse.obj" "./main.obj" "./RBX430_lcd.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+<Linking>
+'Finished building target: L07-Morse2.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L07-Morse2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 144: warning #112-D: statement is unreachable
+"../main.c", line 61: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 64: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 61: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 64: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 61: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 64: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+'Finished building: ../main.c'
+' '
+'Building target: L07-Morse2.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L07-Morse2.map" --heap_size=80 --stack_size=80 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L07-Morse2_linkInfo.xml" --rom_model -o "L07-Morse2.out"  "./morse_codes.obj" "./morse.obj" "./main.obj" "./RBX430_lcd.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+<Linking>
+'Finished building target: L07-Morse2.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L07-Morse2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 145: warning #112-D: statement is unreachable
+"../main.c", line 62: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 65: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 62: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 65: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 62: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 65: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+'Finished building: ../main.c'
+' '
+'Building target: L07-Morse2.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L07-Morse2.map" --heap_size=80 --stack_size=80 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L07-Morse2_linkInfo.xml" --rom_model -o "L07-Morse2.out"  "./morse_codes.obj" "./morse.obj" "./main.obj" "./RBX430_lcd.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+<Linking>
+'Finished building target: L07-Morse2.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L07-Morse2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 57: error #102: "current_character_string" has already been declared in the current scope
+"../main.c", line 58: warning #176-D: expression has no effect
+"../main.c", line 58: warning #551-D: variable "current_character_string" is used before its value is set
+"../main.c", line 59: error #66: expected a ";"
+"../main.c", line 57: warning #179-D: variable "current_character_string" was declared but never referenced
+"../main.c", line 147: warning #112-D: statement is unreachable
+"../main.c", line 64: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 67: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 64: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 67: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 64: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 67: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+2 errors detected in the compilation of "../main.c".
+
+>> Compilation failure
+gmake: *** [main.obj] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L07-Morse2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 62: warning #551-D: variable "current_character" is used before its value is set
+"../main.c", line 50: warning #552-D: variable "current_character" was set but never used
+"../main.c", line 146: warning #112-D: statement is unreachable
+"../main.c", line 63: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 66: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 63: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 66: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 63: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 66: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+'Finished building: ../main.c'
+' '
+'Building target: L07-Morse2.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L07-Morse2.map" --heap_size=80 --stack_size=80 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L07-Morse2_linkInfo.xml" --rom_model -o "L07-Morse2.out"  "./morse_codes.obj" "./morse.obj" "./main.obj" "./RBX430_lcd.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+<Linking>
+'Finished building target: L07-Morse2.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L07-Morse2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 60: error #169: argument of type "char" is incompatible with parameter of type "const char *"
+"../main.c", line 148: warning #112-D: statement is unreachable
+"../main.c", line 65: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 68: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 65: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 68: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 65: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 68: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+1 error detected in the compilation of "../main.c".
+
+>> Compilation failure
+gmake: *** [main.obj] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L07-Morse2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 61: error #20: identifier "c" is undefined
+"../main.c", line 151: warning #112-D: statement is unreachable
+"../main.c", line 68: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 71: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 68: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 71: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 68: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 71: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+1 error detected in the compilation of "../main.c".
+
+>> Compilation failure
+gmake: *** [main.obj] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L07-Morse2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 150: warning #112-D: statement is unreachable
+"../main.c", line 67: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 70: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 67: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 70: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 67: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 70: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+'Finished building: ../main.c'
+' '
+'Building target: L07-Morse2.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L07-Morse2.map" --heap_size=80 --stack_size=80 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L07-Morse2_linkInfo.xml" --rom_model -o "L07-Morse2.out"  "./morse_codes.obj" "./morse.obj" "./main.obj" "./RBX430_lcd.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+<Linking>
+'Finished building target: L07-Morse2.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L07-Morse2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 150: warning #112-D: statement is unreachable
+"../main.c", line 67: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 70: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 67: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 70: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 67: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 70: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+'Finished building: ../main.c'
+' '
+'Building target: L07-Morse2.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L07-Morse2.map" --heap_size=80 --stack_size=80 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L07-Morse2_linkInfo.xml" --rom_model -o "L07-Morse2.out"  "./morse_codes.obj" "./morse.obj" "./main.obj" "./RBX430_lcd.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+<Linking>
+'Finished building target: L07-Morse2.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L07-Morse2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 150: warning #112-D: statement is unreachable
+"../main.c", line 67: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 70: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 67: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 70: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 67: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 70: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+'Finished building: ../main.c'
+' '
+'Building target: L07-Morse2.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L07-Morse2.map" --heap_size=80 --stack_size=80 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L07-Morse2_linkInfo.xml" --rom_model -o "L07-Morse2.out"  "./morse_codes.obj" "./morse.obj" "./main.obj" "./RBX430_lcd.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+<Linking>
+'Finished building target: L07-Morse2.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L07-Morse2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 60: error #28: expression must have a constant value
+"../main.c", line 149: warning #112-D: statement is unreachable
+"../main.c", line 66: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 69: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 66: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 69: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 66: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 69: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 60: remark #1535-D: (ULP 8.1) variable "character_print" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+1 error detected in the compilation of "../main.c".
+
+>> Compilation failure
+gmake: *** [main.obj] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L07-Morse2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 150: warning #112-D: statement is unreachable
+"../main.c", line 67: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 70: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 67: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 70: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 67: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 70: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 60: remark #1535-D: (ULP 8.1) variable "character_print" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+'Finished building: ../main.c'
+' '
+'Building target: L07-Morse2.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L07-Morse2.map" --heap_size=80 --stack_size=80 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L07-Morse2_linkInfo.xml" --rom_model -o "L07-Morse2.out"  "./morse_codes.obj" "./morse.obj" "./main.obj" "./RBX430_lcd.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+<Linking>
+'Finished building target: L07-Morse2.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L07-Morse2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 88: error #20: identifier "morse_code" is undefined
+"../main.c", line 91: error #20: identifier "morse_code" is undefined
+"../main.c", line 98: error #20: identifier "morse_code" is undefined
+"../main.c", line 171: warning #112-D: statement is unreachable
+"../main.c", line 53: remark #1535-D: (ULP 8.1) variable "character_print" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+3 errors detected in the compilation of "../main.c".
+
+>> Compilation failure
+gmake: *** [main.obj] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L07-Morse2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 171: warning #112-D: statement is unreachable
+"../main.c", line 88: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 91: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 88: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 91: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 53: remark #1535-D: (ULP 8.1) variable "character_print" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../main.c", line 88: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 91: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+'Finished building: ../main.c'
+' '
+'Building target: L07-Morse2.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L07-Morse2.map" --heap_size=80 --stack_size=80 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L07-Morse2_linkInfo.xml" --rom_model -o "L07-Morse2.out"  "./morse_codes.obj" "./morse.obj" "./main.obj" "./RBX430_lcd.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+<Linking>
+'Finished building target: L07-Morse2.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L07-Morse2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 57: error #145: a value of type "int" cannot be used to initialize an entity of type "char *"
+"../main.c", line 82: error #515: a value of type "int" cannot be assigned to an entity of type "char *"
+"../main.c", line 83: error #169: argument of type "char **" is incompatible with parameter of type "const char *"
+"../main.c", line 173: warning #112-D: statement is unreachable
+"../main.c", line 90: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 93: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 90: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 93: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 54: remark #1535-D: (ULP 8.1) variable "character_print" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../main.c", line 90: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 93: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+3 errors detected in the compilation of "../main.c".
+
+>> Compilation failure
+gmake: *** [main.obj] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L07-Morse2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 57: error #145: a value of type "int" cannot be used to initialize an entity of type "char *"
+"../main.c", line 82: error #515: a value of type "int" cannot be assigned to an entity of type "char *"
+"../main.c", line 83: error #169: argument of type "char **" is incompatible with parameter of type "const char *"
+"../main.c", line 173: warning #112-D: statement is unreachable
+"../main.c", line 90: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 93: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 90: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 93: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 54: remark #1535-D: (ULP 8.1) variable "character_print" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../main.c", line 90: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+
+>> Compilation failure
+"../main.c", line 93: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+3 errors detected in the compilation of "../main.c".
+gmake: *** [main.obj] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L07-Morse2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 173: warning #112-D: statement is unreachable
+"../main.c", line 90: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 93: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 90: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 93: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 54: remark #1535-D: (ULP 8.1) variable "character_print" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../main.c", line 57: remark #1535-D: (ULP 8.1) variable "speed" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../main.c", line 90: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 93: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+'Finished building: ../main.c'
+' '
+'Building target: L07-Morse2.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L07-Morse2.map" --heap_size=80 --stack_size=80 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L07-Morse2_linkInfo.xml" --rom_model -o "L07-Morse2.out"  "./morse_codes.obj" "./morse.obj" "./main.obj" "./RBX430_lcd.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+<Linking>
+'Finished building target: L07-Morse2.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L07-Morse2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 176: warning #112-D: statement is unreachable
+"../main.c", line 93: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 96: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 93: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 96: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 54: remark #1535-D: (ULP 8.1) variable "character_print" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../main.c", line 57: remark #1535-D: (ULP 8.1) variable "speed" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../main.c", line 93: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 96: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+'Finished building: ../main.c'
+' '
+'Building target: L07-Morse2.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L07-Morse2.map" --heap_size=80 --stack_size=80 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L07-Morse2_linkInfo.xml" --rom_model -o "L07-Morse2.out"  "./morse_codes.obj" "./morse.obj" "./main.obj" "./RBX430_lcd.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+<Linking>
+'Finished building target: L07-Morse2.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project L07-Morse2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 176: warning #112-D: statement is unreachable
+"../main.c", line 93: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 96: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 93: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 96: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 54: remark #1535-D: (ULP 8.1) variable "character_print" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../main.c", line 57: remark #1535-D: (ULP 8.1) variable "speed" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../main.c", line 93: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 96: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+'Finished building: ../main.c'
+' '
+'Building target: L07-Morse2.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L07-Morse2.map" --heap_size=80 --stack_size=80 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L07-Morse2_linkInfo.xml" --rom_model -o "L07-Morse2.out"  "./morse_codes.obj" "./morse.obj" "./main.obj" "./RBX430_lcd.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+<Linking>
+'Finished building target: L07-Morse2.out'
+' '
+
+**** Build Finished ****

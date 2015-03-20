@@ -1,10 +1,10 @@
 ******************************************************************************
                   MSP430 Linker PC v4.2.1                      
 ******************************************************************************
->> Linked Fri Mar 20 09:46:17 2015
+>> Linked Fri Mar 20 11:39:08 2015
 
 OUTPUT FILE NAME:   <L07-Morse2.out>
-ENTRY POINT SYMBOL: "_c_int00"  address: 000082fe
+ENTRY POINT SYMBOL: "_c_int00"  address: 00008dbc
 
 
 MEMORY CONFIGURATION
@@ -14,12 +14,12 @@ MEMORY CONFIGURATION
   SFR                   00000000   00000010  00000000  00000010  RWIX
   PERIPHERALS_8BIT      00000010   000000f0  00000000  000000f0  RWIX
   PERIPHERALS_16BIT     00000100   00000100  00000000  00000100  RWIX
-  RAM                   00000200   00000400  00000062  0000039e  RWIX
+  RAM                   00000200   00000400  00000068  00000398  RWIX
   INFOD                 00001000   00000040  00000000  00000040  RWIX
   INFOC                 00001040   00000040  00000000  00000040  RWIX
   INFOB                 00001080   00000040  00000000  00000040  RWIX
   INFOA                 000010c0   00000040  00000000  00000040  RWIX
-  FLASH                 00008000   00007fde  00000454  00007b8a  RWIX
+  FLASH                 00008000   00007fde  0000127a  00006d64  RWIX
   INT00                 0000ffe0   00000002  00000000  00000002  RWIX
   INT01                 0000ffe2   00000002  00000000  00000002  RWIX
   INT02                 0000ffe4   00000002  00000002  00000000  RWIX
@@ -47,10 +47,11 @@ section   page    origin      length       input sections
 
 .pinit     0    00008000    00000000     UNINITIALIZED
 
-.bss       0    00000200    00000012     UNINITIALIZED
+.bss       0    00000200    00000018     UNINITIALIZED
                   00000200    0000000a     morse.obj (.bss)
-                  0000020a    00000004     rts430.lib : _lock.obj (.bss)
-                  0000020e    00000004                : boot.obj (.bss)
+                  0000020a    00000006     RBX430_lcd.obj (.bss)
+                  00000210    00000004     rts430.lib : _lock.obj (.bss)
+                  00000214    00000004                : boot.obj (.bss)
 
 .data      0    00000200    00000000     UNINITIALIZED
 
@@ -58,21 +59,55 @@ section   page    origin      length       input sections
                   000005b0    00000002     rts430.lib : boot.obj (.stack)
                   000005b2    0000004e     --HOLE--
 
-.text      0    00008000    0000033e     
-                  00008000    00000142     morse_codes.obj (.text)
-                  00008142    00000100     morse.obj (.text)
-                  00008242    000000bc     main.obj (.text:main)
-                  000082fe    0000001e     rts430.lib : boot.obj (.text:_c_int00_noinit_noexit)
-                  0000831c    0000000a                : isalpha.obj (.text:isalpha)
-                  00008326    00000008                : isdigit.obj (.text:isdigit)
-                  0000832e    00000006                : isr_trap.obj (.text:__TI_ISR_TRAP)
-                  00008334    00000004                : pre_init.obj (.text:_system_pre_init)
-                  00008338    00000004                : exit.obj (.text:abort)
-                  0000833c    00000002                : _lock.obj (.text:_nop)
+.text      0    00008000    00000e5e     
+                  00008000    00000246     RBX430_lcd.obj (.text:lcd_point)
+                  00008246    00000244     RBX430_lcd.obj (.text:my_printfi)
+                  0000848a    00000186     RBX430_lcd.obj (.text:lcd_init)
+                  00008610    00000184     main.obj (.text:main)
+                  00008794    00000142     morse_codes.obj (.text)
+                  000088d6    00000132     RBX430_lcd.obj (.text:lcd_putchar)
+                  00008a08    000000fc     morse.obj (.text)
+                  00008b04    0000005e     RBX430_lcd.obj (.text:lcd_WD)
+                  00008b62    0000004c     rts430.lib : lsr16.obj (.text)
+                  00008bae    0000004a     RBX430_lcd.obj (.text:lcd_WD2)
+                  00008bf8    00000046     RBX430_lcd.obj (.text:DelayMs)
+                  00008c3e    00000038     RBX430_lcd.obj (.text:ReadDataWord)
+                  00008c76    00000034     RBX430_lcd.obj (.text:WriteDataWord)
+                  00008caa    00000034     RBX430_lcd.obj (.text:lcd_set_x_y)
+                  00008cde    00000030     RBX430_lcd.obj (.text:lcd_cursor)
+                  00008d0e    0000002e     RBX430_lcd.obj (.text:lcd_set)
+                  00008d3c    00000024     RBX430_lcd.obj (.text:lcd_printf)
+                  00008d60    00000020     RBX430_lcd.obj (.text:ReadData)
+                  00008d80    0000001e     RBX430_lcd.obj (.text:WriteCmd)
+                  00008d9e    0000001e     RBX430_lcd.obj (.text:WriteData)
+                  00008dbc    0000001e     rts430.lib : boot.obj (.text:_c_int00_noinit_noexit)
+                  00008dda    00000014     RBX430_lcd.obj (.text:lcd_backlight)
+                  00008dee    00000014     rts430.lib : mult16.obj (.text)
+                  00008e02    00000012                : lsr32.obj (.text:l_lsr)
+                  00008e14    00000010                : epilog.obj (.text)
+                  00008e24    0000000e                : strlen.obj (.text:strlen)
+                  00008e32    0000000a                : isalpha.obj (.text:isalpha)
+                  00008e3c    0000000a     RBX430_lcd.obj (.text:lcd_clear)
+                  00008e46    00000008     rts430.lib : isdigit.obj (.text:isdigit)
+                  00008e4e    00000006                : isr_trap.obj (.text:__TI_ISR_TRAP)
+                  00008e54    00000004                : pre_init.obj (.text:_system_pre_init)
+                  00008e58    00000004                : exit.obj (.text:abort)
+                  00008e5c    00000002                : _lock.obj (.text:_nop)
 
-.const     0    0000833e    00000116     
-                  0000833e    00000102     rts430.lib : ctype.obj (.const:.string:_ctypes_)
-                  00008440    00000014     main.obj (.const:.string)
+.const     0    00008e5e    0000041c     
+                  00008e5e    000001e0     RBX430_lcd.obj (.const:cs)
+                  0000903e    00000102     rts430.lib : ctype.obj (.const:.string:_ctypes_)
+                  00009140    000000a2     RBX430_lcd.obj (.const:.string:dv3)
+                  000091e2    00000036     main.obj (.const:.string)
+                  00009218    0000002c     RBX430_lcd.obj (.const:dv$3)
+                  00009244    00000011     RBX430_lcd.obj (.const:.string:lHexChar$1)
+                  00009255    00000001     --HOLE-- [fill = 0]
+                  00009256    00000011     RBX430_lcd.obj (.const:.string:uHexChar$2)
+                  00009267    00000001     --HOLE-- [fill = 0]
+                  00009268    00000006     RBX430_lcd.obj (.const:px_off)
+                  0000926e    00000006     RBX430_lcd.obj (.const:px_on)
+                  00009274    00000004     main.obj (.const:.string:$P$T0$1)
+                  00009278    00000002     main.obj (.const:.string:$P$T1$2)
 
 PORT1      0    0000ffe4    00000002     
                   0000ffe4    00000002     morse.obj (.int02)
@@ -131,7 +166,7 @@ address    name
 00000057   BCSCTL1
 00000058   BCSCTL2
 00000053   BCSCTL3
-00008338   C$$EXIT
+00008e58   C$$EXIT
 000010fb   CALBC1_12MHZ
 000010f9   CALBC1_16MHZ
 000010ff   CALBC1_1MHZ
@@ -141,7 +176,7 @@ address    name
 000010fe   CALDCO_1MHZ
 000010fc   CALDCO_8MHZ
 00000056   DCOCTL
-00008114   DIVU
+000088a8   DIVU
 00000128   FCTL1
 0000012a   FCTL2
 0000012c   FCTL3
@@ -149,8 +184,25 @@ address    name
 00000001   IE2
 00000002   IFG1
 00000003   IFG2
-000080f4   MACU
-000080f0   MPYU
+00008b62   I_LSR
+00008ba8   I_LSR_1
+00008b84   I_LSR_10
+00008b80   I_LSR_11
+00008b7c   I_LSR_12
+00008b78   I_LSR_13
+00008b74   I_LSR_14
+00008b70   I_LSR_15
+00008ba4   I_LSR_2
+00008ba0   I_LSR_3
+00008b9c   I_LSR_4
+00008b98   I_LSR_5
+00008b94   I_LSR_6
+00008b90   I_LSR_7
+00008b8c   I_LSR_8
+00008b88   I_LSR_9
+00008e02   L_LSR
+00008888   MACU
+00008884   MPYU
 000000c0   OA0CTL0
 000000c1   OA0CTL1
 000000c2   OA1CTL0
@@ -223,11 +275,11 @@ address    name
 00000120   WDTCTL
 00000600   __STACK_END
 00000050   __STACK_SIZE
-0000832e   __TI_ISR_TRAP
+00008e4e   __TI_ISR_TRAP
 00000001   __TI_args_main
 00000001   __TI_auto_init
-0000020e   __TI_cleanup_ptr
-00000210   __TI_dtors_ptr
+00000214   __TI_cleanup_ptr
+00000216   __TI_dtors_ptr
 00000001   __TI_exit
 0000ffe4   __TI_int02
 0000ffe6   __TI_int03
@@ -246,42 +298,66 @@ ffffffff   __c_args__
 ffffffff   __cinit__
 00000200   __data__
 00000200   __edata__
-00000212   __end__
-0000833e   __etext__
+00000218   __end__
+00008e5e   __etext__
+00008dee   __mpyi
 ffffffff   __pinit__
 00008000   __text__
-000082fe   _c_int00
-000082fe   _c_int00_noinit_noexit
-0000833e   _ctypes_
-0000020a   _lock
-0000833c   _nop
+00008dbc   _c_int00
+00008dbc   _c_int00_noinit_noexit
+0000903e   _ctypes_
+00000210   _lock
+00008e5c   _nop
 0000fffe   _reset_vector
 000005b0   _stack
-00008334   _system_pre_init
-0000020c   _unlock
-00008338   abort
-000081aa   beep
+00008e54   _system_pre_init
+00000212   _unlock
+00008e58   abort
+00008a6c   beep
 00000200   beep_cnt
 00000206   beep_enable
 ffffffff   binit
 ffffffff   cinit
+00008e5e   cs
 00000208   debounce_cnt
-000081ba   delay
+00008a7c   delay
 00000202   delay_cnt
-00008194   doDash
-0000817a   doDot
+00008a56   doDash
+00008a40   doDot
+00009140   dv3
 00000200   edata
-00000212   end
-0000833e   etext
-0000831c   isalpha
-00008326   isdigit
-00008158   letter
-00008014   letters
-00008242   main
-00008142   message
-00008000   numbers
+00000218   end
+00008e5e   etext
+00008e20   func_epilog_1
+00008e1e   func_epilog_2
+00008e1c   func_epilog_3
+00008e1a   func_epilog_4
+00008e18   func_epilog_5
+00008e16   func_epilog_6
+00008e14   func_epilog_7
+00008e32   isalpha
+00008e46   isdigit
+00008b04   lcd_WD
+00008bae   lcd_WD2
+00008dda   lcd_backlight
+00008e3c   lcd_clear
+00008cde   lcd_cursor
+0000848a   lcd_init
+00008000   lcd_point
+00008d3c   lcd_printf
+000088d6   lcd_putchar
+00008d0e   lcd_set
+00008caa   lcd_set_x_y
+00008a1e   letter
+000087a8   letters
+00008610   main
+00008a08   message
+00008794   numbers
 ffffffff   pinit
+00009268   px_off
+0000926e   px_on
 00000204   second_cnt
+00008e24   strlen
 
 
 GLOBAL SYMBOLS: SORTED BY Symbol Address 
@@ -392,12 +468,12 @@ address    name
 00000204   second_cnt
 00000206   beep_enable
 00000208   debounce_cnt
-0000020a   _lock
-0000020c   _unlock
-0000020e   __TI_cleanup_ptr
-00000210   __TI_dtors_ptr
-00000212   __end__
-00000212   end
+00000210   _lock
+00000212   _unlock
+00000214   __TI_cleanup_ptr
+00000216   __TI_dtors_ptr
+00000218   __end__
+00000218   end
 000005b0   _stack
 00000600   __STACK_END
 000010f8   CALDCO_16MHZ
@@ -410,30 +486,71 @@ address    name
 000010ff   CALBC1_1MHZ
 00008000   .text
 00008000   __text__
-00008000   numbers
-00008014   letters
-000080f0   MPYU
-000080f4   MACU
-00008114   DIVU
-00008142   message
-00008158   letter
-0000817a   doDot
-00008194   doDash
-000081aa   beep
-000081ba   delay
-00008242   main
-000082fe   _c_int00
-000082fe   _c_int00_noinit_noexit
-0000831c   isalpha
-00008326   isdigit
-0000832e   __TI_ISR_TRAP
-00008334   _system_pre_init
-00008338   C$$EXIT
-00008338   abort
-0000833c   _nop
-0000833e   __etext__
-0000833e   _ctypes_
-0000833e   etext
+00008000   lcd_point
+0000848a   lcd_init
+00008610   main
+00008794   numbers
+000087a8   letters
+00008884   MPYU
+00008888   MACU
+000088a8   DIVU
+000088d6   lcd_putchar
+00008a08   message
+00008a1e   letter
+00008a40   doDot
+00008a56   doDash
+00008a6c   beep
+00008a7c   delay
+00008b04   lcd_WD
+00008b62   I_LSR
+00008b70   I_LSR_15
+00008b74   I_LSR_14
+00008b78   I_LSR_13
+00008b7c   I_LSR_12
+00008b80   I_LSR_11
+00008b84   I_LSR_10
+00008b88   I_LSR_9
+00008b8c   I_LSR_8
+00008b90   I_LSR_7
+00008b94   I_LSR_6
+00008b98   I_LSR_5
+00008b9c   I_LSR_4
+00008ba0   I_LSR_3
+00008ba4   I_LSR_2
+00008ba8   I_LSR_1
+00008bae   lcd_WD2
+00008caa   lcd_set_x_y
+00008cde   lcd_cursor
+00008d0e   lcd_set
+00008d3c   lcd_printf
+00008dbc   _c_int00
+00008dbc   _c_int00_noinit_noexit
+00008dda   lcd_backlight
+00008dee   __mpyi
+00008e02   L_LSR
+00008e14   func_epilog_7
+00008e16   func_epilog_6
+00008e18   func_epilog_5
+00008e1a   func_epilog_4
+00008e1c   func_epilog_3
+00008e1e   func_epilog_2
+00008e20   func_epilog_1
+00008e24   strlen
+00008e32   isalpha
+00008e3c   lcd_clear
+00008e46   isdigit
+00008e4e   __TI_ISR_TRAP
+00008e54   _system_pre_init
+00008e58   C$$EXIT
+00008e58   abort
+00008e5c   _nop
+00008e5e   __etext__
+00008e5e   cs
+00008e5e   etext
+0000903e   _ctypes_
+00009140   dv3
+00009268   px_off
+0000926e   px_on
 0000ffe4   __TI_int02
 0000ffe6   __TI_int03
 0000ffea   __TI_int05
@@ -454,4 +571,4 @@ ffffffff   binit
 ffffffff   cinit
 ffffffff   pinit
 
-[165 symbols]
+[206 symbols]

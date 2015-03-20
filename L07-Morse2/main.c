@@ -2,6 +2,7 @@
 #include "morse2.h"
 #include <stdlib.h>
 #include <ctype.h>
+#include "RBX430_lcd.h"
 
 extern void doDot(void);
 extern void doDash(void);
@@ -27,7 +28,6 @@ int main(void) {
     P3OUT &= 0;
     beep_cnt = 0;
     delay_cnt = 0;
-//    GIE = SR;
     _BIS_SR(GIE); // set general interrupts
     second_cnt = 1;
     beep_enable = 1;
@@ -41,15 +41,53 @@ int main(void) {
     P1IE |= 0x0f;
     debounce_cnt = 0;
 
+
+    lcd_init();
+    lcd_backlight(BACKLIGHT);
+	lcd_clear();
     // main loop
     while(1) {
         char current_character;
         char* message = "HELLO CS 124 WORLD ";
+    	char* character_string = "Character:";
+    	char character_print[4] = {'\'', 'A', '\'', '\0'};
+    	char* message_string = "Message:";
+    	char* speed_string = "Speed:";
+    	char speed[2] = {'0', '\0'};
+    	char* wpm_string = "wpm";
         char* index = message;
+
+
+    	// current character
+    	lcd_cursor(1, 80);
+    	lcd_printf(character_string);
+
+    	// message
+    	lcd_cursor(1, 60);
+    	lcd_printf(message_string);
+
+    	lcd_cursor(50, 60);
+    	lcd_printf(message);
+
+    	// speed
+    	lcd_cursor(1, 40);
+    	lcd_printf(speed_string);
+
+    	lcd_cursor(40, 40);
+    	speed[0] = (char)WPM + '0';
+    	lcd_printf(speed);
         // message loop
         while (current_character = *index++) {
-        	char* morse_code;
+        	// current character
+        	lcd_cursor(70, 80);
+        	character_print[1] = current_character;
+        	lcd_printf(character_print);
 
+        	// speed
+        	lcd_cursor(60, 40);
+        	lcd_printf(wpm_string);
+
+        	char* morse_code;
         	if (isalpha(current_character)) {
         		morse_code = letters[current_character - 'A'];
         	} else if (isdigit(current_character)) {

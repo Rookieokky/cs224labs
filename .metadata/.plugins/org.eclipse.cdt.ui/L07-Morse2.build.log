@@ -5,20 +5,21 @@
 'Building file: ../main.c'
 'Invoking: MSP430 Compiler'
 "C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
-"../main.c", line 137: warning #112-D: statement is unreachable
-"../main.c", line 54: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
-"../main.c", line 57: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
-"../main.c", line 54: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
-"../main.c", line 57: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
-"../main.c", line 54: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
-"../main.c", line 57: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 176: warning #112-D: statement is unreachable
+"../main.c", line 93: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 96: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 93: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 96: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 54: remark #1535-D: (ULP 8.1) variable "character_print" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../main.c", line 57: remark #1535-D: (ULP 8.1) variable "speed" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../main.c", line 93: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
+"../main.c", line 96: remark #2553-D: (ULP 14.1) Array index (involving "current_character") of type "int". Recommend using "unsigned int"
 'Finished building: ../main.c'
 ' '
 'Building target: L07-Morse2.out'
 'Invoking: MSP430 Linker'
-"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L07-Morse2.map" --heap_size=80 --stack_size=80 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L07-Morse2_linkInfo.xml" --rom_model -o "L07-Morse2.out"  "./morse_codes.obj" "./morse.obj" "./main.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L07-Morse2.map" --heap_size=80 --stack_size=80 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L07-Morse2_linkInfo.xml" --rom_model -o "L07-Morse2.out"  "./morse_codes.obj" "./morse.obj" "./main.obj" "./RBX430_lcd.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
 <Linking>
-remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
 'Finished building target: L07-Morse2.out'
 ' '
 
