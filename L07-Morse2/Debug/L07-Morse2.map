@@ -1,10 +1,10 @@
 ******************************************************************************
                   MSP430 Linker PC v4.2.1                      
 ******************************************************************************
->> Linked Thu Mar 19 17:14:14 2015
+>> Linked Fri Mar 20 09:46:17 2015
 
 OUTPUT FILE NAME:   <L07-Morse2.out>
-ENTRY POINT SYMBOL: "_c_int00"  address: 0000831e
+ENTRY POINT SYMBOL: "_c_int00"  address: 000082fe
 
 
 MEMORY CONFIGURATION
@@ -19,7 +19,7 @@ MEMORY CONFIGURATION
   INFOC                 00001040   00000040  00000000  00000040  RWIX
   INFOB                 00001080   00000040  00000000  00000040  RWIX
   INFOA                 000010c0   00000040  00000000  00000040  RWIX
-  FLASH                 00008000   00007fde  00000474  00007b6a  RWIX
+  FLASH                 00008000   00007fde  00000454  00007b8a  RWIX
   INT00                 0000ffe0   00000002  00000000  00000002  RWIX
   INT01                 0000ffe2   00000002  00000000  00000002  RWIX
   INT02                 0000ffe4   00000002  00000002  00000000  RWIX
@@ -58,21 +58,21 @@ section   page    origin      length       input sections
                   000005b0    00000002     rts430.lib : boot.obj (.stack)
                   000005b2    0000004e     --HOLE--
 
-.text      0    00008000    0000035e     
+.text      0    00008000    0000033e     
                   00008000    00000142     morse_codes.obj (.text)
-                  00008142    00000122     morse.obj (.text)
-                  00008264    000000ba     main.obj (.text:main)
-                  0000831e    0000001e     rts430.lib : boot.obj (.text:_c_int00_noinit_noexit)
-                  0000833c    0000000a                : isalpha.obj (.text:isalpha)
-                  00008346    00000008                : isdigit.obj (.text:isdigit)
-                  0000834e    00000006                : isr_trap.obj (.text:__TI_ISR_TRAP)
-                  00008354    00000004                : pre_init.obj (.text:_system_pre_init)
-                  00008358    00000004                : exit.obj (.text:abort)
-                  0000835c    00000002                : _lock.obj (.text:_nop)
+                  00008142    00000100     morse.obj (.text)
+                  00008242    000000bc     main.obj (.text:main)
+                  000082fe    0000001e     rts430.lib : boot.obj (.text:_c_int00_noinit_noexit)
+                  0000831c    0000000a                : isalpha.obj (.text:isalpha)
+                  00008326    00000008                : isdigit.obj (.text:isdigit)
+                  0000832e    00000006                : isr_trap.obj (.text:__TI_ISR_TRAP)
+                  00008334    00000004                : pre_init.obj (.text:_system_pre_init)
+                  00008338    00000004                : exit.obj (.text:abort)
+                  0000833c    00000002                : _lock.obj (.text:_nop)
 
-.const     0    0000835e    00000116     
-                  0000835e    00000102     rts430.lib : ctype.obj (.const:.string:_ctypes_)
-                  00008460    00000014     main.obj (.const:.string)
+.const     0    0000833e    00000116     
+                  0000833e    00000102     rts430.lib : ctype.obj (.const:.string:_ctypes_)
+                  00008440    00000014     main.obj (.const:.string)
 
 PORT1      0    0000ffe4    00000002     
                   0000ffe4    00000002     morse.obj (.int02)
@@ -131,7 +131,7 @@ address    name
 00000057   BCSCTL1
 00000058   BCSCTL2
 00000053   BCSCTL3
-00008358   C$$EXIT
+00008338   C$$EXIT
 000010fb   CALBC1_12MHZ
 000010f9   CALBC1_16MHZ
 000010ff   CALBC1_1MHZ
@@ -223,7 +223,7 @@ address    name
 00000120   WDTCTL
 00000600   __STACK_END
 00000050   __STACK_SIZE
-0000834e   __TI_ISR_TRAP
+0000832e   __TI_ISR_TRAP
 00000001   __TI_args_main
 00000001   __TI_auto_init
 0000020e   __TI_cleanup_ptr
@@ -247,37 +247,37 @@ ffffffff   __cinit__
 00000200   __data__
 00000200   __edata__
 00000212   __end__
-0000835e   __etext__
+0000833e   __etext__
 ffffffff   __pinit__
 00008000   __text__
-0000831e   _c_int00
-0000831e   _c_int00_noinit_noexit
-0000835e   _ctypes_
+000082fe   _c_int00
+000082fe   _c_int00_noinit_noexit
+0000833e   _ctypes_
 0000020a   _lock
-0000835c   _nop
+0000833c   _nop
 0000fffe   _reset_vector
 000005b0   _stack
-00008354   _system_pre_init
+00008334   _system_pre_init
 0000020c   _unlock
-00008358   abort
-000081bc   beep
+00008338   abort
+000081aa   beep
 00000200   beep_cnt
 00000206   beep_enable
 ffffffff   binit
 ffffffff   cinit
 00000208   debounce_cnt
-000081d4   delay
+000081ba   delay
 00000202   delay_cnt
-0000819e   doDash
-0000817c   doDot
+00008194   doDash
+0000817a   doDot
 00000200   edata
 00000212   end
-0000835e   etext
-0000833c   isalpha
-00008346   isdigit
+0000833e   etext
+0000831c   isalpha
+00008326   isdigit
 00008158   letter
 00008014   letters
-00008264   main
+00008242   main
 00008142   message
 00008000   numbers
 ffffffff   pinit
@@ -417,23 +417,23 @@ address    name
 00008114   DIVU
 00008142   message
 00008158   letter
-0000817c   doDot
-0000819e   doDash
-000081bc   beep
-000081d4   delay
-00008264   main
-0000831e   _c_int00
-0000831e   _c_int00_noinit_noexit
-0000833c   isalpha
-00008346   isdigit
-0000834e   __TI_ISR_TRAP
-00008354   _system_pre_init
-00008358   C$$EXIT
-00008358   abort
-0000835c   _nop
-0000835e   __etext__
-0000835e   _ctypes_
-0000835e   etext
+0000817a   doDot
+00008194   doDash
+000081aa   beep
+000081ba   delay
+00008242   main
+000082fe   _c_int00
+000082fe   _c_int00_noinit_noexit
+0000831c   isalpha
+00008326   isdigit
+0000832e   __TI_ISR_TRAP
+00008334   _system_pre_init
+00008338   C$$EXIT
+00008338   abort
+0000833c   _nop
+0000833e   __etext__
+0000833e   _ctypes_
+0000833e   etext
 0000ffe4   __TI_int02
 0000ffe6   __TI_int03
 0000ffea   __TI_int05

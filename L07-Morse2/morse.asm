@@ -100,7 +100,7 @@ message:    .string "HELLO CS 124 WORLD ",0	; message
 letter:
 			 push	r8						; callee save
 			 push	r7
-			 mov.w	6(sp), r7
+			 mov.w	r12, r7
 letter_loop:
 			mov.b	@r7+, r8				; get dot, dash, or end
 			cmp.b	#DOT, r8				; check for a dot
@@ -121,65 +121,53 @@ end_letter:
 ; start doDot subroutine ------------------------------------------------------
 			.def	doDot
 doDot:
-			push 	r15						; callee save
+			push 	r12						; callee save
 
 			GREEN_ON
-			mov.w   #ELEMENT,r15            ; output DOT
-			push 	r15
+			mov.w   #ELEMENT,r12            ; output DOT
             call    #beep
-            pop 	r15
 
-            mov.w   #ELEMENT,r15            ; delay 1 element
-            push 	r15
+            mov.w   #ELEMENT,r12            ; delay 1 element
             call    #delay
-            pop 	r15
 
-			pop 	r15							; callee save
+			pop 	r12							; callee save
 			ret
 
 ; start doDash subroutine -----------------------------------------------------
 			.def	doDash
 doDash:
-			push 	r15						; callee save
+			push 	r12						; callee save
 
-            mov.w   #ELEMENT*3,r15          ; output DASH
-            push 	r15
+            mov.w   #ELEMENT*3,r12          ; output DASH
             call    #beep
-            pop 	r15
 
-            mov.w   #ELEMENT,r15            ; delay 1 element
-            push 	r15
+            mov.w   #ELEMENT,r12            ; delay 1 element
             call    #delay
-            pop 	r15
 
-			pop 	r15							; callee save
+			pop 	r12							; callee save
 			ret
 
 ; beep (r15) ticks subroutine -------------------------------------------------
 			.def	beep
 beep:
-			push 	r15
-			mov.w	4(sp), r15
-			mov.w   r15,&beep_cnt           ; start beep
+			mov.w   r12,&beep_cnt           ; start beep
 			clr.w	&delay_cnt				; clear delay
 
 beep02:     tst.w   &beep_cnt               ; beep finished?
               jne   beep02                  ; n
-            pop 	r15
+
             ret                             ; y
 
 
 ; delay (r15) ticks subroutine ------------------------------------------------
 			.def	delay
 delay:
-			push 	r15
-			mov.w	4(sp), r15
-			mov.w   r15,&delay_cnt          ; start delay
+			mov.w   r12,&delay_cnt          ; start delay
 			clr.w	&beep_cnt				; clear beep
 
 delay02:    tst.w   &delay_cnt              ; delay done?
               jne   delay02                 ; n
-            pop		r15
+
             ret                             ; y
 
 

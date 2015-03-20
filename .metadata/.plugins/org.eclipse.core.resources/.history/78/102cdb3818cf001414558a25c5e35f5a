@@ -3,10 +3,13 @@
 #include <stdlib.h>
 #include <ctype.h>
 
-extern int main_asm(void);
+extern void doDot(void);
+extern void doDash(void);
+extern void beep(int);
+extern void delay(int);
+extern void letter(char*);
 extern char* letters[];
 extern char* numbers[];
-extern char* message;
 extern int beep_cnt;
 extern int delay_cnt;
 extern int second_cnt;
@@ -20,26 +23,48 @@ int main(void) {
     IE1 = WDTIE;
     P4DIR = 0x69;
     P3DIR = 0x10;
-    P4OUT = 0xff;
-    P3OUT = 0xff;
+    P4OUT &= 0;
+    P3OUT &= 0;
     beep_cnt = 0;
     delay_cnt = 0;
-    GIE = SR;
+//    GIE = SR;
+    _BIS_SR(GIE); // set general interrupts
     second_cnt = 1;
     beep_enable = 1;
 
     // initialize switches
-    P1SEL = 0x0f;
-    P1DIR = 0x0f;
-    P1OUT = 0x0f;
-    P1IES = 0x0f;
-    P1REN = 0x0f;
-    P1IE = 0x0f;
+    P1SEL &= 0xf0;
+    P1DIR &= 0xf0;
+    P1OUT |= 0x0f;
+    P1IES |= 0x0f;
+    P1REN |= 0x0f;
+    P1IE |= 0x0f;
     debounce_cnt = 0;
 
     // main loop
-    while(True) {
+    while(1) {
+        char current_character;
+        char* message = "HELLO CS 124 WORLD ";
+        char* index = message;
+        // message loop
+        while (current_character = *index++) {
+        	char* morse_code;
 
+        	if (isalpha(current_character)) {
+        		morse_code = letters[current_character - 'A'];
+        	} else if (isdigit(current_character)) {
+        		// number
+        		morse_code = numbers[current_character - '0'];
+        	} else {
+        		// space
+        		delay(ELEMENT*4);
+        		continue;
+        	}
+
+        	letter(morse_code);
+        	delay(ELEMENT*2);
+        }
+        delay(ELEMENT*4); // end message
     }
 
 //    ; start main function vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv

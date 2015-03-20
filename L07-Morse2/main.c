@@ -61,10 +61,10 @@ int main(void) {
         		continue;
         	}
 
-        	doDot();
         	letter(morse_code);
+        	delay(ELEMENT*2); // space between letters
         }
-        delay(ELEMENT*4);
+        delay(ELEMENT*4); // end message
     }
 
 //    ; start main function vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
