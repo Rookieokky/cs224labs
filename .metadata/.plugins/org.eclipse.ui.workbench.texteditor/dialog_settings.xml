@@ -2,29 +2,30 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="257" key="DIALOG_WIDTH"/>
-		<item value="260" key="DIALOG_Y_ORIGIN"/>
-		<item value="720" key="DIALOG_X_ORIGIN"/>
+		<item value="235" key="DIALOG_Y_ORIGIN"/>
 		<item value="380" key="DIALOG_HEIGHT"/>
+		<item value="976" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="true" key="wrap"/>
-		<item value="false" key="casesensitive"/>
 		<item value="false" key="isRegEx"/>
+		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="= 0" key="selection"/>
+		<item value="init_life" key="selection"/>
 		<list key="findhistory">
+			<item value="init_life"/>
+			<item value="0"/>
+			<item value="bird[]"/>
+			<item value="pulsar"/>
+			<item value="pointer"/>
 			<item value="= 0"/>
 			<item value=" 0"/>
-			<item value="0"/>
 			<item value="beacon"/>
-			<item value="lcd_backlight"/>
-			<item value="#letter"/>
-			<item value="letter"/>
-			<item value="#delay"/>
 		</list>
 		<list key="replacehistory">
+			<item value="string"/>
 			<item value=""/>
 		</list>
 	</section>

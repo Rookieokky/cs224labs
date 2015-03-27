@@ -92,40 +92,98 @@ uint8 life_pr[NUM_COLS/8];				// previous row
 uint8 life_cr[NUM_COLS/8];				// current row
 uint8 life_nr[NUM_COLS/8];				// next row
 
-int read_number(uint8* object) {
-	int number = 0;
-	while (isdigit(*object)) {
-		number = number * 10 + (object - '0');
-		*object++;
-	}
-	return number;
-}
-
-//------------------------------------------------------------------------------
-//	draw RLE pattern -----------------------------------------------------------
-void draw_rle_pattern(int row, int col, const uint8* object)
-{
-	volatile int x = 0;
-	volatile int y = 0;
-	while (*object != ',') {
-		if (isdigit(*object) && x == 0) x = read_number(object);
-		*object++;
-	}
-
-	while (*object != '\n') {
-		if (isdigit(*object) && y == 0) y = read_number(object);
-		*object++;
-	}
-
-	return;
-} // end draw_rle_pattern
-
 void copy_row(uint8* source, uint8* dst) {
 	uint8 i;
 	for (i = 0; i < NUM_COLS/8; ++i) {
 		dst[i] = source[i];
 	}
 }
+
+void clear_row(uint8* row) {
+	uint8 i;
+	for (i = 0; i < NUM_COLS/8; ++i) {
+		row[i] = 0;
+	}
+}
+
+int isdigit(uint8 character) {
+	if (character - '0' >= 0 && character - '0' <= 9) return 1;
+	return 0;
+}
+
+int read_number(const uint8* string) {
+	int number = 0;
+	while (isdigit(*string)) {
+		number = number * 10 + (*string - '0');
+		*string++;
+	}
+	return number;
+}
+
+void set_pixel(int row, int col, uint8 alive) {
+	if (alive == 'o') {
+		lcd_point((col) << 1, (row) << 1, 7);
+		life[(row)][(col) >> 3] |= (0x80 >> ((col) & 0x07)); // birth
+	} else {
+		lcd_point((col) << 1, (row) << 1, 6);
+		life[(row)][(col) >> 3] &= ~(0x80 >> ((col) & 0x07)); // death
+	}
+}
+
+//------------------------------------------------------------------------------
+//	draw RLE pattern -----------------------------------------------------------
+void draw_rle_pattern(int row, int col, const uint8* string)
+{
+//	int x = 0;
+//	int y = 0;
+//	while (*string != ',') {
+//		if (isdigit(*string) && x == 0) x = read_number(string);
+//		*string++;
+//	}
+//
+//	while (*string != '\n') {
+//		if (isdigit(*string) && y == 0) y = read_number(string);
+//		*string++;
+//	}
+//
+//	// clear the grid
+//	uint8 i;
+//	for (i = 0; i < NUM_ROWS; ++i) {
+//		clear_row(life[i]);
+//	}
+//
+//	int current_row = NUM_ROWS - row - 1;
+//	int current_col = NUM_COLS - col - 1;
+//	int repeat = 0;
+//	while (*string != 0) {
+//		if (isdigit(*string)) {
+//			repeat = read_number(string);
+//			string += repeat/10 + 1; // get past the number
+//			for (i = 0; i < repeat; ++i) {
+//				set_pixel(current_row, current_col, *string);
+//				--current_col;
+//			}
+//		} else if (*string == '$') {
+//			--current_row;
+//			current_col = NUM_COLS - col - 1;
+//		} else if (*string == 'o' || *string == 'b') {
+//			set_pixel(current_row, current_col, *string);
+//			--current_col;
+//		} else if (*string == '!') {
+//			break;
+//		}
+//
+//		++string;
+//	}
+
+	life[75][3] = 0x07;					// ** delete **
+	lcd_point(29 << 1, 75 << 1, 7);		// ** delete **
+	lcd_point(30 << 1, 75 << 1, 7);		// ** delete **
+	lcd_point(31 << 1, 75 << 1, 7);		// ** delete **
+
+	return;
+} // end draw_rle_pattern
+
 
 int living_neighbors(col) {
 	int count = 0;
@@ -159,16 +217,7 @@ void main(void)
 		init_life(BIRD);				// load a new life seed into LCD
 
 		// clear previous row
-		life_pr[0] = 0;
-		life_pr[1] = 0;
-		life_pr[2] = 0;
-		life_pr[3] = 0;
-		life_pr[4] = 0;
-		life_pr[5] = 0;
-		life_pr[6] = 0;
-		life_pr[7] = 0;
-		life_pr[8] = 0;
-		life_pr[9] = 0;
+		clear_row(life_pr);
 		while (1) {						// next generation
 
 			for (row = NUM_ROWS - 2; row > 0; --row) {
