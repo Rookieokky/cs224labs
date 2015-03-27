@@ -92,34 +92,30 @@ uint8 life_pr[NUM_COLS/8];				// previous row
 uint8 life_cr[NUM_COLS/8];				// current row
 uint8 life_nr[NUM_COLS/8];				// next row
 
+int read_number(uint8* object) {
+	int number = 0;
+	while (isdigit(*object)) {
+		number = number * 10 + (object - '0');
+		*object++;
+	}
+	return number;
+}
+
 //------------------------------------------------------------------------------
 //	draw RLE pattern -----------------------------------------------------------
 void draw_rle_pattern(int row, int col, const uint8* object)
 {
-	uint8 power = 0;
-	char focus = 'x';
-	int x = 0;
-	int y = 0;
-	while (*object != 0) {
-		if (*object == 'x') focus = 'x';
-		if (*object == 'y') focus = 'y';
-
-		int number = *object - '0';
-		if (number >= 0 && number <= 10) {
-			if (focus == 'x') {
-				x = number;
-			} else {
-				y = number;
-			}
-		} else {
-			power = 0; // not a character
-		}
-
-		if (*object++ == '\n') break;
+	volatile int x = 0;
+	volatile int y = 0;
+	while (*object != ',') {
+		if (isdigit(*object) && x == 0) x = read_number(object);
 		*object++;
 	}
 
-
+	while (*object != '\n') {
+		if (isdigit(*object) && y == 0) y = read_number(object);
+		*object++;
+	}
 
 	return;
 } // end draw_rle_pattern

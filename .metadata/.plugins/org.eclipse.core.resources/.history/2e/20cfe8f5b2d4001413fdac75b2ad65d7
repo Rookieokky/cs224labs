@@ -8,10 +8,10 @@ CG_TOOL_ROOT := C:/ti/ccsv5/tools/compiler/msp430_4.2.1
 
 ORDERED_OBJS += \
 $(GEN_CMDS__FLAG) \
-"./morse_codes.obj" \
-"./morse.obj" \
 "./main.obj" \
+"./lifelib.obj" \
 "./RBX430_lcd.obj" \
+"./RBX430-1.obj" \
 "../lnk_msp430f2274.cmd" \
 -l"libc.a" \
 
@@ -112,22 +112,21 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: L07-Morse2.out
+all: L08-Life.out
 
 # Tool invocations
-L07-Morse2.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
+L08-Life.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MSP430 Linker'
-	"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L07-Morse2.map" --heap_size=80 --stack_size=80 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L07-Morse2_linkInfo.xml" --rom_model -o "L07-Morse2.out" $(ORDERED_OBJS)
+	"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L08-Life.map" --heap_size=80 --stack_size=80 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L08-Life_linkInfo.xml" --rom_model -o "L08-Life.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(MSP430_EXECUTABLE_OUTPUTS__QUOTED) "L07-Morse2.out"
-	-$(RM) "RBX430_lcd.pp" "main.pp" 
-	-$(RM) "RBX430_lcd.obj" "main.obj" "morse.obj" "morse_codes.obj" 
-	-$(RM) "morse.pp" "morse_codes.pp" 
+	-$(RM) $(MSP430_EXECUTABLE_OUTPUTS__QUOTED) "L08-Life.out"
+	-$(RM) "RBX430-1.pp" "RBX430_lcd.pp" "lifelib.pp" "main.pp" 
+	-$(RM) "RBX430-1.obj" "RBX430_lcd.obj" "lifelib.obj" "main.obj" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

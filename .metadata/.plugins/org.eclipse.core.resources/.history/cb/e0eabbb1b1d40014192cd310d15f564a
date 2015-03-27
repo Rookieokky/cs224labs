@@ -96,24 +96,52 @@ uint8 life_nr[NUM_COLS/8];				// next row
 //	draw RLE pattern -----------------------------------------------------------
 void draw_rle_pattern(int row, int col, const uint8* object)
 {
-	life[75][4] = 0x07;					// ** delete **
-	lcd_point(37 << 1, 75 << 1, 7);		// ** delete **
-	lcd_point(38 << 1, 75 << 1, 7);		// ** delete **
-	lcd_point(39 << 1, 75 << 1, 7);		// ** delete **
+	uint8 power = 0;
+	char focus = 'x';
+	int x = 0;
+	int y = 0;
+	while (*object != 0) {
+		if (*object == 'x') focus = 'x';
+		if (*object == 'y') focus = 'y';
+
+		int number = *object - '0';
+		if (number >= 0 && number <= 10) {
+			if (focus == 'x') {
+				x = number;
+			} else {
+				y = number;
+			}
+		} else {
+			power = 0; // not a character
+		}
+
+		if (*object++ == '\n') break;
+		*object++;
+	}
+
+
+
 	return;
 } // end draw_rle_pattern
 
 void copy_row(uint8* source, uint8* dst) {
 	uint8 i;
 	for (i = 0; i < NUM_COLS/8; ++i) {
-		source[i] = dst[i];
+		dst[i] = source[i];
 	}
 }
 
-int living_neighbors(row, col) {
-	uint8 count = 0;
-	count += (life_pr[(col - 1) >> 3] & (0x80 >> ((col) & 0x07)) ? 1 : 0)
-	return 0;
+int living_neighbors(col) {
+	int count = 0;
+	count += (life_pr[(col - 1) >> 3] & (0x80 >> ((col - 1) & 0x07)) ? 1 : 0);
+	count += (life_pr[(col) >> 3] & (0x80 >> ((col) & 0x07)) ? 1 : 0);
+	count += (life_pr[(col + 1) >> 3] & (0x80 >> ((col + 1) & 0x07)) ? 1 : 0);
+	count += (life_cr[(col - 1) >> 3] & (0x80 >> ((col - 1) & 0x07)) ? 1 : 0);
+	count += (life_cr[(col + 1) >> 3] & (0x80 >> ((col + 1) & 0x07)) ? 1 : 0);
+	count += (life_nr[(col - 1) >> 3] & (0x80 >> ((col - 1) & 0x07)) ? 1 : 0);
+	count += (life_nr[(col) >> 3] & (0x80 >> ((col) & 0x07)) ? 1 : 0);
+	count += (life_nr[(col + 1) >> 3] & (0x80 >> ((col + 1) & 0x07)) ? 1 : 0);
+	return count;
 }
 
 //------------------------------------------------------------------------------
@@ -129,7 +157,7 @@ void main(void)
 
 	while (1)							// new pattern seed
 	{
-		uint16 row, col;
+		uint16 row, col, neighbors, alive;
 
 		// setup beginning life generation
 		init_life(BIRD);				// load a new life seed into LCD
@@ -150,8 +178,21 @@ void main(void)
 			for (row = NUM_ROWS - 2; row > 0; --row) {
 				copy_row(life[row], life_cr);
 				copy_row(life[row - 1], life_nr);
-				for (col = NUM_COLS-2; col > 0; --col) {
+				for (col = NUM_COLS - 2; col > 0; --col) {
+					neighbors = living_neighbors(col);
+					alive = (life_cr[(col) >> 3] & (0x80 >> ((col) & 0x07)) ? 1 : 0);
 
+					if (alive) {
+						if (neighbors < 2 || neighbors > 3) {
+							life[(row)][(col) >> 3] &= ~(0x80 >> ((col) & 0x07)); // death
+							lcd_point((col) << 1, (row) << 1, 6);
+						}
+					} else {
+						if (neighbors == 3) {
+							life[(row)][(col) >> 3] |= (0x80 >> ((col) & 0x07)); // birth
+							lcd_point((col) << 1, (row) << 1, 7);
+						}
+					}
 				}
 				copy_row(life_cr, life_pr);
 			}
