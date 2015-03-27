@@ -1,0 +1,30 @@
+
+**** Build of configuration Debug for project L08-Life ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 98: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../main.c", line 99: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../main.c", line 119: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../main.c", line 121: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../main.c", line 135: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../main.c", line 142: remark #2553-D: (ULP 14.1) Array index (involving "col") of type "int". Recommend using "unsigned int"
+"../main.c", line 143: remark #2553-D: (ULP 14.1) Array index (involving "col") of type "int". Recommend using "unsigned int"
+"../main.c", line 144: remark #2553-D: (ULP 14.1) Array index (involving "col") of type "int". Recommend using "unsigned int"
+"../main.c", line 145: remark #2553-D: (ULP 14.1) Array index (involving "col") of type "int". Recommend using "unsigned int"
+"../main.c", line 146: remark #2553-D: (ULP 14.1) Array index (involving "col") of type "int". Recommend using "unsigned int"
+"../main.c", line 147: remark #2553-D: (ULP 14.1) Array index (involving "col") of type "int". Recommend using "unsigned int"
+"../main.c", line 148: remark #2553-D: (ULP 14.1) Array index (involving "col") of type "int". Recommend using "unsigned int"
+"../main.c", line 149: remark #2553-D: (ULP 14.1) Array index (involving "col") of type "int". Recommend using "unsigned int"
+'Finished building: ../main.c'
+' '
+'Building target: L08-Life.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L08-Life.map" --heap_size=80 --stack_size=80 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L08-Life_linkInfo.xml" --rom_model -o "L08-Life.out"  "./main.obj" "./lifelib.obj" "./RBX430_lcd.obj" "./RBX430-1.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+<Linking>
+'Finished building target: L08-Life.out'
+' '
+
+**** Build Finished ****
