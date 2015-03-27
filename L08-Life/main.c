@@ -124,7 +124,7 @@ void set_pixel(int row, int col, uint8 alive) {
 	if (alive == 'o') {
 		lcd_point((col) << 1, (row) << 1, 7);
 		life[(row)][(col) >> 3] |= (0x80 >> ((col) & 0x07)); // birth
-	} else {
+	} else if (alive == 'b') {
 		lcd_point((col) << 1, (row) << 1, 6);
 		life[(row)][(col) >> 3] &= ~(0x80 >> ((col) & 0x07)); // death
 	}
@@ -134,52 +134,55 @@ void set_pixel(int row, int col, uint8 alive) {
 //	draw RLE pattern -----------------------------------------------------------
 void draw_rle_pattern(int row, int col, const uint8* string)
 {
-//	int x = 0;
-//	int y = 0;
-//	while (*string != ',') {
-//		if (isdigit(*string) && x == 0) x = read_number(string);
-//		*string++;
-//	}
-//
-//	while (*string != '\n') {
-//		if (isdigit(*string) && y == 0) y = read_number(string);
-//		*string++;
-//	}
-//
-//	// clear the grid
-//	uint8 i;
-//	for (i = 0; i < NUM_ROWS; ++i) {
-//		clear_row(life[i]);
-//	}
-//
-//	int current_row = NUM_ROWS - row - 1;
-//	int current_col = NUM_COLS - col - 1;
-//	int repeat = 0;
-//	while (*string != 0) {
-//		if (isdigit(*string)) {
-//			repeat = read_number(string);
-//			string += repeat/10 + 1; // get past the number
-//			for (i = 0; i < repeat; ++i) {
-//				set_pixel(current_row, current_col, *string);
-//				--current_col;
-//			}
-//		} else if (*string == '$') {
-//			--current_row;
-//			current_col = NUM_COLS - col - 1;
-//		} else if (*string == 'o' || *string == 'b') {
-//			set_pixel(current_row, current_col, *string);
-//			--current_col;
-//		} else if (*string == '!') {
-//			break;
-//		}
-//
-//		++string;
-//	}
+	int x = 0;
+	int y = 0;
+	while (*string != ',') {
+		if (isdigit(*string) && x == 0) x = read_number(string);
+		*string++;
+	}
 
-	life[75][3] = 0x07;					// ** delete **
-	lcd_point(29 << 1, 75 << 1, 7);		// ** delete **
-	lcd_point(30 << 1, 75 << 1, 7);		// ** delete **
-	lcd_point(31 << 1, 75 << 1, 7);		// ** delete **
+	while (*string != '\n') {
+		if (isdigit(*string) && y == 0) y = read_number(string);
+		*string++;
+	}
+
+	// clear the grid
+	uint8 i;
+	for (i = 0; i < NUM_ROWS; ++i) {
+		clear_row(life[i]);
+	}
+
+	int current_row = NUM_ROWS - row - 1;
+	int initial_col = NUM_COLS - col - 1 - x;
+	int current_col = initial_col;
+	int repeat = 0;
+	while (*string != 0) {
+		if (isdigit(*string)) {
+			repeat = read_number(string);
+			while (isdigit(*string)) { // skip past the numbers
+				++string;
+			}
+			for (i = 0; i < repeat; ++i) {
+				set_pixel(current_row, current_col, *string);
+				++current_col;
+			}
+		} else if (*string == '$') {
+			--current_row;
+			current_col = initial_col;
+		} else if (*string == 'o' || *string == 'b') {
+			set_pixel(current_row, current_col, *string);
+			++current_col;
+		} else if (*string == '!') {
+			break;
+		}
+
+		++string;
+	}
+
+	// life[75][3] = 0x07;					// ** delete **
+	// lcd_point(29 << 1, 75 << 1, 7);		// ** delete **
+	// lcd_point(30 << 1, 75 << 1, 7);		// ** delete **
+	// lcd_point(31 << 1, 75 << 1, 7);		// ** delete **
 
 	return;
 } // end draw_rle_pattern
