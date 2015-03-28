@@ -7,18 +7,28 @@
 "C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
 "../main.c", line 97: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
 "../main.c", line 104: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
-"../main.c", line 126: remark #2553-D: (ULP 14.1) Array index (involving "col") of type "int". Recommend using "unsigned int"
-"../main.c", line 126: remark #2553-D: (ULP 14.1) Array index (involving "row") of type "int". Recommend using "unsigned int"
-"../main.c", line 129: remark #2553-D: (ULP 14.1) Array index (involving "col") of type "int". Recommend using "unsigned int"
-"../main.c", line 129: remark #2553-D: (ULP 14.1) Array index (involving "row") of type "int". Recommend using "unsigned int"
-"../main.c", line 190: remark #2553-D: (ULP 14.1) Array index (involving "col") of type "int". Recommend using "unsigned int"
+"../main.c", line 124: remark #2553-D: (ULP 14.1) Array index (involving "col") of type "int". Recommend using "unsigned int"
+"../main.c", line 159: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../main.c", line 160: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../main.c", line 164: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../main.c", line 169: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../main.c", line 173: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
 "../main.c", line 191: remark #2553-D: (ULP 14.1) Array index (involving "col") of type "int". Recommend using "unsigned int"
 "../main.c", line 192: remark #2553-D: (ULP 14.1) Array index (involving "col") of type "int". Recommend using "unsigned int"
-"../main.c", line 193: remark #2553-D: (ULP 14.1) Array index (involving "col") of type "int". Recommend using "unsigned int"
 "../main.c", line 194: remark #2553-D: (ULP 14.1) Array index (involving "col") of type "int". Recommend using "unsigned int"
 "../main.c", line 195: remark #2553-D: (ULP 14.1) Array index (involving "col") of type "int". Recommend using "unsigned int"
-"../main.c", line 196: remark #2553-D: (ULP 14.1) Array index (involving "col") of type "int". Recommend using "unsigned int"
 "../main.c", line 197: remark #2553-D: (ULP 14.1) Array index (involving "col") of type "int". Recommend using "unsigned int"
+"../main.c", line 198: remark #2553-D: (ULP 14.1) Array index (involving "col") of type "int". Recommend using "unsigned int"
+"../main.c", line 201: remark #2553-D: (ULP 14.1) Array index (involving "col") of type "int". Recommend using "unsigned int"
+"../main.c", line 202: remark #2553-D: (ULP 14.1) Array index (involving "col") of type "int". Recommend using "unsigned int"
+"../main.c", line 204: remark #2553-D: (ULP 14.1) Array index (involving "col") of type "int". Recommend using "unsigned int"
+"../main.c", line 205: remark #2553-D: (ULP 14.1) Array index (involving "col") of type "int". Recommend using "unsigned int"
+"../main.c", line 208: remark #2553-D: (ULP 14.1) Array index (involving "col") of type "int". Recommend using "unsigned int"
+"../main.c", line 209: remark #2553-D: (ULP 14.1) Array index (involving "col") of type "int". Recommend using "unsigned int"
+"../main.c", line 211: remark #2553-D: (ULP 14.1) Array index (involving "col") of type "int". Recommend using "unsigned int"
+"../main.c", line 212: remark #2553-D: (ULP 14.1) Array index (involving "col") of type "int". Recommend using "unsigned int"
+"../main.c", line 214: remark #2553-D: (ULP 14.1) Array index (involving "col") of type "int". Recommend using "unsigned int"
+"../main.c", line 215: remark #2553-D: (ULP 14.1) Array index (involving "col") of type "int". Recommend using "unsigned int"
 'Finished building: ../main.c'
 ' '
 'Building target: L08-Life.out'

@@ -187,7 +187,7 @@ void init_life(enum SEED seed)
 
 		default:
 		{
-			draw_rle_pattern(4, 2, jon_arbuckle);	// pattern of choice
+			draw_rle_pattern(65, 30, gosper_glider_gun);
 			break;
 		}
 	}
