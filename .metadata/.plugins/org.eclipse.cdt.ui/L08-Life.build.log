@@ -5,27 +5,19 @@
 'Building file: ../main.c'
 'Invoking: MSP430 Compiler'
 "C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
-"../main.c", line 92: error #840: unrecognized global name 'row'
-"../main.c", line 93: error #840: unrecognized global name 'col'
-"../main.c", line 94: error #840: unrecognized global name 'position'
-"../main.c", line 95: error #840: unrecognized global name 'top_row'
-"../main.c", line 96: error #840: unrecognized global name 'middle_row'
-"../main.c", line 97: error #840: unrecognized global name 'bottom_row'
 "../main.c", line 160: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
 "../main.c", line 161: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
 "../main.c", line 165: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
 "../main.c", line 170: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
 "../main.c", line 174: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../main.c", line 219: remark #2553-D: (ULP 14.1) Array index (involving "row") of type "int". Recommend using "unsigned int"
-"../main.c", line 221: remark #2553-D: (ULP 14.1) Array index (involving "row") of type "int". Recommend using "unsigned int"
-"../main.c", line 240: remark #2553-D: (ULP 14.1) Array index (involving "col") of type "int". Recommend using "unsigned int"
-"../main.c", line 241: remark #2553-D: (ULP 14.1) Array index (involving "col") of type "int". Recommend using "unsigned int"
-"../main.c", line 242: remark #2553-D: (ULP 14.1) Array index (involving "col") of type "int". Recommend using "unsigned int"
-"../main.c", line 262: remark #2553-D: (ULP 14.1) Array index (involving "col") of type "int". Recommend using "unsigned int"
-6 errors detected in the compilation of "../main.c".
-
->> Compilation failure
-gmake: *** [main.obj] Error 1
-gmake: Target `all' not remade because of errors.
+"../main.c", line 234: remark #2553-D: (ULP 14.1) Array index (involving "row") of type "int". Recommend using "unsigned int"
+'Finished building: ../main.c'
+' '
+'Building target: L08-Life.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=coffabi --advice:power=all -g --define=__MSP430F2274__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"L08-Life.map" --heap_size=80 --stack_size=80 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="L08-Life_linkInfo.xml" --rom_model -o "L08-Life.out"  "./main.obj" "./lifelib.obj" "./RBX430_lcd.obj" "./RBX430-1.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+<Linking>
+'Finished building target: L08-Life.out'
+' '
 
 **** Build Finished ****
