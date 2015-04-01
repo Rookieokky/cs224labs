@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <body>
 	<version>1</version>
+<<<<<<< HEAD
 	<timestamp>0x551c38b7</timestamp>
+=======
+	<timestamp>0x5519a5ca</timestamp>
+>>>>>>> master
 	<menu>
 		<menu_item option="--opt_for_speed" description="Control Speed vs Size"/>
 		<menu_item option="--opt_level" description="Optimization Level"/>

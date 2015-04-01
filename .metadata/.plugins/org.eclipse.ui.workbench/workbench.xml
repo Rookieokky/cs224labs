@@ -47,23 +47,35 @@
 </editorArea>
 <editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="F:/cs224labs/L08-Life/main.c" title="main.c" tooltip="L08-Life/main.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/L08-Life/main.c"/>
+<<<<<<< HEAD
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="7410" selectionTopPixel="2274"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="life.h" partName="life.h" path="F:/cs224labs/L08-Life/life.h" title="life.h" tooltip="L08-Life/life.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/L08-Life/life.h"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="187" selectionTopPixel="0"/>
+=======
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="8312" selectionTopPixel="3645"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="life.h" partName="life.h" path="F:/cs224labs/L08-Life/life.h" title="life.h" tooltip="L08-Life/life.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/L08-Life/life.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="364" selectionTopPixel="0"/>
+>>>>>>> master
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="RBX430_lcd.h" partName="RBX430_lcd.h" path="F:/cs224labs/L08-Life/RBX430_lcd.h" title="RBX430_lcd.h" tooltip="L08-Life/RBX430_lcd.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/L08-Life/RBX430_lcd.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="958" selectionTopPixel="675"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="958" selectionTopPixel="0"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="lifelib.h" partName="lifelib.h" path="F:/cs224labs/L08-Life/lifelib.h" title="lifelib.h" tooltip="L08-Life/lifelib.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/L08-Life/lifelib.h"/>
+<<<<<<< HEAD
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2468" selectionTopPixel="389"/>
+=======
+<editorState selectionHorizontalPixel="0" selectionLength="8" selectionOffset="2350" selectionTopPixel="389"/>
+>>>>>>> master
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="lifelib.c" partName="lifelib.c" path="F:/cs224labs/L08-Life/lifelib.c" title="lifelib.c" tooltip="L08-Life/lifelib.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/L08-Life/lifelib.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="10994" selectionTopPixel="4500"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5896" selectionTopPixel="2384"/>
 </editor>
 <editor id="com.ti.ccstudio.ui.cmdFileEditor" name="lnk_msp430f2274.cmd" partName="lnk_msp430f2274.cmd" path="F:/cs224labs/L08-Life/lnk_msp430f2274.cmd" title="lnk_msp430f2274.cmd" tooltip="L08-Life/lnk_msp430f2274.cmd" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/L08-Life/lnk_msp430f2274.cmd"/>
@@ -81,18 +93,25 @@
 <view id="org.eclipse.ui.views.ProgressView" partName="Progress">
 <viewState/>
 </view>
-<view id="org.eclipse.debug.ui.RegisterView" partName="Registers"/>
+<view id="org.eclipse.debug.ui.RegisterView" partName="Registers">
+<viewState/>
+</view>
 <view id="org.eclipse.debug.ui.DebugView" partName="Debug">
 <viewState/>
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
+<<<<<<< HEAD
 <category IMemento.internal.id="Warnings (3 items)"/>
 <category IMemento.internal.id="Errors"/>
 <category IMemento.internal.id="Warnings"/>
+=======
+<category IMemento.internal.id="Warnings"/>
+<category IMemento.internal.id="Errors"/>
+>>>>>>> master
 </expanded>
-<columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="434"/>
+<columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="587"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
@@ -106,7 +125,11 @@
 <view id="com.ti.ccstudio.project.ui.views.AdviceView" partName="Advice">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.type" markerContentGenerator="com.ti.ccstudio.project.ui.views.adviceMarkerGenerator" partName="Advice">
 <expanded>
+<<<<<<< HEAD
 <category IMemento.internal.id="Power (ULP™) Advice (30 items)"/>
+=======
+<category IMemento.internal.id="Power (ULP™) Advice (20 items)"/>
+>>>>>>> master
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -373,11 +396,11 @@
 <hide_toolbar_item_id id="org.eclipse.ui.navigate.next"/>
 <hide_toolbar_item_id id="com.ti.ccstudio.debug.ui.command.realtime"/>
 <hide_toolbar_item_id id="org.eclipse.debug.internal.ui.actions.RunDropDownAction"/>
-<view id="org.eclipse.ui.navigator.ProjectExplorer"/>
-<view id="org.eclipse.ui.console.ConsoleView"/>
 <view id="com.ti.ccstudio.project.ui.views.AdviceView"/>
 <view id="org.eclipse.ui.views.ProblemView"/>
 <view id="org.eclipse.ui.views.ProgressView"/>
+<view id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
 <fastViewBars/>
 <layout>
 <mainWindow>
@@ -753,6 +776,7 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ti.ccstudio.ui.cmdFileEditor" path="/L08-Life/lnk_msp430f2274.cmd"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/L08-Life/RBX430_lcd.c"/>
 </editors>
+<<<<<<< HEAD
 <item historyLabel="main.c" index="0">
 <position info="not_deleted" x="9278" y="18"/>
 </item>
@@ -902,6 +926,157 @@
 </item>
 <item active="true" historyLabel="main.c" index="0">
 <position info="not_deleted" x="6540" y="0"/>
+=======
+<item historyLabel="life.h" index="1">
+<position info="not_deleted" x="578" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="5277" y="0"/>
+</item>
+<item historyLabel="life.h" index="1">
+<position info="not_deleted" x="578" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="5277" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position/>
+</item>
+<item historyLabel="life.h" index="1">
+<position info="not_deleted" x="578" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position/>
+</item>
+<item historyLabel="life.h" index="1">
+<position info="not_deleted" x="578" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="9281" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position/>
+</item>
+<item historyLabel="main.c" index="0">
+<position/>
+</item>
+<item historyLabel="main.c" index="0">
+<position/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="7717" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="9593" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="8639" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="7709" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="6213" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="8968" y="0"/>
+</item>
+<item historyLabel="RBX430_lcd.h" index="2">
+<position info="not_deleted" x="958" y="0"/>
+</item>
+<item historyLabel="lifelib.h" index="3">
+<position info="not_deleted" x="2350" y="8"/>
+</item>
+<item historyLabel="lifelib.c" index="4">
+<position info="not_deleted" x="12900" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="8968" y="0"/>
+</item>
+<item historyLabel="life.h" index="1">
+<position info="not_deleted" x="578" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="5947" y="0"/>
+</item>
+<item historyLabel="lifelib.h" index="3">
+<position info="not_deleted" x="2350" y="8"/>
+</item>
+<item historyLabel="lifelib.c" index="4">
+<position info="not_deleted" x="13333" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="8312" y="0"/>
+</item>
+<item historyLabel="lifelib.c" index="4">
+<position info="not_deleted" x="5896" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="8312" y="0"/>
+</item>
+<item historyLabel="lifelib.c" index="4">
+<position info="not_deleted" x="5900" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="8879" y="0"/>
+</item>
+<item historyLabel="lifelib.c" index="4">
+<position info="not_deleted" x="5896" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="8312" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="7446" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="7629" y="22"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="7497" y="20"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="7701" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="7629" y="22"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="7446" y="0"/>
+</item>
+<item historyLabel="life.h" index="1">
+<position info="not_deleted" x="364" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="7446" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="8595" y="0"/>
+</item>
+<item historyLabel="lifelib.c" index="4">
+<position info="not_deleted" x="5900" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="8595" y="0"/>
+</item>
+<item historyLabel="lifelib.c" index="4">
+<position info="not_deleted" x="5900" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="8595" y="0"/>
+</item>
+<item historyLabel="lifelib.c" index="4">
+<position info="not_deleted" x="5896" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="8312" y="0"/>
+</item>
+<item active="true" historyLabel="main.c" index="0">
+<position info="not_deleted" x="7337" y="0"/>
+>>>>>>> master
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -909,6 +1084,12 @@
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
+<trimArea IMemento.internal.id="16384">
+<trimItem IMemento.internal.id="left"/>
+</trimArea>
+<trimArea IMemento.internal.id="131072">
+<trimItem IMemento.internal.id="org.eclipse.ui.editorss"/>
+</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 <trimItem IMemento.internal.id="org.eclipse.mylyn.tasks.ui.trim.container"/>
@@ -920,6 +1101,8 @@
 <trimItem IMemento.internal.id="com.ti.ccstudio.debug.ui.profileClockStatus"/>
 <trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@d88d2d"/>
+<trimItem IMemento.internal.id="bottomRight"/>
 </trimArea>
 </trimLayout>
 </window>

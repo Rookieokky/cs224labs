@@ -13,6 +13,7 @@
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
+<<<<<<< HEAD
 		<item value="lcd_point" key="selection"/>
 		<list key="findhistory">
 			<item value="lcd_point"/>
@@ -28,6 +29,23 @@
 			<item value="life_cr"/>
 			<item value="life_pr"/>
 			<item value="neighbors"/>
+=======
+		<item value="rowi" key="selection"/>
+		<list key="findhistory">
+			<item value="rowi"/>
+			<item value="block"/>
+			<item value="block_16"/>
+			<item value="copy_row"/>
+			<item value="current_col"/>
+			<item value="current_row"/>
+			<item value="switches"/>
+			<item value="isr"/>
+		</list>
+		<list key="replacehistory">
+			<item value="coli"/>
+			<item value="rowi"/>
+			<item value="block_16"/>
+>>>>>>> master
 			<item value="16"/>
 			<item value="uint8"/>
 			<item value="string"/>

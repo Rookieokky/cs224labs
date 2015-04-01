@@ -1853,7 +1853,11 @@ java.lang.NullPointerException
 !ENTRY com.ti.ccstudio.debug 1 0 2015-03-27 20:55:17.703
 !MESSAGE DS_ERROR: MSP430: Trouble Setting Breakpoint with the Action "Remain Halted" at 0x8966: Software breakpoint conflicts with one or more enabled hardware triggers
 
+<<<<<<< HEAD
 !SESSION 2015-04-01 10:40:04.155 -----------------------------------------------
+=======
+!SESSION 2015-03-30 11:22:47.880 -----------------------------------------------
+>>>>>>> master
 eclipse.buildId=M20120914-1540
 java.version=1.6.0_13
 java.vendor=Sun Microsystems Inc.
@@ -1861,6 +1865,7 @@ BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
 Framework arguments:  -product com.ti.ccstudio.branding.product
 Command-line arguments:  -os win32 -ws win32 -arch x86 -product com.ti.ccstudio.branding.product
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.ui 2 0 2015-04-01 10:40:06.683
 !MESSAGE Warnings while parsing the viewer contributions from the 'org.eclipse.ui.popupMenus' extension point
 !SUBENTRY 1 org.eclipse.ui 2 0 2015-04-01 10:40:06.683
@@ -2149,4 +2154,31 @@ No USB FET was found
 
 !ENTRY com.ti.ccstudio.debug 1 0 2015-04-01 11:51:11.259
 !MESSAGE DS_ERROR: MSP430: GEL: File: F:\cs224labs\L08-Life\Debug\L08-Life.out: a data verification error occurred, file load failed.
+=======
+!ENTRY org.eclipse.ui 2 0 2015-03-30 11:22:58.395
+!MESSAGE Warnings while parsing the viewer contributions from the 'org.eclipse.ui.popupMenus' extension point
+!SUBENTRY 1 org.eclipse.ui 2 0 2015-03-30 11:22:58.395
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.CEditorRulerActions/org.eclipse.cdt.debug.internal.ui.actions.CBreakpointPropertiesRulerActionDelegate'
+!SUBENTRY 1 org.eclipse.ui 2 0 2015-03-30 11:22:58.395
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.CEditorRulerActions/org.eclipse.cdt.debug.internal.ui.actions.EnableDisableBreakpointRulerActionDelegate'
+!SUBENTRY 1 org.eclipse.ui 2 0 2015-03-30 11:22:58.395
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.CEditorRulerActions/org.eclipse.cdt.debug.ui.actions.RulerCreateBreakpointInteractiveAction'
+!SUBENTRY 1 org.eclipse.ui 2 0 2015-03-30 11:22:58.395
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.AsmEditorRulerActions/org.eclipse.cdt.debug.internal.ui.actions.asm.CBreakpointPropertiesRulerActionDelegate'
+!SUBENTRY 1 org.eclipse.ui 2 0 2015-03-30 11:22:58.395
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.AsmEditorRulerActions/org.eclipse.cdt.debug.internal.ui.actions.asm.EnableDisableBreakpointRulerActionDelegate'
+!SUBENTRY 1 org.eclipse.ui 2 0 2015-03-30 11:22:58.395
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.AsmEditorRulerActions/org.eclipse.cdt.debug.ui.actions.asm.RulerCreateBreakpointInteractiveAction'
+!SUBENTRY 1 org.eclipse.ui 2 0 2015-03-30 11:22:58.395
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.dsf.ui', id='AUTOGEN:::org.eclipse.cdt.dsf.debug.ui.disassemblyRulerActions/org.eclipse.debug.ui.actions.RulerAddBreakpointAction'
+!SUBENTRY 1 org.eclipse.ui 2 0 2015-03-30 11:22:58.395
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.dsf.ui', id='org.eclipse.cdt.dsf.debug.ui.disassembly.commands.rulerToggleBreakpoint'
+
+!ENTRY com.ti.ccstudio.debug 1 0 2015-03-30 12:46:13.040
+!MESSAGE DS_ERROR: MSP430: GEL: Encountered a problem loading file: F:\cs224labs\L08-Life\Debug\L08-Life.out Could not open file
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2015-03-30 13:31:54.981
+!MESSAGE DS_ERROR: MSP430: Trouble Setting Breakpoint with the Action "Remain Halted" at 0x90c4: Software breakpoint conflicts with one or more enabled hardware triggers
+>>>>>>> master
 
