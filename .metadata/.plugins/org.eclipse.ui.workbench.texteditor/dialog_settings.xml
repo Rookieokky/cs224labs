@@ -3,32 +3,39 @@
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="257" key="DIALOG_WIDTH"/>
 		<item value="235" key="DIALOG_Y_ORIGIN"/>
-		<item value="976" key="DIALOG_X_ORIGIN"/>
 		<item value="380" key="DIALOG_HEIGHT"/>
+		<item value="976" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="true" key="wrap"/>
-		<item value="false" key="casesensitive"/>
 		<item value="false" key="isRegEx"/>
+		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="switches" key="selection"/>
+		<item value="lcd_point" key="selection"/>
 		<list key="findhistory">
+			<item value="lcd_point"/>
+			<item value="life[row]"/>
+			<item value="life_cr"/>
+			<item value="clear_row"/>
+			<item value="count"/>
 			<item value="switches"/>
 			<item value="isr"/>
 			<item value="interrupt"/>
-			<item value="8"/>
-			<item value="int"/>
-			<item value="init_life"/>
-			<item value="0"/>
-			<item value="bird[]"/>
 		</list>
 		<list key="replacehistory">
+			<item value="life_cr"/>
+			<item value="life_pr"/>
+			<item value="neighbors"/>
 			<item value="16"/>
 			<item value="uint8"/>
 			<item value="string"/>
 			<item value=""/>
 		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item value="389" key="DIALOG_Y_ORIGIN"/>
+		<item value="609" key="DIALOG_X_ORIGIN"/>
 	</section>
 </section>
