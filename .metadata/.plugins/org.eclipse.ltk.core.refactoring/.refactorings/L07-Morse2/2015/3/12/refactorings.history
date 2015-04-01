@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;L07-Morse2/main.asm&apos; to &apos;morse.asm&apos;" description="Rename resource &apos;main.asm&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="main.asm" name="morse.asm" stamp="1426802338436" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;L07-Morse2/main.c&apos; to &apos;morse2.c&apos;" description="Rename resource &apos;main.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="main.c" name="morse2.c" stamp="1426880380519" updateReferences="true"/>
-</session>
