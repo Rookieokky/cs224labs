@@ -1,6 +1,7 @@
 //	life.c	03/27/2015
 //
 //	Robert Williams
+//  I didn't cheat
 //
 //******************************************************************************
 //  The Game of Life
@@ -87,6 +88,12 @@ extern volatile uint16 switches;		// debounced switch values
 extern const uint16 life_image[];
 
 // global variables ------------------------------------------------------------
+<<<<<<< HEAD
+uint8 life[NUM_ROWS][NUM_COLS/8];		// 80 x 80 life grid
+uint8 life_pr[NUM_COLS/8];				// previous row
+uint8 life_cr[NUM_COLS/8];				// current row
+uint8 bitmask_lookup[8] = {0x80, 0x40, 0x20, 0x10, 0x08, 0x04, 0x02, 0x01};
+=======
 uint16	life[NUM_ROWS/4][NUM_COLS/4];	// 80 x 80 life grid
 uint16	current_row[(NUM_COLS - 2) / 2];// current row
 //uint16	next_row[(NUM_COLS - 2)/2];		// next row
@@ -112,6 +119,7 @@ void clear_row(uint8* row) {
 		row[i] = 0x00;
 	}
 }
+>>>>>>> master
 
 int isdigit(uint8 character) {
 	if (character - '0' >= 0 && character - '0' <= 9) return 1;
@@ -127,11 +135,15 @@ uint16 read_number(const uint8* string) {
 	return number;
 }
 
+<<<<<<< HEAD
+void set_pixel(uint8 row, uint8 col) {
+=======
 void set_pixel(uint16 row, uint16 col) {
 	// 0x0001 <<
 	// ((row / 2) * 2 + col / 2) * 4
 	// 				+
 	// (row % 2 * 2) + (col % 2)
+>>>>>>> master
 	SET_BIT(row, col);
 	lcd_point((col) << 1, (row) << 1, 7);
 }
@@ -194,6 +206,8 @@ void draw_rle_pattern(int row, int col, const uint8* string)
 	return;
 } // end draw_rle_pattern
 
+<<<<<<< HEAD
+=======
 
 void count_neighbors() {
 	neighbors = 0;
@@ -249,6 +263,7 @@ void do_row() {
 	}
 }
 
+>>>>>>> master
 //------------------------------------------------------------------------------
 // main ------------------------------------------------------------------------
 void main(void)
@@ -260,8 +275,18 @@ void main(void)
 	port1_init();						// init P1.0-3 switches
 	__bis_SR_register(GIE);				// enable interrupts
 
+	// clock speed
+	BCSCTL1 = CALBC1_16MHZ;       // Set range
+	DCOCTL = CALDCO_16MHZ;        // Set DCO step and modulation
+
 	while (1)							// new pattern seed
 	{
+<<<<<<< HEAD
+		register uint16 row, col, neighbors, alive, col_index1, col_index2, col_index3;
+		register uint8 right_three, middle_three, left_three;
+
+=======
+>>>>>>> master
 		// setup beginning life generation
 		if (switches == 1) {
 			init_life(LIFE);
@@ -277,6 +302,81 @@ void main(void)
 
 		while (1) {						// next generation
 
+<<<<<<< HEAD
+			// clear previous row
+			life_pr[0] = 0;
+			life_pr[1] = 0;
+			life_pr[2] = 0;
+			life_pr[3] = 0;
+			life_pr[4] = 0;
+			life_pr[5] = 0;
+			life_pr[6] = 0;
+			life_pr[7] = 0;
+			life_pr[8] = 0;
+			life_pr[9] = 0;
+
+			row = NUM_ROWS - 2;
+			while (row != 0) {
+
+				life_cr[0] = life[row][0];
+				life_cr[1] = life[row][1];
+				life_cr[2] = life[row][2];
+				life_cr[3] = life[row][3];
+				life_cr[4] = life[row][4];
+				life_cr[5] = life[row][5];
+				life_cr[6] = life[row][6];
+				life_cr[7] = life[row][7];
+				life_cr[8] = life[row][8];
+				life_cr[9] = life[row][9];
+
+				right_three = 0;
+				middle_three = 0;
+				left_three = 0;
+				left_three += life_pr[9] & 0x02;
+				left_three += life_cr[9] & 0x02;
+				left_three += life[row - 1][9] & 0x02;
+				left_three >>= 1;
+				neighbors = left_three;
+				alive = 0;
+
+				col = NUM_COLS - 2;
+				while (col != 0) {
+					neighbors -= right_three;
+					if (alive) ++neighbors;
+					right_three = middle_three;
+					middle_three = left_three;
+					left_three = 0;
+
+					col_index1 = col - 1;
+					col_index2 = col_index1 >> 3;
+					col_index3 = col_index1 & 0x07;
+
+					if (life_pr[col_index2]) left_three += (life_pr[col_index2] & bitmask_lookup[col_index3] ? 1 : 0);
+					if (life_cr[col_index2]) left_three += (life_cr[col_index2] & bitmask_lookup[col_index3] ? 1 : 0);
+					if (life[row - 1][col_index2]) left_three += (life[row - 1][col_index2] & bitmask_lookup[col_index3] ? 1 : 0);
+
+					alive = (life_cr[(col) >> 3] & bitmask_lookup[col & 0x07] ? 1 : 0);
+					if (alive) --neighbors;
+					if (left_three) neighbors += left_three;
+
+					if (alive && ((neighbors & 0xFC) || neighbors == 1 || neighbors == 0)) CLEAR_BIT(row, col), lcd_point((col) << 1, (row) << 1, 6);
+					else if (alive == 0 && neighbors == 3) SET_BIT(row, col), lcd_point((col) << 1, (row) << 1, 7);
+					--col;
+				}
+
+				life_pr[0] = life_cr[0];
+				life_pr[1] = life_cr[1];
+				life_pr[2] = life_cr[2];
+				life_pr[3] = life_cr[3];
+				life_pr[4] = life_cr[4];
+				life_pr[5] = life_cr[5];
+				life_pr[6] = life_cr[6];
+				life_pr[7] = life_cr[7];
+				life_pr[8] = life_cr[8];
+				life_pr[9] = life_cr[9];
+
+				--row;
+=======
 			rowi = 79;
 			for (coli = 0; coli < (NUM_ROWS - 2)/2; ++coli) {
 				if (coli % 2 == 0) {
@@ -289,6 +389,7 @@ void main(void)
 //					next_row[coli] = ((life[rowi][(coli >> 1)] & 0xF000) >> 12) + ((life[rowi][(coli >> 1) + 1] & 0x0F00) >> 4)
 //							+ ((life[rowi - 1][(coli >> 1)]) & 0x00F0 << 4) + ((life[rowi - 1][(coli >> 1) + 1] & 0x000F) << 12);
 				}
+>>>>>>> master
 			}
 
 			do_row();
