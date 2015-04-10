@@ -134,7 +134,7 @@ void NEXT_LEVEL_event(void)
 void LCD_UPDATE_event(void)
 {
 	--timer;
-	if (timer == 0) sys_event = END_GAME;
+	if (game_mode != PLAY) return;
 
 	// white text
 	lcd_mode(0x02);
@@ -144,7 +144,7 @@ void LCD_UPDATE_event(void)
 	lcd_printf("Score%u", score);
 
 	// time
-	lcd_cursor(123, 150);
+	lcd_cursor(128, 150);
 	if (timer < 10) {
 		lcd_printf("0:0%u", timer);
 	} else if (timer == 60) {
@@ -152,6 +152,8 @@ void LCD_UPDATE_event(void)
 	} else {
 		lcd_printf("0:%u", timer);
 	}
+
+	if (timer == 0) sys_event = END_GAME;
 } // end LCD_UPDATE_event
 
 
@@ -160,7 +162,6 @@ void LCD_UPDATE_event(void)
 void END_GAME_event(void)
 {
 	game_mode = IDLE;
-	sys_event = 0;
 } // end END_GAME_event
 
 
