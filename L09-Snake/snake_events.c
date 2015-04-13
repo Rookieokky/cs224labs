@@ -25,7 +25,13 @@ volatile uint8	timer;					// game timer
 volatile uint8 head;					// head index into snake array
 volatile uint8 tail;					// tail index into snake array
 SNAKE snake[MAX_SNAKE];					// snake segments
-FOOD* foods;
+
+FOOD *foods = NULL;
+uint8 level_foods;
+uint8 foods_eaten_on_current_level;
+uint8 foods_to_eat_on_current_level;
+
+ROCK rocks[MAX_ROCKS];
 
 extern const uint16 snake_text_image[];		// snake text image
 extern const uint16 snake1_image[];			// snake image
@@ -39,6 +45,9 @@ static void delete_tail(void);
 static void add_head(void);
 void draw_board(void);
 void draw_foods(void);
+void draw_rocks(void);
+void draw_level_banner(void);
+void free_foods(void);
 
 //-- switch #1 event -----------------------------------------------------------
 //
@@ -169,12 +178,12 @@ void END_GAME_event(void)
 {
 	game_mode = IDLE;
 	// print out game over and the final score
-	lcd_rectangle(19, 39, 119, 79, FILL + 1);
+	lcd_rectangle(14, 39, 134, 79, FILL + 1);
 	// white text
 	lcd_mode(0x04);
 
 	// game over
-	lcd_cursor(29, 89);
+	lcd_cursor(19, 89);
 	lcd_printf("GAME OVER!");
 
 	// score
@@ -191,15 +200,48 @@ void MOVE_SNAKE_event(void)
 	{
 		add_head();						// add head
 		lcd_point(COL(snake[head].point.x), ROW(snake[head].point.y), PENTX);
-		//vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-		//	Add code here to check for collisions...
-//		if (snake[head].xy == ((0 << 8) + 12)) { beep(); blink();}
-//		lcd_square(COL(12), ROW(0), 2, 1 + FILL);
-		//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-		delete_tail();					// delete tail
-		if (score / level == 10) {
-			game_mode = IDLE;
-			sys_event = NEXT_LEVEL;
+
+		// check for food collision
+		uint8 food_collision = 0;
+		uint8 i = level_foods;
+		do {
+			--i;
+			if (snake[head].xy == foods[i].xy) {
+				food_collision = 1;
+
+				foods_eaten_on_current_level++;
+
+				// add to the score and make sure it is updated
+				score += level;
+				sys_event |= LCD_UPDATE;
+				++timer; // make sure the timer is not messed up by lcd_update
+
+				// move the food off the grid
+				foods[i].point.x = X_MAX;
+				foods[i].point.y = Y_MAX;
+
+				break;
+			}
+		} while (i > 0);
+
+		uint8 end_game = 0;
+		i = MAX_ROCKS;
+		do {
+			--i;
+			if (snake[head].xy == rocks[i].xy) {
+				end_game = 1;
+			}
+		} while (i > 0);
+
+		if (food_collision == 0) delete_tail();
+
+		if (end_game) {
+			sys_event = END_GAME;
+		}
+
+		if (foods_eaten_on_current_level >= foods_to_eat_on_current_level) {
+			draw_level_banner();
+			game_mode = NEXT;
 			level++;
 		}
 	}
@@ -218,7 +260,13 @@ void START_LEVEL_event(void)
 	draw_board();
 
 	// draw the foods
+	level_foods = LEVEL_1_FOOD;
+	foods_eaten_on_current_level = 0;
+	foods_to_eat_on_current_level = LEVEL_1_FOOD;
 	draw_foods();
+
+	// draw the rocks
+	draw_rocks();
 
 	// draw snake
 	new_snake(START_SCORE, RIGHT);
@@ -413,7 +461,7 @@ void draw_board(void) {
 }
 
 void draw_foods(void) {
-	uint8 level_foods = LEVEL_1_FOOD;
+	free_foods();
 	foods = malloc(sizeof(FOOD) * level_foods);
 
 	uint8 i;
@@ -422,6 +470,52 @@ void draw_foods(void) {
 		uint8 y_coordinate = rand() % Y_MAX;
 		foods[i].point.x = x_coordinate;
 		foods[i].point.y = y_coordinate;
-		lcd_square(COL(x_coordinate), ROW(y_coordinate), 2, 1);
+
+		switch (i % 5) {
+		case 1:
+			lcd_circle(COL(x_coordinate), ROW(y_coordinate), 2, 1);
+			break;
+		case 2:
+			lcd_triangle(COL(x_coordinate), ROW(y_coordinate), 2, 1);
+			break;
+		case 3:
+			lcd_star(COL(x_coordinate), ROW(y_coordinate), 2, 1);
+			break;
+		case 4:
+			lcd_diamond(COL(x_coordinate), ROW(y_coordinate), 2, 1);
+			break;
+		default:
+			lcd_square(COL(x_coordinate), ROW(y_coordinate), 2, 1);
+			break;
+		}
+	}
+}
+
+void draw_rocks(void) {
+	uint8 i;
+	for (i = 0; i < MAX_ROCKS; i++) {
+		uint8 x_coordinate = rand() % X_MAX;
+		uint8 y_coordinate = rand() % Y_MAX;
+		rocks[i].point.x = x_coordinate;
+		rocks[i].point.y = y_coordinate;
+
+		lcd_point(COL(x_coordinate), ROW(y_coordinate), PENTX);
+	}
+}
+
+void draw_level_banner() {
+	// print out game over and the final score
+	lcd_rectangle(39, 59, 79, 29, FILL + 1);
+	// white text
+	lcd_mode(0x04);
+
+	// game over
+	lcd_cursor(44, 44);
+	lcd_printf("LEVEL%u", level);
+}
+
+void free_foods(void) {
+	if (foods != NULL) {
+		free(foods);
 	}
 }

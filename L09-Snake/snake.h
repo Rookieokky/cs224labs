@@ -60,6 +60,7 @@ void LCD_UPDATE_event(void);
 
 #define MAX_SNAKE			128			// max snake length (make power of 2)
 #define MAX_FOOD			10			// max # of foods
+#define MAX_ROCKS			3			// max # of rocks
 
 #define TIME_1_LIMIT		30
 #define LEVEL_1_FOOD		5			// 10
