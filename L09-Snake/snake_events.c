@@ -25,6 +25,7 @@ volatile uint8	timer;					// game timer
 volatile uint8 head;					// head index into snake array
 volatile uint8 tail;					// tail index into snake array
 SNAKE snake[MAX_SNAKE];					// snake segments
+FOOD* foods;
 
 extern const uint16 snake_text_image[];		// snake text image
 extern const uint16 snake1_image[];			// snake image
@@ -37,6 +38,7 @@ static void new_snake(uint16 length, uint8 dir);
 static void delete_tail(void);
 static void add_head(void);
 void draw_board(void);
+void draw_foods(void);
 
 //-- switch #1 event -----------------------------------------------------------
 //
@@ -125,6 +127,10 @@ void SWITCH_4_event(void)
 //
 void NEXT_LEVEL_event(void)
 {
+	if (level == 4) {
+		sys_event = END_GAME;
+		return;
+	}
 	sys_event = START_LEVEL;
 } // end NEXT_LEVEL_event
 
@@ -162,6 +168,18 @@ void LCD_UPDATE_event(void)
 void END_GAME_event(void)
 {
 	game_mode = IDLE;
+	// print out game over and the final score
+	lcd_rectangle(19, 39, 119, 79, FILL + 1);
+	// white text
+	lcd_mode(0x04);
+
+	// game over
+	lcd_cursor(29, 89);
+	lcd_printf("GAME OVER!");
+
+	// score
+	lcd_cursor(39, 49);
+	lcd_printf("Score %u", score);
 } // end END_GAME_event
 
 
@@ -175,10 +193,15 @@ void MOVE_SNAKE_event(void)
 		lcd_point(COL(snake[head].point.x), ROW(snake[head].point.y), PENTX);
 		//vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 		//	Add code here to check for collisions...
-		if (snake[head].xy == ((0 << 8) + 12)) { beep(); blink();}
-		lcd_square(COL(12), ROW(0), 2, 1 + FILL);
+//		if (snake[head].xy == ((0 << 8) + 12)) { beep(); blink();}
+//		lcd_square(COL(12), ROW(0), 2, 1 + FILL);
 		//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 		delete_tail();					// delete tail
+		if (score / level == 10) {
+			game_mode = IDLE;
+			sys_event = NEXT_LEVEL;
+			level++;
+		}
 	}
 	return;
 } // end MOVE_SNAKE_event
@@ -193,6 +216,9 @@ void START_LEVEL_event(void)
 
 	// draw the game board
 	draw_board();
+
+	// draw the foods
+	draw_foods();
 
 	// draw snake
 	new_snake(START_SCORE, RIGHT);
@@ -216,10 +242,9 @@ void NEW_GAME_event(void)
 	lcd_wordImage(snake1_image, (159-60)/2, 60, 1);
 	lcd_wordImage(snake_text_image, (159-111)/2, 20, 1);
 
-	new_snake(START_SCORE, RIGHT);
 
 	// initialize game variables
-	score = START_SCORE; // this happens automatically but I'll do it anyway
+	score = 0;
 	level = 1;
 
 	// wait for the user to start level 1
@@ -247,8 +272,7 @@ void new_snake(uint16 length, uint8 dir)
 	direction = dir;
 
 	// build snake
-	score = length;
-	for (i = score - 1; i > 0; --i)
+	for (i = length - 1; i > 0; --i)
 	{
 		add_head();
 	}
@@ -386,4 +410,18 @@ void draw_board(void) {
 	// level
 	lcd_cursor(70, 150);
 	lcd_printf("Level%u", level);
+}
+
+void draw_foods(void) {
+	uint8 level_foods = LEVEL_1_FOOD;
+	foods = malloc(sizeof(FOOD) * level_foods);
+
+	uint8 i;
+	for (i = 0; i < level_foods; i++) {
+		uint8 x_coordinate = rand() % X_MAX;
+		uint8 y_coordinate = rand() % Y_MAX;
+		foods[i].point.x = x_coordinate;
+		foods[i].point.y = y_coordinate;
+		lcd_square(COL(x_coordinate), ROW(y_coordinate), 2, 1);
+	}
 }

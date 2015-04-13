@@ -88,6 +88,18 @@ typedef union							// snake segment object
 	POINT point;
 } SNAKE;
 
+typedef union							// food object
+{
+	uint16 xy;
+	POINT point;
+} FOOD;
+
+typedef union							// rock object
+{
+	uint16 xy;
+	POINT point;
+} ROCK;
+
 #define COL(x)	((x)*6+7+3)				// grid x value to LCD column
 #define ROW(y)	((y)*6+10+3)			// grid y value to LCD row
 
