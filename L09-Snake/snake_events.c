@@ -51,8 +51,11 @@ uint8 foods_to_eat_on_current_level;
 ROCK rocks[MAX_ROCKS];
 uint8 num_rocks;
 
+uint8 win;
+
 extern const uint16 snake_text_image[];		// snake text image
 extern const uint16 snake1_image[];			// snake image
+extern const uint16 king_snake_image[];		// king snake image
 
 static uint8 move_right(SNAKE* head);		// move snake head right
 static uint8 move_up(SNAKE* head);			// move snake head up
@@ -154,8 +157,9 @@ void SWITCH_4_event(void)
 //
 void NEXT_LEVEL_event(void)
 {
-	if (level == 4) {
+	if (level == 5) {
 		sys_event = END_GAME;
+		win = 1;
 		return;
 	}
 	sys_event = START_LEVEL;
@@ -197,21 +201,27 @@ void LCD_UPDATE_event(void)
 void END_GAME_event(void)
 {
 	game_mode = IDLE;
-	// print out game over and the final score
-	lcd_rectangle(14, 39, 134, 79, FILL + 1);
-	// white text
-	lcd_mode(0x04);
-
-	// game over
-	lcd_cursor(19, 89);
-	lcd_printf("GAME OVER!");
-
-	// score
-	lcd_cursor(39, 49);
-	lcd_printf("Score %u", score);
-
-	// play sound
-	rasberry();
+	
+	if (win) {
+		lcd_wordImage(king_snake_image, (159-60)/2, 60, 1);
+		imperial_march();
+	} else {
+		// print out game over and the final score
+		lcd_rectangle(14, 39, 134, 79, FILL + 1);
+		// white text
+		lcd_mode(0x04);
+	
+		// game over
+		lcd_cursor(19, 89);
+		lcd_printf("GAME OVER!");
+	
+		// score
+		lcd_cursor(39, 49);
+		lcd_printf("Score %u", score);
+	
+		// play sound
+		rasberry();
+	}
 } // end END_GAME_event
 
 
@@ -368,6 +378,7 @@ void NEW_GAME_event(void)
 	// initialize game variables
 	score = 0;
 	level = 1;
+	win = 0;
 
 	// wait for the user to start level 1
 	game_mode = NEXT;
