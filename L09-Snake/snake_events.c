@@ -13,6 +13,23 @@
 #include "snake.h"
 #include "snakelib.h"
 
+const TONE Scale[] = {
+		{ TONE_C, 50 },
+		{ TONE_D, 50 },
+		{ TONE_E, 50 },
+		{ TONE_F, 50 },
+		{ TONE_G, 50 },
+		{ TONE_F, 50 },
+		{ TONE_E, 50 },
+		{ TONE_D, 50 },
+		{ TONE_C, 50 },
+		{ TONE_E, 50 },
+		{ TONE_G, 50 },
+		{ TONE_E, 50 },
+		{ TONE_C, 50 }
+};
+
+
 extern volatile uint16 sys_event;			// pending events
 
 volatile enum MODE game_mode;			// 0=idle, 1=play, 2=next
@@ -32,6 +49,7 @@ uint8 foods_eaten_on_current_level;
 uint8 foods_to_eat_on_current_level;
 
 ROCK rocks[MAX_ROCKS];
+uint8 num_rocks;
 
 extern const uint16 snake_text_image[];		// snake text image
 extern const uint16 snake1_image[];			// snake image
@@ -168,7 +186,9 @@ void LCD_UPDATE_event(void)
 		lcd_printf("0:%u", timer);
 	}
 
-	if (timer == 0) sys_event = END_GAME;
+	if (timer == 0) {
+		sys_event = END_GAME;
+	}
 } // end LCD_UPDATE_event
 
 
@@ -189,6 +209,9 @@ void END_GAME_event(void)
 	// score
 	lcd_cursor(39, 49);
 	lcd_printf("Score %u", score);
+
+	// play sound
+	rasberry();
 } // end END_GAME_event
 
 
@@ -210,6 +233,8 @@ void MOVE_SNAKE_event(void)
 				food_collision = 1;
 
 				foods_eaten_on_current_level++;
+				beep();
+				blink();
 
 				// add to the score and make sure it is updated
 				score += level;
@@ -220,11 +245,17 @@ void MOVE_SNAKE_event(void)
 				foods[i].point.x = X_MAX;
 				foods[i].point.y = Y_MAX;
 
+				// spawn new food on levels three and four
+				if (level > 2) draw_foods();
+
 				break;
 			}
 		} while (i > 0);
 
 		uint8 end_game = 0;
+
+		// check for snake collisions with rocks
+		if (level == 1) goto no_rocks; // skip the rocks on level 1
 		i = MAX_ROCKS;
 		do {
 			--i;
@@ -232,17 +263,31 @@ void MOVE_SNAKE_event(void)
 				end_game = 1;
 			}
 		} while (i > 0);
+		no_rocks:
 
+		// check for snake collisions with itself
+		i = head;
+		while (i > tail) {
+			i--;
+			if (snake[head].xy == snake[i].xy) {
+				end_game = 1;
+			}
+		}
+
+		// snake grows on food eaten
 		if (food_collision == 0) delete_tail();
 
 		if (end_game) {
 			sys_event = END_GAME;
+			return;
 		}
 
 		if (foods_eaten_on_current_level >= foods_to_eat_on_current_level) {
-			draw_level_banner();
 			game_mode = NEXT;
 			level++;
+			doDitty(13, Scale);
+			if (level != 5) draw_level_banner();
+			sys_event = 0; // stop move snake from happening again
 		}
 	}
 	return;
@@ -253,27 +298,56 @@ void MOVE_SNAKE_event(void)
 //
 void START_LEVEL_event(void)
 {
-	move_cnt = WDT_MOVE2;				// level 2, speed 2
+
+
 	lcd_clear();						// clear lcd
 
 	// draw the game board
 	draw_board();
 
 	// draw the foods
-	level_foods = LEVEL_1_FOOD;
+	switch (level) {
+	case 1:
+		move_cnt = WDT_MOVE1;
+		level_foods = LEVEL_1_FOOD;
+		foods_to_eat_on_current_level = LEVEL_1_FOOD;
+		timer = TIME_1_LIMIT;
+		break;
+	case 2:
+		move_cnt = WDT_MOVE2;
+		level_foods = LEVEL_2_FOOD;
+		foods_to_eat_on_current_level = LEVEL_2_FOOD;
+		timer = TIME_2_LIMIT;
+		break;
+	case 3:
+		move_cnt = WDT_MOVE3;
+		level_foods = 1;
+		foods_to_eat_on_current_level = LEVEL_3_FOOD;
+		timer = TIME_3_LIMIT;
+		break;
+	case 4:
+		move_cnt = WDT_MOVE4;
+		level_foods = 1;
+		foods_to_eat_on_current_level = LEVEL_4_FOOD;
+		timer = TIME_4_LIMIT;
+		break;
+	}
+
 	foods_eaten_on_current_level = 0;
-	foods_to_eat_on_current_level = LEVEL_1_FOOD;
 	draw_foods();
 
 	// draw the rocks
+	if (level == 1) num_rocks = 0;
+	else num_rocks = rand() % MAX_ROCKS;
 	draw_rocks();
 
 	// draw snake
 	new_snake(START_SCORE, RIGHT);
 
 	// reset the timer
-	timer = TIME_1_LIMIT + 1; // this will be decremented immediately
+	timer++; // this will be decremented immediately
 
+	// update the lcd with all the new info
 	sys_event |= LCD_UPDATE;
 
 	game_mode = PLAY;					// start level
@@ -298,12 +372,6 @@ void NEW_GAME_event(void)
 	// wait for the user to start level 1
 	game_mode = NEXT;
 
-	// example foods
-//	lcd_diamond(COL(16), ROW(20), 2, 1);	// ***demo only***
-//	lcd_star(COL(17), ROW(20), 2, 1);
-//	lcd_circle(COL(18), ROW(20), 2, 1);
-//	lcd_square(COL(19), ROW(20), 2, 1);
-//	lcd_triangle(COL(20), ROW(20), 2, 1);
 	return;
 } // end NEW_GAME_event
 
@@ -493,9 +561,9 @@ void draw_foods(void) {
 
 void draw_rocks(void) {
 	uint8 i;
-	for (i = 0; i < MAX_ROCKS; i++) {
+	for (i = 0; i < num_rocks; i++) {
 		uint8 x_coordinate = rand() % X_MAX;
-		uint8 y_coordinate = rand() % Y_MAX;
+		uint8 y_coordinate = (rand() % Y_MAX - 1) + 1; // no rocks on bottom row
 		rocks[i].point.x = x_coordinate;
 		rocks[i].point.y = y_coordinate;
 
@@ -510,7 +578,7 @@ void draw_level_banner() {
 	lcd_mode(0x04);
 
 	// game over
-	lcd_cursor(44, 44);
+	lcd_cursor(44, 64);
 	lcd_printf("LEVEL%u", level);
 }
 
