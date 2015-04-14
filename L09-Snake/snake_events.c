@@ -322,8 +322,6 @@ void START_LEVEL_event(void)
 
 	// draw the game board
 	draw_board();
-
-	// draw the foods
 	switch (level) {
 	case 1:
 		move_cnt = WDT_MOVE1;
@@ -351,13 +349,14 @@ void START_LEVEL_event(void)
 		break;
 	}
 
-	foods_eaten_on_current_level = 0;
-	draw_foods();
-
 	// draw the rocks
 	if (level == 1) num_rocks = 0;
 	else num_rocks = (rand() % (MAX_ROCKS - 2)) + 2; // at least two rocks
 	draw_rocks();
+
+	// init the foods
+	foods_eaten_on_current_level = 0;
+	draw_foods();
 
 	// draw snake
 	new_snake(START_SCORE, RIGHT);
