@@ -11,6 +11,7 @@
 
 #define SNAKE1_IMAGE		1
 #define SNAKE_TEXT_IMAGE	1
+#define	KING_SNAKE_IMAGE	1
 
 #ifndef BYU1_IMAGE
 #define BYU1_IMAGE			0

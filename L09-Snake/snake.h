@@ -1,6 +1,7 @@
 //------------------------------------------------------------------------------
 // snake.h (04/06/2015)
 //------------------------------------------------------------------------------
+//	 Robert Williams -- I didn't cheat
 #ifndef SNAKE_H_
 #define SNAKE_H_
 
@@ -21,6 +22,9 @@
 
 #define WDT_LCD		(WDT_CPS/4)			// 250 ms
 #define WDT_MOVE1	(WDT_CPS/4)			// 250 ms
+//#define WDT_MOVE2	(WDT_CPS/4)			// 250 ms
+//#define WDT_MOVE3	(WDT_CPS/4)			// 250 ms
+//#define WDT_MOVE4	(WDT_CPS/4)			// 250 ms
 #define WDT_MOVE2	(WDT_CPS/8)			// 125 ms
 #define WDT_MOVE3	(WDT_CPS/16)		// 62 ms
 #define WDT_MOVE4	(WDT_CPS/32)		// 31 ms
@@ -55,6 +59,7 @@ void LCD_UPDATE_event(void);
 
 //-- snake game equates --------------------------------------------------------
 #define START_SCORE			10
+#define BEGINNING_LEVEL		1
 #define X_MAX	24						// columns
 #define Y_MAX	23						// rows
 
@@ -63,7 +68,7 @@ void LCD_UPDATE_event(void);
 #define MAX_ROCKS			5			// max # of rocks
 
 #define TIME_1_LIMIT		30
-#define LEVEL_1_FOOD		5			// 10
+#define LEVEL_1_FOOD		MAX_FOOD			// MAX_FOOD
 
 #define TIME_2_LIMIT		30
 #define LEVEL_2_FOOD		MAX_FOOD

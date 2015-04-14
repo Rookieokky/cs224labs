@@ -1,6 +1,8 @@
 //******************************************************************************
 //	snake_events.c  (04/06/2015)
 //
+//	Robert Williams -- I didn't cheat
+//
 //  Author:			Paul Roper, Brigham Young University
 //  Revisions:		1.0		11/25/2012	RBX430-1
 //
@@ -69,6 +71,7 @@ void draw_foods(void);
 void draw_rocks(void);
 void draw_level_banner(void);
 void free_foods(void);
+void draw_food(uint8);
 
 //-- switch #1 event -----------------------------------------------------------
 //
@@ -157,11 +160,6 @@ void SWITCH_4_event(void)
 //
 void NEXT_LEVEL_event(void)
 {
-	if (level == 5) {
-		sys_event = END_GAME;
-		win = 1;
-		return;
-	}
 	sys_event = START_LEVEL;
 } // end NEXT_LEVEL_event
 
@@ -203,7 +201,8 @@ void END_GAME_event(void)
 	game_mode = IDLE;
 	
 	if (win) {
-		lcd_wordImage(king_snake_image, (159-60)/2, 60, 1);
+		lcd_clear();
+		lcd_wordImage(king_snake_image, 20, 20, 1);
 		imperial_march();
 	} else {
 		// print out game over and the final score
@@ -258,6 +257,9 @@ void MOVE_SNAKE_event(void)
 				// spawn new food on levels three and four
 				if (level > 2) draw_foods();
 
+				// add a new food if level 1
+				if (level == 1) draw_food(i);
+
 				break;
 			}
 		} while (i > 0);
@@ -266,7 +268,7 @@ void MOVE_SNAKE_event(void)
 
 		// check for snake collisions with rocks
 		if (level == 1) goto no_rocks; // skip the rocks on level 1
-		i = MAX_ROCKS;
+		i = num_rocks;
 		do {
 			--i;
 			if (snake[head].xy == rocks[i].xy) {
@@ -293,11 +295,17 @@ void MOVE_SNAKE_event(void)
 		}
 
 		if (foods_eaten_on_current_level >= foods_to_eat_on_current_level) {
-			game_mode = NEXT;
 			level++;
-			doDitty(13, Scale);
-			if (level != 5) draw_level_banner();
-			sys_event = 0; // stop move snake from happening again
+			if (level == 5) {
+				game_mode = IDLE;
+				sys_event = END_GAME;
+				win = 1;
+			} else {
+				game_mode = NEXT;
+				doDitty(13, Scale);
+				draw_level_banner();
+				sys_event = LCD_UPDATE; // stop move snake from happening again
+			}
 		}
 	}
 	return;
@@ -348,7 +356,7 @@ void START_LEVEL_event(void)
 
 	// draw the rocks
 	if (level == 1) num_rocks = 0;
-	else num_rocks = rand() % MAX_ROCKS;
+	else num_rocks = (rand() % (MAX_ROCKS - 2)) + 2; // at least two rocks
 	draw_rocks();
 
 	// draw snake
@@ -377,7 +385,7 @@ void NEW_GAME_event(void)
 
 	// initialize game variables
 	score = 0;
-	level = 1;
+	level = BEGINNING_LEVEL;
 	win = 0;
 
 	// wait for the user to start level 1
@@ -545,28 +553,47 @@ void draw_foods(void) {
 
 	uint8 i;
 	for (i = 0; i < level_foods; i++) {
-		uint8 x_coordinate = rand() % X_MAX;
-		uint8 y_coordinate = rand() % Y_MAX;
-		foods[i].point.x = x_coordinate;
-		foods[i].point.y = y_coordinate;
+		draw_food(i);
+	}
+}
 
-		switch (i % 5) {
-		case 1:
-			lcd_circle(COL(x_coordinate), ROW(y_coordinate), 2, 1);
-			break;
-		case 2:
-			lcd_triangle(COL(x_coordinate), ROW(y_coordinate), 2, 1);
-			break;
-		case 3:
-			lcd_star(COL(x_coordinate), ROW(y_coordinate), 2, 1);
-			break;
-		case 4:
-			lcd_diamond(COL(x_coordinate), ROW(y_coordinate), 2, 1);
-			break;
-		default:
-			lcd_square(COL(x_coordinate), ROW(y_coordinate), 2, 1);
-			break;
-		}
+void draw_food(uint8 index) {
+	uint8 x_coordinate, y_coordinate, i;
+
+	start_over:
+	x_coordinate = rand() % X_MAX;
+	y_coordinate = (rand() % (Y_MAX - 1)) + 1; // no foods on bottom row
+	foods[index].point.x = x_coordinate;
+	foods[index].point.y = y_coordinate;
+
+	i = num_rocks;
+	while (i > 0) {
+		i--;
+		if (rocks[i].xy == foods[index].xy) goto start_over;
+	}
+
+	i = head;
+	while (i > tail) {
+		i--;
+		if (snake[i].xy == foods[index].xy) goto start_over;
+	}
+
+	switch (index % 5) {
+	case 1:
+		lcd_circle(COL(x_coordinate), ROW(y_coordinate), 2, 1);
+		break;
+	case 2:
+		lcd_triangle(COL(x_coordinate), ROW(y_coordinate), 2, 1);
+		break;
+	case 3:
+		lcd_star(COL(x_coordinate), ROW(y_coordinate), 2, 1);
+		break;
+	case 4:
+		lcd_diamond(COL(x_coordinate), ROW(y_coordinate), 2, 1);
+		break;
+	default:
+		lcd_square(COL(x_coordinate), ROW(y_coordinate), 2, 1);
+		break;
 	}
 }
 
@@ -574,7 +601,7 @@ void draw_rocks(void) {
 	uint8 i;
 	for (i = 0; i < num_rocks; i++) {
 		uint8 x_coordinate = rand() % X_MAX;
-		uint8 y_coordinate = (rand() % Y_MAX - 1) + 1; // no rocks on bottom row
+		uint8 y_coordinate = (rand() % (Y_MAX - 1)) + 1; // no rocks on bottom row
 		rocks[i].point.x = x_coordinate;
 		rocks[i].point.y = y_coordinate;
 
